@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecart Home</title>
+    <!-- Bootstrap css cdn link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- end of Bootstrap css cdn link -->
+    <!-- Style css -->
+    <link rel="stylesheet" href="./css/userHomePage.css" />
+    <!-- end of Style css -->
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container-fluid">
+        <div class="row header">
+          <div class="col-6 topheader topheaderone">
+            <div class="topheadingimg topheadingimgone">
+              <img
+                src="./images/header/shipping-icon.svg"
+                alt="shipping-icon"
+              />
+              <p>Free Shipping</p>
+            </div>
+          </div>
+          <div class="col-6 topheader topheadertwo">
+            <div class="topheadingimg topheadingimgtwo">
+              <img
+                src="./images/header/warranty-icon.svg"
+                alt="warranty-icon"
+              />
+              <p>1 Year Warranty</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="container-fluid">
+          <div class="row navigation">
+            <div
+              class="col-12 d-flex align-items-center justify-content-between"
+            >
+              <div class="logo d-flex align-items-center m-0 p-0">
+                <div class="mobilenavigation">
+                  <button class="hamburger">
+                    <span class="d-block mt-0"></span>
+                    <span class="d-block"></span>
+                    <span class="d-block mb-0"></span>
+                  </button>
+                </div>
+
+                <a href="/">
+                  <svg
+                    width="118"
+                    height="32"
+                    viewBox="0 0 118 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 31.04C3.42667 31.04 2.26667 30.5467 1.52 29.56C0.773333 28.5467 0.4 27.0533 0.4 25.08C0.4 23.08 1.24 17.44 2.92 8.16L0.8 3.88C3.81333 1.93333 6.56 0.96 9.04 0.96C10.6133 0.96 11.5867 1.70667 11.96 3.2C14.9733 3.12 18.7333 2.44 23.24 1.16C23.4533 2.04 23.56 2.90667 23.56 3.76C23.56 5.92 22.84 7.54666 21.4 8.64C19.9867 9.73333 18.16 10.28 15.92 10.28C14.4 10.28 12.9067 9.96 11.44 9.32C11.2267 10.52 10.8533 12.48 10.32 15.2C11.3067 15.3867 12.1467 15.48 12.84 15.48C13.9333 15.2667 15.1333 14.96 16.44 14.56C16.5733 15.0133 16.64 15.76 16.64 16.8C16.64 17.8133 16.2267 18.6267 15.4 19.24C14.5733 19.8533 13.64 20.16 12.6 20.16C11.5867 20.16 10.5467 20.04 9.48 19.8C9.18667 21.48 9.04 23.0667 9.04 24.56H15.52C17.5467 24.2667 19.5867 23.7467 21.64 23C21.8 23.48 21.88 24.1333 21.88 24.96C21.88 26.5333 21.4133 27.9333 20.48 29.16C19.5733 30.3867 18.3067 31 16.68 31C15.8267 31 14.5733 30.8267 12.92 30.48C11.2933 30.16 10.08 29.96 9.28 29.88C8 30.6533 6.57333 31.04 5 31.04ZM24.5656 20.48C24.5656 16.2133 26.0323 12.7333 28.9656 10.04C31.899 7.34667 35.5923 6 40.0456 6C42.339 6 44.1523 6.44 45.4856 7.32C46.819 8.17333 47.4856 9.25333 47.4856 10.56C47.4856 11.8667 47.0323 12.8667 46.1256 13.56C45.2456 14.2533 44.2723 14.6 43.2056 14.6C42.1656 14.6 41.2056 14.32 40.3256 13.76C39.4723 13.2 38.8056 12.3867 38.3256 11.32C36.6456 12.0133 35.3123 13.24 34.3256 15C33.3656 16.76 32.8856 18.52 32.8856 20.28C32.8856 22.04 33.2323 23.4667 33.9256 24.56C34.619 25.6533 35.5256 26.2 36.6456 26.2C37.7656 26.2 38.6723 25.8267 39.3656 25.08C40.0856 24.3333 40.4456 23.2267 40.4456 21.76C44.339 21.76 46.2856 22.68 46.2856 24.52C46.2856 26.0933 45.299 27.5733 43.3256 28.96C41.3523 30.32 38.7523 31 35.5256 31C32.299 31 29.659 30.04 27.6056 28.12C25.579 26.1733 24.5656 23.6267 24.5656 20.48ZM65.3534 25.08L64.9534 24.88C64.2334 26.8 63.1934 28.3067 61.8334 29.4C60.5001 30.4667 59.0068 31 57.3534 31C55.0868 31 53.2734 30.1467 51.9134 28.44C50.5534 26.7333 49.8734 24.4533 49.8734 21.6C49.8734 17.1733 51.3534 13.4667 54.3134 10.48C57.3001 7.49333 61.0068 6 65.4334 6C66.5801 6 67.6334 6.10667 68.5934 6.32C68.7534 7.06667 68.8468 7.72 68.8734 8.28C70.2068 7.42666 71.5801 7 72.9934 7C74.9401 7 75.9134 8.05333 75.9134 10.16C75.9134 10.9067 75.4868 13.16 74.6334 16.92C73.8068 20.68 73.3934 23.4667 73.3934 25.28C73.3934 27.0933 73.8068 28.3467 74.6334 29.04C73.1401 30.3467 71.5801 31 69.9534 31C68.3534 31 67.1801 30.52 66.4334 29.56C65.7134 28.6 65.3534 27.1067 65.3534 25.08ZM57.3934 19.64C57.3934 20.9467 57.6601 21.96 58.1934 22.68C58.7534 23.3733 59.5401 23.72 60.5534 23.72C61.5668 23.72 62.5668 23.3467 63.5534 22.6C64.5401 21.8533 65.3668 20.8267 66.0334 19.52C66.2734 16.8267 66.7934 13.64 67.5934 9.96C64.9001 9.96 62.5268 10.9333 60.4734 12.88C58.4201 14.8267 57.3934 17.08 57.3934 19.64ZM79.9266 26.04C79.9266 24.9733 80.1932 22.9067 80.7266 19.84C81.2866 16.7733 81.8599 13.9733 82.4466 11.44L80.3666 8.24C83.6999 6.74667 86.0332 6 87.3666 6C88.7266 6 89.4066 6.85333 89.4066 8.56C89.4066 9.49333 88.9666 11.44 88.0866 14.4L88.4866 14.6C90.4066 8.86667 92.7932 6 95.6466 6C96.9532 6 97.9532 6.4 98.6466 7.2C99.3399 8 99.6866 8.89333 99.6866 9.88C99.6866 11.3467 99.1399 12.6 98.0466 13.64C96.9532 14.68 95.3132 15.2 93.1266 15.2C89.8199 15.2 88.1666 18.6 88.1666 25.4C88.1666 27.0533 88.4466 28.2667 89.0066 29.04C87.3532 30.3467 85.8332 31 84.4466 31C81.4332 31 79.9266 29.3467 79.9266 26.04ZM101.578 15.56C101.392 14.8133 101.298 14.12 101.298 13.48C101.298 12.1733 101.685 11.1867 102.458 10.52C103.232 9.85333 104.232 9.52 105.458 9.52C105.458 8.13333 105.098 6.62667 104.378 5C105.685 4.04 106.872 3.32 107.938 2.84C109.032 2.33333 110.178 2.08 111.378 2.08C112.578 2.08 113.405 2.30667 113.858 2.76C114.338 3.18667 114.578 3.85333 114.578 4.76C114.578 5.66667 114.392 7.08 114.018 9C115.085 8.84 116.165 8.61333 117.258 8.32C117.445 8.88 117.538 9.6 117.538 10.48C117.538 11.36 117.192 12.1867 116.498 12.96C115.832 13.7067 114.845 14.08 113.538 14.08H112.938C111.978 18.4267 111.498 21.7733 111.498 24.12C111.498 26.4667 111.912 28.1067 112.738 29.04C111.245 30.3467 109.658 31 107.978 31C106.298 31 105.085 30.5067 104.338 29.52C103.618 28.5067 103.258 26.9467 103.258 24.84C103.258 23.56 103.725 20.2 104.658 14.76C103.592 14.9467 102.565 15.2133 101.578 15.56Z"
+                      fill="#00FF00"
+                    />
+                  </svg>
+                </a>
+              </div>
+
+              <div class="navigationnavbar">
+                <ul class="d-flex list-unstyled m-0 p-0 align-items-center">
+                  <li>
+                    <a href="/"> Home </a>
+                  </li>
+                  <li>
+                    <a href="/earbuds"> Earbuds </a>
+                  </li>
+                  <li>
+                    <a href="/earphones"> Earphones </a>
+                  </li>
+                  <li>
+                    <a href="/speakers"> Speakers </a>
+                  </li>
+                  <li>
+                    <a href="/soundbars"> Soundbars </a>
+                  </li>
+                  <li>
+                    <a href="/smartWatch"> Smart Watch </a>
+                  </li>
+                  <li>
+                    <a href="/"> Shop By Category </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mobilenavigationList">
+                <h2>Shop By Category</h2>
+                <ul class="m-0 list-unstyled">
+                  <li>
+                    <a href="/earbuds"> Earbuds </a>
+                  </li>
+                  <li>
+                    <a href="/earphones"> Earphones </a>
+                  </li>
+                  <li>
+                    <a href="/speakers"> Speakers </a>
+                  </li>
+                  <li>
+                    <a href="/soundbars"> Soundbars </a>
+                  </li>
+                  <li>
+                    <a href="/smartWatch"> Smart Watch </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="useroptions d-flex">
+                <ul class="m-0 p-0 d-flex align-items-center list-unstyled">
+                  <li>
+                    <a href="/userAccont">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g clip-path="url(#clip0_12_13)">
+                          <path
+                            d="M20 19.1191C19.9999 18.4132 19.5801 17.7785 18.9305 17.5021L13.9481 15.3823V14.1903C14.4082 13.5115 14.6975 12.7081 14.7549 11.8423H15.3535C16.5381 11.8423 17.5019 10.8784 17.5019 9.6938V7.95507C17.5019 6.94327 16.7985 6.09319 15.8554 5.86644C15.8127 4.14111 15.4223 2.82991 14.6658 1.86555C13.6945 0.627599 12.1249 0 10.0001 0C7.87527 0 6.30559 0.627599 5.33436 1.86571C4.57767 2.82991 4.1875 4.14111 4.14477 5.86644C3.20147 6.09319 2.49819 6.94327 2.49819 7.95507V9.6938C2.49819 10.8784 3.46209 11.8423 4.64664 11.8423H5.24525C5.30262 12.7081 5.59193 13.5115 6.05199 14.1903V15.3823L1.06965 17.5021C0.420078 17.7785 0.000152589 18.4134 0.000152589 19.1193L0 19.4139C0 19.5694 0.061646 19.7185 0.171663 19.8283C0.281527 19.9382 0.430454 20 0.585942 20H19.4142C19.5697 20 19.7188 19.9382 19.8287 19.8283C19.9385 19.7183 20.0001 19.5693 20.0001 19.4139L20 19.1191ZM12.7769 15.7934C12.7773 15.8075 12.8101 17.2296 11.9701 18.1044C11.5089 18.5846 10.846 18.8279 10.0001 18.8279C9.1572 18.8279 8.496 18.5863 8.03507 18.1096C7.18493 17.2302 7.22293 15.8058 7.22327 15.7934C7.22353 15.7865 7.22373 15.7797 7.22373 15.7728C7.22373 15.7704 7.22387 15.7679 7.22387 15.7653V15.3952C8.00607 15.9579 8.96507 16.2897 10.0001 16.2897C11.0351 16.2897 11.9941 15.9577 12.7763 15.3952V15.7655C12.7763 15.7678 12.7765 15.7702 12.7765 15.7727C12.7765 15.7795 12.7766 15.7864 12.7769 15.7934ZM13.5957 7.62093C13.5949 7.63267 13.5939 7.6444 13.5939 7.65647V10.944L12.481 11.686C12.127 11.9221 11.7149 12.0469 11.2891 12.0469H10.2981C9.9746 12.0469 9.71213 12.3092 9.71213 12.6329C9.71213 12.9565 9.9746 13.2188 10.2981 13.2188H11.2891C11.9469 13.2188 12.584 13.0259 13.1312 12.6609L13.4782 12.4296C13.0758 13.9743 11.6689 15.1179 10.0001 15.1179C8.0184 15.1179 6.4063 13.5057 6.4063 11.5241V7.65647C6.4063 7.64427 6.40523 7.63253 6.40447 7.6206V6.81907C6.40523 6.80713 6.4063 6.7954 6.4063 6.7832C6.4063 5.77519 6.65029 5.10929 7.13153 4.80427C7.91553 4.30713 9.28673 4.76429 9.748 4.98203C9.90667 5.05772 10.0921 5.05757 10.2511 4.98249C10.7134 4.76444 12.0845 4.30729 12.8686 4.80427C13.3499 5.10929 13.5939 5.77519 13.5939 6.7832C13.5939 6.79527 13.5949 6.807 13.5957 6.81873V7.62093ZM16.3301 7.95507V9.6938C16.3301 10.2323 15.892 10.6704 15.3535 10.6704H14.7676V6.97853H15.3535C15.892 6.97853 16.3301 7.4166 16.3301 7.95507ZM10.0001 1.17189C13.103 1.17189 14.5602 2.59005 14.6794 5.75459C14.5155 4.85859 14.1183 4.20719 13.4921 3.81198C12.2797 3.04675 10.6269 3.56997 10.0001 3.81656C9.37327 3.56997 7.7204 3.04675 6.50807 3.81198C5.88185 4.20719 5.48466 4.85859 5.32078 5.75459C5.43995 2.59005 6.8972 1.17189 10.0001 1.17189ZM5.23259 10.6704H4.64664C4.10815 10.6704 3.67007 10.2323 3.67007 9.6938V7.95507C3.67007 7.4166 4.10815 6.97853 4.64664 6.97853H5.23259V10.6704ZM1.52849 18.5805L6.11913 16.6273C6.22197 17.2631 6.47741 18.1283 7.1036 18.8281H1.2494C1.3115 18.7196 1.40825 18.6316 1.52849 18.5805ZM12.8965 18.8281C13.5227 18.1283 13.7782 17.2631 13.881 16.6273L18.4717 18.5805C18.5919 18.6316 18.6885 18.7196 18.7507 18.8281H12.8965Z"
+                            fill="white"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_12_13">
+                            <rect width="20" height="20" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/userOrders">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.7416 18.9583H6.24994C4.81661 18.9583 3.74162 18.575 3.07495 17.8167C2.40828 17.0583 2.14994 15.9583 2.32494 14.5333L3.07495 8.28332C3.29162 6.44166 3.75828 4.79166 7.00828 4.79166H13.0082C16.2499 4.79166 16.7166 6.44166 16.9416 8.28332L17.6916 14.5333C17.8582 15.9583 17.6082 17.0667 16.9416 17.8167C16.2499 18.575 15.1832 18.9583 13.7416 18.9583ZM6.99994 6.04166C4.59994 6.04166 4.48327 6.99165 4.30827 8.42499L3.55828 14.675C3.43328 15.7333 3.58327 16.5083 4.00827 16.9833C4.43327 17.4583 5.18327 17.7 6.24994 17.7H13.7416C14.8082 17.7 15.5582 17.4583 15.9832 16.9833C16.4082 16.5083 16.5582 15.7333 16.4332 14.675L15.6832 8.42499C15.5082 6.98331 15.3999 6.04166 12.9916 6.04166H6.99994Z"
+                          fill="white"
+                        />
+                        <path
+                          d="M13.3334 7.29166C12.9917 7.29166 12.7084 7.00832 12.7084 6.66666V3.74999C12.7084 2.84999 12.15 2.29166 11.25 2.29166H8.75002C7.85002 2.29166 7.29169 2.84999 7.29169 3.74999V6.66666C7.29169 7.00832 7.00835 7.29166 6.66669 7.29166C6.32502 7.29166 6.04169 7.00832 6.04169 6.66666V3.74999C6.04169 2.15832 7.15835 1.04166 8.75002 1.04166H11.25C12.8417 1.04166 13.9584 2.15832 13.9584 3.74999V6.66666C13.9584 7.00832 13.675 7.29166 13.3334 7.29166Z"
+                          fill="white"
+                        />
+                        <path
+                          d="M17.0084 14.8167H6.66669C6.32502 14.8167 6.04169 14.5333 6.04169 14.1917C6.04169 13.85 6.32502 13.5667 6.66669 13.5667H17.0084C17.35 13.5667 17.6334 13.85 17.6334 14.1917C17.6334 14.5333 17.35 14.8167 17.0084 14.8167Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/userWhislist">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.82031 18.2891L8.72266 18.1992L1.87891 11.8438C0.679687 10.7305 0 9.16798 0 7.53126V7.40235C0 4.65235 1.95312 2.29298 4.65625 1.77735C6.19531 1.48048 7.76953 1.83595 9.02344 2.71876C9.375 2.96876 9.70312 3.25782 10 3.58985C10.1641 3.40235 10.3398 3.23048 10.5273 3.07032C10.6719 2.94532 10.8203 2.82813 10.9766 2.71876C12.2305 1.83595 13.8047 1.48048 15.3438 1.77345C18.0469 2.28907 20 4.65235 20 7.40235V7.53126C20 9.16798 19.3203 10.7305 18.1211 11.8438L11.2773 18.1992L11.1797 18.2891C10.8594 18.5859 10.4375 18.7539 10 18.7539C9.5625 18.7539 9.14062 18.5899 8.82031 18.2891ZM9.33984 5.66407C9.32422 5.65235 9.3125 5.63673 9.30078 5.6211L8.60547 4.83985L8.60156 4.83595C7.69922 3.82423 6.33594 3.36329 5.00781 3.6172C3.1875 3.96485 1.875 5.55079 1.875 7.40235V7.53126C1.875 8.64454 2.33984 9.71095 3.15625 10.4688L10 16.8242L16.8438 10.4688C17.6602 9.71095 18.125 8.64454 18.125 7.53126V7.40235C18.125 5.5547 16.8125 3.96485 14.9961 3.6172C13.668 3.36329 12.3008 3.82813 11.4023 4.83595C11.4023 4.83595 11.4023 4.83595 11.3984 4.83985C11.3945 4.84376 11.3984 4.83985 11.3945 4.84376L10.6992 5.62501C10.6875 5.64063 10.6719 5.65235 10.6602 5.66798C10.4844 5.84376 10.2461 5.94141 10 5.94141C9.75391 5.94141 9.51562 5.84376 9.33984 5.66798V5.66407Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/usersAddToCart">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.83331 18.3333C5.37498 18.3333 4.98262 18.1701 4.65623 17.8437C4.32984 17.5174 4.16665 17.125 4.16665 16.6667C4.16665 16.2083 4.32984 15.816 4.65623 15.4896C4.98262 15.1632 5.37498 15 5.83331 15C6.29165 15 6.68401 15.1632 7.0104 15.4896C7.33679 15.816 7.49998 16.2083 7.49998 16.6667C7.49998 17.125 7.33679 17.5174 7.0104 17.8437C6.68401 18.1701 6.29165 18.3333 5.83331 18.3333ZM14.1666 18.3333C13.7083 18.3333 13.316 18.1701 12.9896 17.8437C12.6632 17.5174 12.5 17.125 12.5 16.6667C12.5 16.2083 12.6632 15.816 12.9896 15.4896C13.316 15.1632 13.7083 15 14.1666 15C14.625 15 15.0173 15.1632 15.3437 15.4896C15.6701 15.816 15.8333 16.2083 15.8333 16.6667C15.8333 17.125 15.6701 17.5174 15.3437 17.8437C15.0173 18.1701 14.625 18.3333 14.1666 18.3333ZM5.12498 4.99999L7.12498 9.16666H12.9583L15.25 4.99999H5.12498ZM4.33331 3.33332H16.625C16.9444 3.33332 17.1875 3.47568 17.3541 3.76041C17.5208 4.04513 17.5278 4.33332 17.375 4.62499L14.4166 9.95832C14.2639 10.2361 14.059 10.4514 13.8021 10.6042C13.5451 10.7569 13.2639 10.8333 12.9583 10.8333H6.74998L5.83331 12.5H15.8333V14.1667H5.83331C5.20831 14.1667 4.73609 13.8924 4.41665 13.3437C4.0972 12.7951 4.08331 12.25 4.37498 11.7083L5.49998 9.66666L2.49998 3.33332H0.833313V1.66666H3.54165L4.33331 3.33332Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end of header -->
+
+    <!-- main -->
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div
+                  class="carousel-item active"
+                  data-bs-interval="6000"
+                  data-bs-pause="false"
+                  data-bs-ride="false"
+                >
+                  <a href=""
+                    ><img
+                      src="./images/slideImg/1a.webp"
+                      class="w-100 img-large-screen"
+                      alt="..."
+                  /></a>
+                  <a href=""
+                    ><img
+                      src="./images/slideImg/1as.jpg"
+                      class="w-100 img-small-screen"
+                      alt="..."
+                  /></a>
+                </div>
+                <div
+                  class="carousel-item"
+                  data-bs-interval="6000"
+                  data-bs-pause="false"
+                  data-bs-ride="false"
+                >
+                  <a href=""
+                    ><img
+                      src="./images/slideImg/2a.webp"
+                      class="w-100 img-large-screen"
+                      alt="..."
+                  /></a>
+                  <a href=""
+                    ><img
+                      src="./images/slideImg/2as.webp"
+                      class="w-100 img-small-screen"
+                      alt="..."
+                  /></a>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon slideBtn leftBtn"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon slideBtn"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="main-body">
+              <div class="col-12">
+                <div class="text-center">
+                  <h2>Newly Arrayvals</h2>
+                </div>
+              </div>
+              <div class="col-12 overflow-hidden">
+                <div>
+                  <ul
+                    id="newlyLaunched"
+                    class="newlyLaunched position-relative p-0 d-flex align-items-center list-unstyled"
+                  >
+                    <li>
+                      <a href="">
+                        <div class="newItems">
+                          <div class="productImg">
+                            <img src="./images/newlyLaunched/3.png" alt="" />
+                          </div>
+                          <div class="text-area">
+                            <div class="productTittle">
+                              <p>duopods a250</p>
+                            </div>
+                            <div
+                              class="discountPrice d-flex align-items-baseline"
+                            >
+                              <p>₹1299</p>
+                              <p>₹2999</p>
+                            </div>
+                            <div class="property">
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>Swift Charge Technology</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>Dual Connectivity</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>Powered By 13mm Powerful Drivers</p>
+                              </div>
+                            </div>
+                            <div class="colorOptions">
+                              <div class="d-flex align-items-center">
+                                <p>Colors</p>
+                                <div class="d-flex align-items-center">
+                                  <div class="bg-black"></div>
+                                  <div class="bg-white"></div>
+                                  <div class="bg-primary"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="shopOption">
+                              <div class="d-flex align-items-center">
+                                <p>shop Now</p>
+                                <svg
+                                  width="18"
+                                  height="12"
+                                  viewBox="0 0 18 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g clip-path="url(#clip0_28_66)">
+                                    <path
+                                      d="M1 1L6 6L1 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.65"
+                                      d="M6 1L11 6L6 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.4"
+                                      d="M11 1L16 6L11 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_28_66">
+                                      <rect
+                                        width="18"
+                                        height="12"
+                                        fill="white"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div class="newItems">
+                          <div class="productImg">
+                            <img src="./images/newlyLaunched/2.png" alt="" />
+                          </div>
+                          <div class="text-area">
+                            <div class="productTittle">
+                              <p>COMMANDO Q9</p>
+                            </div>
+                            <div
+                              class="discountPrice d-flex align-items-baseline"
+                            >
+                              <p>₹1999</p>
+                              <p>₹3999</p>
+                            </div>
+                            <div class="property">
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>Pro Gaming Earbuds</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>35Ms Low Latency</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>Quad Mic ENC</p>
+                              </div>
+                            </div>
+                            <div class="colorOptions">
+                              <div class="d-flex align-items-center">
+                                <p>Colors</p>
+                                <div class="d-flex align-items-center">
+                                  <div class="bg-black"></div>
+                                  <div class="bg-white"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="shopOption">
+                              <div class="d-flex align-items-center">
+                                <p>shop Now</p>
+                                <svg
+                                  width="18"
+                                  height="12"
+                                  viewBox="0 0 18 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g clip-path="url(#clip0_28_66)">
+                                    <path
+                                      d="M1 1L6 6L1 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.65"
+                                      d="M6 1L11 6L6 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.4"
+                                      d="M11 1L16 6L11 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_28_66">
+                                      <rect
+                                        width="18"
+                                        height="12"
+                                        fill="white"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div class="newItems">
+                          <div class="productImg">
+                            <img src="./images/newlyLaunched/2c.png" alt="" />
+                          </div>
+                          <div class="text-area">
+                            <div class="productTittle">
+                              <p>SOUNDBAR S48</p>
+                            </div>
+                            <div
+                              class="discountPrice d-flex align-items-baseline"
+                            >
+                              <p>₹3999</p>
+                              <p>₹13799</p>
+                            </div>
+                            <div class="property">
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>48 Watt Soundbar</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>External Subwoofer</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>2.1 Channel</p>
+                              </div>
+                            </div>
+                            <div class="colorOptions">
+                              <div class="d-flex align-items-center">
+                                <p>Colors</p>
+                                <div class="d-flex align-items-center">
+                                  <div class="bg-black"></div>
+                                  <div class="bg-white"></div>
+                                  <div class="bg-primary"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="shopOption">
+                              <div class="d-flex align-items-center">
+                                <p>shop Now</p>
+                                <svg
+                                  width="18"
+                                  height="12"
+                                  viewBox="0 0 18 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g clip-path="url(#clip0_28_66)">
+                                    <path
+                                      d="M1 1L6 6L1 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.65"
+                                      d="M6 1L11 6L6 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.4"
+                                      d="M11 1L16 6L11 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_28_66">
+                                      <rect
+                                        width="18"
+                                        height="12"
+                                        fill="white"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <div class="newItems">
+                          <div class="productImg">
+                            <img src="./images/newlyLaunched/9.png" alt="" />
+                          </div>
+                          <div class="text-area">
+                            <div class="productTittle">
+                              <p>DUOPODS K2</p>
+                            </div>
+                            <div
+                              class="discountPrice d-flex align-items-baseline"
+                            >
+                              <p>₹1199</p>
+                              <p>₹2999</p>
+                            </div>
+                            <div class="property">
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>HDCalling with AI ENC</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>40 HRS Combine Playtime</p>
+                              </div>
+                              <div>
+                                <img
+                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
+                                  alt=""
+                                />
+                                <p>13mm Electroplated Drivers</p>
+                              </div>
+                            </div>
+                            <div class="colorOptions">
+                              <div class="d-flex align-items-center">
+                                <p>Colors</p>
+                                <div class="d-flex align-items-center">
+                                  <div class="bg-black"></div>
+                                  <div class="bg-white"></div>
+                                  <div class="bg-primary"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="shopOption">
+                              <div class="d-flex align-items-center">
+                                <p>shop Now</p>
+                                <svg
+                                  width="18"
+                                  height="12"
+                                  viewBox="0 0 18 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g clip-path="url(#clip0_28_66)">
+                                    <path
+                                      d="M1 1L6 6L1 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.65"
+                                      d="M6 1L11 6L6 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                    <path
+                                      opacity="0.4"
+                                      d="M11 1L16 6L11 11"
+                                      stroke="#4B4955"
+                                      stroke-width="1.5"
+                                    />
+                                  </g>
+                                  <defs>
+                                    <clipPath id="clip0_28_66">
+                                      <rect
+                                        width="18"
+                                        height="12"
+                                        fill="white"
+                                      />
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row slideProduct">
+          <div class="col-12 text-center">
+            <ul
+              class="slideButton d-flex align-items-center list-unstyled justify-content-center"
+            >
+              <li data-index="0">
+                <button onfocus="moveSlide(0)"></button>
+              </li>
+              <li data-index="1">
+                <button onfocus="moveSlide(1)"></button>
+              </li>
+              <li data-index="2">
+                <button onfocus="moveSlide(2)"></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- end of main -->
+
+    <!-- footer -->
+    <footer>
+      <div class="container-fluid">
+        <div class="row footerdescription">
+          <div class="col-12">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-3 subheading">
+                  <h2>Customer Service</h2>
+                  <div class="descriptionOne d-flex align-items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_396_280)">
+                        <path
+                          d="M32 30.5906C31.9998 29.4611 31.3281 28.4455 30.2889 28.0034L22.317 24.6117V22.7045C23.0531 21.6183 23.5161 20.3329 23.6079 18.9476H24.5657C26.4609 18.9476 28.0031 17.4054 28.0031 15.5101V12.7281C28.0031 11.1092 26.8777 9.7491 25.3686 9.3863C25.3003 6.62578 24.6757 4.52786 23.4653 2.98489C21.9113 1.00416 19.3998 0 16.0001 0C12.6004 0 10.089 1.00416 8.53498 2.98513C7.32428 4.52786 6.7 6.62578 6.63164 9.3863C5.12236 9.7491 3.9971 11.1092 3.9971 12.7281V15.5101C3.9971 17.4054 5.53935 18.9476 7.43462 18.9476H8.3924C8.48419 20.3329 8.94709 21.6183 9.68318 22.7045V24.6117L1.71143 28.0034C0.672125 28.4455 0.000244143 29.4614 0.000244143 30.5908L0 31.0623C0 31.311 0.0986336 31.5495 0.27466 31.7253C0.450443 31.9011 0.688726 32 0.937507 32H31.0627C31.3115 32 31.5501 31.9011 31.7259 31.7253C31.9017 31.5493 32.0002 31.3108 32.0002 31.0623L32 30.5906ZM20.443 25.2694C20.4437 25.2919 20.4962 27.5674 19.1522 28.967C18.4142 29.7354 17.3536 30.1247 16.0001 30.1247C14.6515 30.1247 13.5936 29.738 12.8561 28.9754C11.4959 27.5683 11.5567 25.2893 11.5572 25.2694C11.5577 25.2585 11.558 25.2475 11.558 25.2365C11.558 25.2326 11.5582 25.2287 11.5582 25.2245V24.6323C12.8097 25.5327 14.3441 26.0635 16.0001 26.0635C17.6561 26.0635 19.1906 25.5324 20.442 24.6323V25.2249C20.442 25.2285 20.4423 25.2323 20.4423 25.2363C20.4423 25.2473 20.4426 25.2582 20.443 25.2694ZM21.7531 12.1935C21.7519 12.2123 21.7502 12.231 21.7502 12.2503V17.5104L19.9696 18.6976C19.4032 19.0753 18.7438 19.2751 18.0626 19.2751H16.4769C15.9594 19.2751 15.5394 19.6947 15.5394 20.2126C15.5394 20.7303 15.9594 21.1501 16.4769 21.1501H18.0626C19.1151 21.1501 20.1344 20.8415 21.0099 20.2575L21.5651 19.8874C20.9213 22.3588 18.6703 24.1887 16.0001 24.1887C12.8294 24.1887 10.2501 21.6091 10.2501 18.4386V12.2503C10.2501 12.2308 10.2484 12.2121 10.2471 12.193V10.9105C10.2484 10.8914 10.2501 10.8726 10.2501 10.8531C10.2501 9.24031 10.6405 8.17487 11.4105 7.68683C12.6649 6.89141 14.8588 7.62286 15.5968 7.97125C15.8507 8.09235 16.1473 8.09211 16.4017 7.97199C17.1414 7.6231 19.3351 6.89166 20.5898 7.68683C21.3598 8.17487 21.7502 9.24031 21.7502 10.8531C21.7502 10.8724 21.7519 10.8912 21.7531 10.91V12.1935ZM26.1281 12.7281V15.5101C26.1281 16.3717 25.4272 17.0726 24.5657 17.0726H23.6282V11.1657H24.5657C25.4272 11.1657 26.1281 11.8666 26.1281 12.7281ZM16.0001 1.87502C20.9648 1.87502 23.2963 4.14408 23.487 9.20735C23.2247 7.77374 22.5893 6.7315 21.5873 6.09917C19.6476 4.87479 17.0031 5.71196 16.0001 6.1065C14.9972 5.71196 12.3526 4.87479 10.4129 6.09917C9.41097 6.7315 8.77546 7.77374 8.51325 9.20735C8.70393 4.14408 11.0355 1.87502 16.0001 1.87502ZM8.37214 17.0726H7.43462C6.57305 17.0726 5.87212 16.3717 5.87212 15.5101V12.7281C5.87212 11.8666 6.57305 11.1657 7.43462 11.1657H8.37214V17.0726ZM2.44558 29.7287L9.7906 26.6037C9.95516 27.621 10.3639 29.0053 11.3658 30.125H1.99904C2.0984 29.9514 2.25319 29.8106 2.44558 29.7287ZM20.6345 30.125C21.6364 29.0053 22.0451 27.621 22.2096 26.6037L29.5547 29.7287C29.7471 29.8106 29.9015 29.9514 30.0012 30.125H20.6345Z"
+                          fill="#00FF00"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_396_280">
+                          <rect width="32" height="32" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <div>
+                      <p class="contact p-0 m-0">+911234567890</p>
+                      <p class="dateTime">(Mon-Fri, 10:00am-5:00pm)</p>
+                    </div>
+                  </div>
+                  <div class="descriptionOne d-flex align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.015 2.66666C8.67367 2.66666 2.69734 8.63783 2.69467 15.9792C2.69333 18.3258 3.30798 20.6168 4.47331 22.6354L2.66602 29.3333L9.64262 27.6849C11.5879 28.7462 13.7778 29.3034 16.0071 29.3047H16.0124C23.3524 29.3047 29.3261 23.3322 29.3301 15.9922C29.3327 12.4335 27.9489 9.08766 25.4343 6.5703C22.9196 4.0543 19.5776 2.66799 16.015 2.66666ZM16.0124 5.33333C18.8604 5.33465 21.5368 6.44505 23.5489 8.4557C25.5608 10.469 26.6661 13.1443 26.6634 15.9895C26.6607 21.8615 21.8844 26.638 16.0098 26.638C14.2325 26.6367 12.4719 26.1904 10.9212 25.3437L10.0228 24.8541L9.03064 25.0886L6.40561 25.7083L7.04623 23.3282L7.33529 22.2604L6.78321 21.302C5.85254 19.6914 5.36 17.8499 5.36134 15.9792C5.364 10.1098 10.1417 5.33333 16.0124 5.33333ZM11.3014 9.83335C11.0788 9.83335 10.7188 9.91667 10.4134 10.25C10.1081 10.582 9.24677 11.3861 9.24677 13.0234C9.24677 14.6608 10.4395 16.2435 10.6061 16.4661C10.7715 16.6875 12.9084 20.1536 16.291 21.487C19.1017 22.595 19.6725 22.3763 20.2832 22.3203C20.8939 22.2656 22.2533 21.5169 22.5306 20.7396C22.808 19.9623 22.8085 19.2936 22.7259 19.1562C22.6432 19.0176 22.4212 18.9349 22.0879 18.7682C21.7559 18.6015 20.1198 17.7981 19.8145 17.6874C19.5092 17.5769 19.2858 17.5208 19.0645 17.8542C18.8431 18.1875 18.207 18.9349 18.0124 19.1562C17.8177 19.3789 17.6244 19.4088 17.291 19.2422C16.9577 19.0741 15.8859 18.7219 14.614 17.5885C13.6246 16.7072 12.957 15.6198 12.7624 15.2865C12.569 14.9544 12.7441 14.7721 12.9108 14.6067C13.0602 14.4574 13.2415 14.2181 13.4082 14.0234C13.5736 13.8288 13.6308 13.6901 13.7415 13.4688C13.8522 13.2474 13.7956 13.0521 13.7129 12.8854C13.6303 12.7187 12.9829 11.0753 12.6868 10.4166C12.4375 9.86328 12.1742 9.85043 11.9368 9.84115C11.7435 9.83311 11.5227 9.83335 11.3014 9.83335Z"
+                        fill="#00FF00"
+                      />
+                    </svg>
+                    <div>
+                      <p class="contact m-0 p-0">+910987654321</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3 subheading">
+                  <h2>Warranty</h2>
+                  <div class="descriptionTwo d-flex flex-column">
+                    <a href="#">Register Your Product</a>
+                    <a href="#">Report a problem with product</a>
+                  </div>
+                </div>
+                <div class="col-3 subheading">
+                  <h2>Product Help</h2>
+                  <div class="descriptionTwo d-flex flex-column">
+                    <a href="#"
+                      >Return & Cancellation<br />
+                      Policy</a
+                    >
+                    <a href="#">Shipping & Delivery Policy</a>
+                  </div>
+                </div>
+                <div class="col-3 subheading">
+                  <h2>About Us</h2>
+                  <div class="descriptionThree d-flex">
+                    <div class="descriptionTwo">
+                      <a href="/earbuds">Earbuds</a> <br />
+                      <a href="/earphone">Earphone</a> <br />
+                      <a href="/speakers">Speakers</a>
+                    </div>
+                    <div class="descriptionTwo">
+                      <a href="/soundbars">Soundbars</a> <br />
+                      <a href="/smartwatch">Smartwatch</a> <br />
+                      <a href="/cables">Cables</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mediumScreen">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed subheading"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    <h2>Customer Service</h2>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="descriptionOne d-flex align-items-start">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <g clip-path="url(#clip0_396_280)">
+                          <path
+                            d="M32 30.5906C31.9998 29.4611 31.3281 28.4455 30.2889 28.0034L22.317 24.6117V22.7045C23.0531 21.6183 23.5161 20.3329 23.6079 18.9476H24.5657C26.4609 18.9476 28.0031 17.4054 28.0031 15.5101V12.7281C28.0031 11.1092 26.8777 9.7491 25.3686 9.3863C25.3003 6.62578 24.6757 4.52786 23.4653 2.98489C21.9113 1.00416 19.3998 0 16.0001 0C12.6004 0 10.089 1.00416 8.53498 2.98513C7.32428 4.52786 6.7 6.62578 6.63164 9.3863C5.12236 9.7491 3.9971 11.1092 3.9971 12.7281V15.5101C3.9971 17.4054 5.53935 18.9476 7.43462 18.9476H8.3924C8.48419 20.3329 8.94709 21.6183 9.68318 22.7045V24.6117L1.71143 28.0034C0.672125 28.4455 0.000244143 29.4614 0.000244143 30.5908L0 31.0623C0 31.311 0.0986336 31.5495 0.27466 31.7253C0.450443 31.9011 0.688726 32 0.937507 32H31.0627C31.3115 32 31.5501 31.9011 31.7259 31.7253C31.9017 31.5493 32.0002 31.3108 32.0002 31.0623L32 30.5906ZM20.443 25.2694C20.4437 25.2919 20.4962 27.5674 19.1522 28.967C18.4142 29.7354 17.3536 30.1247 16.0001 30.1247C14.6515 30.1247 13.5936 29.738 12.8561 28.9754C11.4959 27.5683 11.5567 25.2893 11.5572 25.2694C11.5577 25.2585 11.558 25.2475 11.558 25.2365C11.558 25.2326 11.5582 25.2287 11.5582 25.2245V24.6323C12.8097 25.5327 14.3441 26.0635 16.0001 26.0635C17.6561 26.0635 19.1906 25.5324 20.442 24.6323V25.2249C20.442 25.2285 20.4423 25.2323 20.4423 25.2363C20.4423 25.2473 20.4426 25.2582 20.443 25.2694ZM21.7531 12.1935C21.7519 12.2123 21.7502 12.231 21.7502 12.2503V17.5104L19.9696 18.6976C19.4032 19.0753 18.7438 19.2751 18.0626 19.2751H16.4769C15.9594 19.2751 15.5394 19.6947 15.5394 20.2126C15.5394 20.7303 15.9594 21.1501 16.4769 21.1501H18.0626C19.1151 21.1501 20.1344 20.8415 21.0099 20.2575L21.5651 19.8874C20.9213 22.3588 18.6703 24.1887 16.0001 24.1887C12.8294 24.1887 10.2501 21.6091 10.2501 18.4386V12.2503C10.2501 12.2308 10.2484 12.2121 10.2471 12.193V10.9105C10.2484 10.8914 10.2501 10.8726 10.2501 10.8531C10.2501 9.24031 10.6405 8.17487 11.4105 7.68683C12.6649 6.89141 14.8588 7.62286 15.5968 7.97125C15.8507 8.09235 16.1473 8.09211 16.4017 7.97199C17.1414 7.6231 19.3351 6.89166 20.5898 7.68683C21.3598 8.17487 21.7502 9.24031 21.7502 10.8531C21.7502 10.8724 21.7519 10.8912 21.7531 10.91V12.1935ZM26.1281 12.7281V15.5101C26.1281 16.3717 25.4272 17.0726 24.5657 17.0726H23.6282V11.1657H24.5657C25.4272 11.1657 26.1281 11.8666 26.1281 12.7281ZM16.0001 1.87502C20.9648 1.87502 23.2963 4.14408 23.487 9.20735C23.2247 7.77374 22.5893 6.7315 21.5873 6.09917C19.6476 4.87479 17.0031 5.71196 16.0001 6.1065C14.9972 5.71196 12.3526 4.87479 10.4129 6.09917C9.41097 6.7315 8.77546 7.77374 8.51325 9.20735C8.70393 4.14408 11.0355 1.87502 16.0001 1.87502ZM8.37214 17.0726H7.43462C6.57305 17.0726 5.87212 16.3717 5.87212 15.5101V12.7281C5.87212 11.8666 6.57305 11.1657 7.43462 11.1657H8.37214V17.0726ZM2.44558 29.7287L9.7906 26.6037C9.95516 27.621 10.3639 29.0053 11.3658 30.125H1.99904C2.0984 29.9514 2.25319 29.8106 2.44558 29.7287ZM20.6345 30.125C21.6364 29.0053 22.0451 27.621 22.2096 26.6037L29.5547 29.7287C29.7471 29.8106 29.9015 29.9514 30.0012 30.125H20.6345Z"
+                            fill="#00FF00"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_396_280">
+                            <rect width="32" height="32" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                      <div>
+                        <p class="contact p-0 m-0">+911234567890</p>
+                        <p class="dateTime p-0">(Mon-Fri, 10:00am-5:00pm)</p>
+                      </div>
+                    </div>
+                    <div class="descriptionOne d-flex align-items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                      >
+                        <path
+                          d="M16.015 2.66666C8.67367 2.66666 2.69734 8.63783 2.69467 15.9792C2.69333 18.3258 3.30798 20.6168 4.47331 22.6354L2.66602 29.3333L9.64262 27.6849C11.5879 28.7462 13.7778 29.3034 16.0071 29.3047H16.0124C23.3524 29.3047 29.3261 23.3322 29.3301 15.9922C29.3327 12.4335 27.9489 9.08766 25.4343 6.5703C22.9196 4.0543 19.5776 2.66799 16.015 2.66666ZM16.0124 5.33333C18.8604 5.33465 21.5368 6.44505 23.5489 8.4557C25.5608 10.469 26.6661 13.1443 26.6634 15.9895C26.6607 21.8615 21.8844 26.638 16.0098 26.638C14.2325 26.6367 12.4719 26.1904 10.9212 25.3437L10.0228 24.8541L9.03064 25.0886L6.40561 25.7083L7.04623 23.3282L7.33529 22.2604L6.78321 21.302C5.85254 19.6914 5.36 17.8499 5.36134 15.9792C5.364 10.1098 10.1417 5.33333 16.0124 5.33333ZM11.3014 9.83335C11.0788 9.83335 10.7188 9.91667 10.4134 10.25C10.1081 10.582 9.24677 11.3861 9.24677 13.0234C9.24677 14.6608 10.4395 16.2435 10.6061 16.4661C10.7715 16.6875 12.9084 20.1536 16.291 21.487C19.1017 22.595 19.6725 22.3763 20.2832 22.3203C20.8939 22.2656 22.2533 21.5169 22.5306 20.7396C22.808 19.9623 22.8085 19.2936 22.7259 19.1562C22.6432 19.0176 22.4212 18.9349 22.0879 18.7682C21.7559 18.6015 20.1198 17.7981 19.8145 17.6874C19.5092 17.5769 19.2858 17.5208 19.0645 17.8542C18.8431 18.1875 18.207 18.9349 18.0124 19.1562C17.8177 19.3789 17.6244 19.4088 17.291 19.2422C16.9577 19.0741 15.8859 18.7219 14.614 17.5885C13.6246 16.7072 12.957 15.6198 12.7624 15.2865C12.569 14.9544 12.7441 14.7721 12.9108 14.6067C13.0602 14.4574 13.2415 14.2181 13.4082 14.0234C13.5736 13.8288 13.6308 13.6901 13.7415 13.4688C13.8522 13.2474 13.7956 13.0521 13.7129 12.8854C13.6303 12.7187 12.9829 11.0753 12.6868 10.4166C12.4375 9.86328 12.1742 9.85043 11.9368 9.84115C11.7435 9.83311 11.5227 9.83335 11.3014 9.83335Z"
+                          fill="#00FF00"
+                        />
+                      </svg>
+                      <div>
+                        <p class="contact m-0 p-0">+910987654321</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button
+                    class="accordion-button collapsed subheading"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    <h2>Warranty</h2>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="descriptionTwo d-flex flex-column">
+                      <a href="#">Register Your Product</a>
+                      <a href="#">Report a problem with product</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button
+                    class="accordion-button collapsed subheading"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    <h2>Product Help</h2>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="descriptionTwo d-flex flex-column">
+                      <a href="#"
+                        >Return & Cancellation<br />
+                        Policy</a
+                      >
+                      <a href="#">Shipping & Delivery Policy</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                  <button
+                    class="accordion-button collapsed subheading"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseFour"
+                  >
+                    <h2>About Us</h2>
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingFour"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <div class="descriptionThree d-flex">
+                      <div class="descriptionTwo">
+                        <a href="/earbuds">Earbuds</a> <br />
+                        <a href="/earphone">Earphone</a> <br />
+                        <a href="/speakers">Speakers</a>
+                      </div>
+                      <div class="descriptionTwo">
+                        <a href="/soundbars">Soundbars</a> <br />
+                        <a href="/smartwatch">Smartwatch</a> <br />
+                        <a href="/cables">Cables</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row social largeScreenSocial">
+          <div class="col-3 position-relative">
+            <div class="socialMedia d-flex align-items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="24"
+                  viewBox="0 0 18 24"
+                  fill="none"
+                >
+                  <path
+                    d="M4.89741 23.9904H11.3673V11.9934H15.7093C15.7093 11.9934 16.1159 10.0575 16.3142 7.94066H11.3925V5.17976C11.3925 4.76729 12.0972 4.21327 12.7958 4.21327H16.3212V0.00946045H11.5265C4.73826 0.00946045 4.89741 4.0506 4.89741 4.65399V7.95464H1.74805V11.9919H4.89741V23.9904Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="26"
+                  viewBox="0 0 29 26"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_396_298)">
+                    <path
+                      d="M21.1119 0.0141602H7.57536C3.77498 0.0141602 0.683594 2.95392 0.683594 6.567V19.4379C0.683594 23.0514 3.77498 25.9903 7.57536 25.9903H21.1119C24.9124 25.9903 28.0034 23.0514 28.0034 19.4379V6.567C28.0034 2.95392 24.9124 0.0141602 21.1119 0.0141602ZM25.0306 19.4379C25.0306 21.4925 23.2725 23.1641 21.1119 23.1641H7.57536C5.41491 23.1641 3.65682 21.4925 3.65682 19.4379V6.567C3.65682 4.51279 5.41491 2.84156 7.57536 2.84156H21.1119C23.2725 2.84156 25.0306 4.51279 25.0306 6.567V19.4379Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M21.6067 7.69546C20.6885 7.69546 19.9414 6.98549 19.9414 6.11242C19.9414 5.23976 20.6885 4.52979 21.6067 4.52979C22.525 4.52979 23.2717 5.23976 23.2717 6.11242C23.2717 6.98549 22.525 7.69546 21.6067 7.69546Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M14.3443 6.3125C10.4652 6.3125 7.30859 9.31347 7.30859 13.0023C7.30859 16.691 10.4652 19.6924 14.3443 19.6924C18.2244 19.6924 21.381 16.691 21.381 13.0023C21.381 9.31387 18.2244 6.3125 14.3443 6.3125ZM14.3443 16.8662C12.1051 16.8662 10.2814 15.1326 10.2814 13.0023C10.2814 10.8727 12.1051 9.1399 14.3443 9.1399C16.5848 9.1399 18.4074 10.8727 18.4074 13.0023C18.4074 15.1326 16.5848 16.8662 14.3443 16.8662Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_396_298">
+                      <rect
+                        width="27.3448"
+                        height="26"
+                        fill="white"
+                        transform="translate(0.671875)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="22"
+                  viewBox="0 0 29 22"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_396_306)">
+                    <path
+                      d="M0.994141 19.1616C3.4747 20.6742 6.42116 21.5566 9.58718 21.5566C19.8981 21.5566 25.5362 13.4352 25.5362 6.39134C25.5362 6.16067 25.5307 5.93064 25.5203 5.7019C26.6157 4.95061 27.5658 4.01182 28.3173 2.94288C27.312 3.36685 26.2318 3.65358 25.0977 3.78244C26.2551 3.12265 27.144 2.07819 27.5623 0.833667C26.4792 1.44417 25.2797 1.88811 24.003 2.12684C22.9804 1.09108 21.5234 0.443848 19.9109 0.443848C16.8154 0.443848 14.3053 2.83045 14.3053 5.77375C14.3053 6.19127 14.3552 6.59817 14.4507 6.98831C9.79217 6.76601 5.6615 4.64423 2.89667 1.41936C2.41418 2.20673 2.13769 3.122 2.13769 4.09913C2.13769 5.94804 3.12707 7.57948 4.63146 8.53534C3.71222 8.50764 2.84788 8.26762 2.09229 7.86846C2.09195 7.89101 2.09195 7.91324 2.09195 7.93579C2.09195 10.5179 4.02428 12.6723 6.58854 13.162C6.11824 13.2834 5.62288 13.3491 5.11159 13.3491C4.75039 13.3491 4.39937 13.3156 4.05681 13.2531C4.77005 15.3707 6.84063 16.9116 9.29341 16.9545C7.37496 18.3842 4.95776 19.2364 2.3315 19.2364C1.87882 19.2364 1.43259 19.2112 0.994141 19.1616Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_396_306">
+                      <rect
+                        width="27.3448"
+                        height="22"
+                        fill="white"
+                        transform="translate(0.982422)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="20"
+                  viewBox="0 0 28 20"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_396_312)">
+                    <path
+                      d="M3.73202 18.6948C7.11997 19.0537 10.5486 19.056 13.9629 19.0537C17.3784 19.056 20.8076 19.0537 24.1942 18.6948C25.6247 18.5427 26.8134 17.5228 27.1482 16.1413C27.6245 14.1745 27.6259 12.0257 27.6259 9.9999C27.6259 7.97445 27.6303 5.82657 27.1535 3.85976C26.8188 2.47702 25.6305 1.45834 24.1993 1.3066C20.8117 0.946419 17.3824 0.945131 13.9687 0.946419C10.5543 0.945131 7.12404 0.946419 3.73575 1.3066C2.30657 1.45834 1.11796 2.47702 0.784549 3.85976C0.308494 5.82657 0.302734 7.97445 0.302734 10.0002C0.302734 12.026 0.302734 14.1745 0.779466 16.1413C1.11253 17.5228 2.30114 18.5427 3.73202 18.6948ZM10.4388 5.44191C13.3338 6.87812 16.2104 8.30434 19.1247 9.75022C16.2189 11.1826 13.3419 12.6017 10.4388 14.0331V5.44191Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_396_312">
+                      <rect
+                        width="27.3448"
+                        height="20"
+                        fill="white"
+                        transform="translate(0.291016)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="catgory">
+              <div class="catgoryDiv">
+                <a href="/earbuds">Shop Earbuds</a>
+              </div>
+              <div class="catgoryDiv">
+                <a href="/soundbars">Shop Soundbars</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="catgory">
+              <div class="catgoryDiv">
+                <a href="/earphones">Shop Earphones</a>
+              </div>
+              <div class="catgoryDiv">
+                <a href="/smartwatch">Shop Smartwatch</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="catgory">
+              <div class="catgoryDiv">
+                <a href="/speakers">Shop Speakers</a>
+              </div>
+              <div class="catgoryDiv">
+                <a href="/cables">Shop Cables</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row social smallScreenSocial">
+          <div class="col-12 position-relative d-flex justify-content-center">
+            <div class="socialMedia smallSocialMedia d-flex align-items-center">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="24"
+                  viewBox="0 0 18 24"
+                  fill="none"
+                >
+                  <path
+                    d="M4.89741 23.9904H11.3673V11.9934H15.7093C15.7093 11.9934 16.1159 10.0575 16.3142 7.94066H11.3925V5.17976C11.3925 4.76729 12.0972 4.21327 12.7958 4.21327H16.3212V0.00946045H11.5265C4.73826 0.00946045 4.89741 4.0506 4.89741 4.65399V7.95464H1.74805V11.9919H4.89741V23.9904Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="26"
+                  viewBox="0 0 29 26"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_396_298)">
+                    <path
+                      d="M21.1119 0.0141602H7.57536C3.77498 0.0141602 0.683594 2.95392 0.683594 6.567V19.4379C0.683594 23.0514 3.77498 25.9903 7.57536 25.9903H21.1119C24.9124 25.9903 28.0034 23.0514 28.0034 19.4379V6.567C28.0034 2.95392 24.9124 0.0141602 21.1119 0.0141602ZM25.0306 19.4379C25.0306 21.4925 23.2725 23.1641 21.1119 23.1641H7.57536C5.41491 23.1641 3.65682 21.4925 3.65682 19.4379V6.567C3.65682 4.51279 5.41491 2.84156 7.57536 2.84156H21.1119C23.2725 2.84156 25.0306 4.51279 25.0306 6.567V19.4379Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M21.6067 7.69546C20.6885 7.69546 19.9414 6.98549 19.9414 6.11242C19.9414 5.23976 20.6885 4.52979 21.6067 4.52979C22.525 4.52979 23.2717 5.23976 23.2717 6.11242C23.2717 6.98549 22.525 7.69546 21.6067 7.69546Z"
+                      fill="white"
+                    />
+                    <path
+                      d="M14.3443 6.3125C10.4652 6.3125 7.30859 9.31347 7.30859 13.0023C7.30859 16.691 10.4652 19.6924 14.3443 19.6924C18.2244 19.6924 21.381 16.691 21.381 13.0023C21.381 9.31387 18.2244 6.3125 14.3443 6.3125ZM14.3443 16.8662C12.1051 16.8662 10.2814 15.1326 10.2814 13.0023C10.2814 10.8727 12.1051 9.1399 14.3443 9.1399C16.5848 9.1399 18.4074 10.8727 18.4074 13.0023C18.4074 15.1326 16.5848 16.8662 14.3443 16.8662Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_396_298">
+                      <rect
+                        width="27.3448"
+                        height="26"
+                        fill="white"
+                        transform="translate(0.671875)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="29"
+                  height="22"
+                  viewBox="0 0 29 22"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_396_306)">
+                    <path
+                      d="M0.994141 19.1616C3.4747 20.6742 6.42116 21.5566 9.58718 21.5566C19.8981 21.5566 25.5362 13.4352 25.5362 6.39134C25.5362 6.16067 25.5307 5.93064 25.5203 5.7019C26.6157 4.95061 27.5658 4.01182 28.3173 2.94288C27.312 3.36685 26.2318 3.65358 25.0977 3.78244C26.2551 3.12265 27.144 2.07819 27.5623 0.833667C26.4792 1.44417 25.2797 1.88811 24.003 2.12684C22.9804 1.09108 21.5234 0.443848 19.9109 0.443848C16.8154 0.443848 14.3053 2.83045 14.3053 5.77375C14.3053 6.19127 14.3552 6.59817 14.4507 6.98831C9.79217 6.76601 5.6615 4.64423 2.89667 1.41936C2.41418 2.20673 2.13769 3.122 2.13769 4.09913C2.13769 5.94804 3.12707 7.57948 4.63146 8.53534C3.71222 8.50764 2.84788 8.26762 2.09229 7.86846C2.09195 7.89101 2.09195 7.91324 2.09195 7.93579C2.09195 10.5179 4.02428 12.6723 6.58854 13.162C6.11824 13.2834 5.62288 13.3491 5.11159 13.3491C4.75039 13.3491 4.39937 13.3156 4.05681 13.2531C4.77005 15.3707 6.84063 16.9116 9.29341 16.9545C7.37496 18.3842 4.95776 19.2364 2.3315 19.2364C1.87882 19.2364 1.43259 19.2112 0.994141 19.1616Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_396_306">
+                      <rect
+                        width="27.3448"
+                        height="22"
+                        fill="white"
+                        transform="translate(0.982422)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="20"
+                  viewBox="0 0 28 20"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_396_312)">
+                    <path
+                      d="M3.73202 18.6948C7.11997 19.0537 10.5486 19.056 13.9629 19.0537C17.3784 19.056 20.8076 19.0537 24.1942 18.6948C25.6247 18.5427 26.8134 17.5228 27.1482 16.1413C27.6245 14.1745 27.6259 12.0257 27.6259 9.9999C27.6259 7.97445 27.6303 5.82657 27.1535 3.85976C26.8188 2.47702 25.6305 1.45834 24.1993 1.3066C20.8117 0.946419 17.3824 0.945131 13.9687 0.946419C10.5543 0.945131 7.12404 0.946419 3.73575 1.3066C2.30657 1.45834 1.11796 2.47702 0.784549 3.85976C0.308494 5.82657 0.302734 7.97445 0.302734 10.0002C0.302734 12.026 0.302734 14.1745 0.779466 16.1413C1.11253 17.5228 2.30114 18.5427 3.73202 18.6948ZM10.4388 5.44191C13.3338 6.87812 16.2104 8.30434 19.1247 9.75022C16.2189 11.1826 13.3419 12.6017 10.4388 14.0331V5.44191Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_396_312">
+                      <rect
+                        width="27.3448"
+                        height="20"
+                        fill="white"
+                        transform="translate(0.291016)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end of footer -->
+
+    <!-- custom js -->
+    <script src="./js/userHomePage.js"></script>
+    <!-- end of custom js -->
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/23d1247997.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- end of fontawesome -->
+    <!-- Bootstrap script file -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!--end of Bootstrap script file -->
+  </body>
+</html>

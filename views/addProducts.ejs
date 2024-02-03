@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD PRODUCTS</title>
+    <link rel="stylesheet" href="/css/adminCss/products.css">
+    <link rel="stylesheet" href="/css/adminCss/main.css">
+</head>
+<body>
+    <div class="continer">
+        <div class="layer1">
+            <div class="logo">
+                <img src="" alt="" class="logoimg">
+            </div>
+            <div class="searchBar">
+                <!-- <input type="text" placeholder="  search product" class="searchBar1"> -->
+            </div>
+            <div class="logout">
+                <button class="btn1">LOGOUT</button>
+            </div>
+        </div>
+        <div class="layer2">
+            <div class="tabs">
+                <ul>
+                    <li onclick="window.location.href='/dashboard'">DASHBOARD</li>
+                    <li onclick="window.location.href='/users'">USERS</li>
+                    <li onclick="window.location.href='/products'">PRODUCTS</li>
+                    <li onclick="window.location.href='/category'">CATEGORY</li>
+                    <li onclick="window.location.href='/coupon'">COUPONS</li>
+                    <li onclick="window.location.href='/orders'">ORDERS</li>
+                    <li onclick="window.location.href='/banner'">BANNERS</li>
+                </ul>
+            </div>
+            <div class="content_part">
+
+                <form action="/add-product" method="post" enctype="multipart/form-data">
+                    <div class="frame">
+                        <div class="gap_div">
+                            <div class="card_div">
+                                <div class="form-group">
+                                    <label for="productName">Product Name</label>
+                                    <input type="text" id="productName" name="productName" placeholder="Enter product name">
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="tel" id="price" name="price" placeholder="Enter price">
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="discount">Discount</label>
+                                    <input type="text" id="discount" name="discount" placeholder="Enter discount">
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="stock">Stock</label>
+                                    <input type="tel" id="stock" name="stock" placeholder="Enter stock">
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <select id="category" name="category">
+                                        <option value="" selected disabled>Select category</option>
+                                        <option value="home">Home</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="mens">Mens</option>
+                                        <option value="womens">Womens</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subCategory">Sub Category</label>
+                                    <select name="subCategory" id="subCategory">
+                                        <option value="" selected disabled>Select sub category</option>
+                                        <option value="Shirts">Shirts</option>
+                                        <option value="Pants">Pants</option>
+                                        <option value="Shoes">Shoes</option>
+                                        <option value="Tops">Tops</option>
+                                        <option value="Bottoms">Bottoms</option>
+                                        <option value="Shawls">Shawls</option>
+                                        <option value="PartyWear">Party Wears</option>
+                                        <option value="Mobiles">Mobiles</option>
+                                        <option value="Laptops">Laptops</option>
+                                        <option value="Watches">Watches</option>
+                                        <option value="Kitchen">Kitchen Items</option>
+                                        <option value="Bedsheets">Bedsheets</option>
+                                        <option value="Electronic">Electronic Accessories</option>
+                                    </select>
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="deliveryDate">Delivery Date</label>
+                                    <input type="date" id="deliveryDate" name="deliveryDate" placeholder="Enter delivery date">
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="colour">Colour</label>
+                                    <select name="colour" id="colour">
+                                        <option value="" selected disabled>Select color</option>
+                                        <option value="#ff0000" style="color: #ff0000;">Red</option> 
+                                        <option value="#0000ff" style="color: #0000ff;">Blue</option>
+                                        <option value="#00ff00" style="color: #00ff00;">Green</option>
+                                        <option value="#000000" style="color: #000000;">Black</option>
+                                        <option value="#f98000" style="color: #f98000;">Orange</option>
+                                        <option value="#ffea00" style="color: #ffea00;">Yellow</option>     
+                                    </select>
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="size">Size</label>
+                                    <select name="size" id="">
+                                        <option value="" selected disabled>Choose Size</option>                                            
+                                        <option value="">Small</option>
+                                        <option value="">Medium</option>
+                                        <option value="">Large</option>
+                                        <option value="">X-Large</option>
+                                        <option value="">XX-Large</option>
+                                    </select>
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="text" id="quantity" name="quantity" placeholder="Enter quantity">
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" name="description" placeholder="Enter description"></textarea>
+                                </div>
+                                <div class="form-group">
+
+                                    <button type="submit">Submit</button>
+                                </div>
+                            </div>
+                            <div class="img_div">      
+                                <div class="form-group img_centr">
+                                    <div class="image_space">
+                                        <img src="" alt="">
+                                    </div>
+                                   <div class="image_buttn">
+                                    Choose Image
+                                    <input type="file" id="productImage" name="productImage">
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                         
+            </div>
+        </div>
+    </div>
+</body>
+</html>
