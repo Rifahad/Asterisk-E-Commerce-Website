@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.calc{
+    width: 400px;
+    height:650px;
+    background-color: #414350;
+    z-index: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 7%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 7%;
+    padding-left: 10px;
+}
+
+.screen{
+    width: 360px;
+    height: 90px;
+    background-color: #486465;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.top{
+    width: 380px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(6,50px);
+    grid-template-rows: repeat(5,40px);
+    gap: 10px;
+    align-self: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+
+.bottom{
+    width: 380px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(5,60px);
+    grid-template-rows: repeat(5,50px);
+    gap: 10px;
+    justify-content: center;
+}
+
+.key{
+    background-color: black;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}
+
+.key2{
+    background-color: #918f9a;
+    color: white;
+    border-radius: 10px;
+}
+
+.reply{
+    grid-area:1/3/3/5;
+    border-radius: 50px;
+}
+
+.key3{
+    background-color: #d6d6d4;
+    color: black;
+    
+}
+
+.key4{
+    background-color: red;
+}

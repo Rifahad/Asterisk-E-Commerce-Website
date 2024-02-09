@@ -19,6 +19,8 @@ const {
     products,
     addProduct,
     addProductPost,
+    // editProduct,
+    deleteProduct,
     banner,
     addBanner,
     addBannerPost,
@@ -30,7 +32,7 @@ const {
 
 }=require("../controller/adminController")
 
-
+    
 router.get("/register",registerAccount)
       .post("/login-admin",registerAccountPost)
 
@@ -41,17 +43,21 @@ router.get("/register",registerAccount)
 
       .get("/category",category)
       .get("/add-category",addCategory)
-      .post('/add-category',addCategoryPost)
+      .post('/add-category',upload.single('productImage'),addCategoryPost)
       
       .get("/orders",orders)
 
       .get('/products',products)
+    //   .get('/product/edit/:id',editProduct)
+      .get("/product/delete/:productId",deleteProduct)
+
+
       .get("/add-product",addProduct)
       .post("/add-product",upload.single('productImage'),addProductPost)
 
       .get("/banner" , banner )
       .get("/add-banner",addBanner)
-      .post("/add-banner",addBannerPost)
+      .post("/add-banner",upload.single('productImage'),addBannerPost)
 
       .get("/coupon",coupon)
       .get("/add-coupon",addCoupon)

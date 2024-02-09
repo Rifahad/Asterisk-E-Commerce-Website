@@ -5,7 +5,9 @@ const port=process.env.PORT || 8086
 const path=require("path")
 const mongoose=require("mongoose")
 const session=require("express-session")
-mongoose.connect("mongodb://localhost/MainProject")
+mongoose.connect("mongodb://localhost/MainProject").then(()=>{
+    console.log( "succes");
+})
 
 const common=require("./router/userRoute")
 const adminRoutes=require("./router/adminRoute")

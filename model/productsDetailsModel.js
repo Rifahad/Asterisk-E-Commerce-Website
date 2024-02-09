@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
 
 const productDetails=new mongoose.Schema({
+    productImage:String,
     productName: String,
     price: Number,
     discount: String,
@@ -12,7 +13,6 @@ const productDetails=new mongoose.Schema({
     size: String,
     quantity: Number,
     description: String,
-    productImage:String,
 })
 
 module.exports=mongoose.model("Products",productDetails)

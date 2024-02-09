@@ -40,27 +40,27 @@
                             <div class="card_div">
                                 <div class="form-group">
                                     <label for="productName">Product Name</label>
-                                    <input type="text" id="productName" name="productName" placeholder="Enter product name">
+                                    <input type="text" id="productName" name="productName" placeholder="Enter product name" required>
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="price">Price</label>
-                                    <input type="tel" id="price" name="price" placeholder="Enter price">
+                                    <input type="number" id="price" name="price" placeholder="Enter price" required>
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="discount">Discount</label>
-                                    <input type="text" id="discount" name="discount" placeholder="Enter discount">
+                                    <input type="number" id="discount" name="discount" placeholder="Enter discount">
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="stock">Stock</label>
-                                    <input type="tel" id="stock" name="stock" placeholder="Enter stock">
+                                    <input type="number" id="stock" name="stock" placeholder="Enter stock" required>
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="category">Category</label>
-                                    <select id="category" name="category">
+                                    <select id="category" name="category" required>
                                         <option value="" selected disabled>Select category</option>
                                         <option value="home">Home</option>
                                         <option value="electronics">Electronics</option>
@@ -109,13 +109,13 @@
                 
                                 <div class="form-group">
                                     <label for="size">Size</label>
-                                    <select name="size" id="">
-                                        <option value="" selected disabled>Choose Size</option>                                            
-                                        <option value="">Small</option>
-                                        <option value="">Medium</option>
-                                        <option value="">Large</option>
-                                        <option value="">X-Large</option>
-                                        <option value="">XX-Large</option>
+                                    <select name="size" id="size">
+                                        <option value="default" selected disabled>Choose Size</option>                                            
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                        <option value="xl">X-Large</option>
+                                        <option value="xxl">XX-Large</option>
                                     </select>
                                 </div>
                 
@@ -130,19 +130,19 @@
                                 </div>
                                 <div class="form-group">
 
-                                    <button type="submit">Submit</button>
                                 </div>
                             </div>
                             <div class="img_div">      
                                 <div class="form-group img_centr">
                                     <div class="image_space">
-                                        <img src="" alt="">
+                                        <img src="" alt=""  id="imagePreview" width="100%" height="100%">
                                     </div>
                                    <div class="image_buttn">
                                     Choose Image
-                                    <input type="file" id="productImage" name="productImage">
-                                   </div>
+                                    <input type="file" name="productImage" id="" onchange="previewImage(this)">
                                 </div>
+                                <button type="submit" style="background-color: #000000; color: white; margin-top: 20px;">Submit</button>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -153,4 +153,16 @@
         </div>
     </div>
 </body>
+<script>
+    function previewImage(input) {
+        var file = input.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 </html>

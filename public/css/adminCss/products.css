@@ -1,15 +1,16 @@
 *{
     margin: 0;
     padding: 0;
+    color: white;
 }
 .continer{
-    width: 1536px;
-    height:auto;
-    background-color: blue;
+    width: 100vw;
+    height:100vh;
+    background-color: black;
 }
 .layer1{
     display: flex;
-    background-color: rgb(206,206,206);
+    background-color: black;
     align-items: center;
 }
 .logo{
@@ -59,13 +60,13 @@
 .tabs{
     width: 20%;
     height: 100%;
-    background-color: aliceblue;
+    background-color: black;
     border-right: 1px solid black;
 }
 .tabs ul {
     height: 100%;
     width: 100%;
-    background-color: antiquewhite;
+    background-color: black;
 }
 .tabs ul li{
     display: flex;
@@ -74,7 +75,7 @@
     font-family: sans-serif;
     padding-left: 2rem;
     list-style: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     height: 4rem;
 }
 .sublayer2{

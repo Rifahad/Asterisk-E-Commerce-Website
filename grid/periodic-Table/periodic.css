@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+button{
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+}
+.periodic-table{
+    padding-top: 40px;
+    display: grid;
+    align-self: center;
+    justify-content: center;
+    grid-template-columns: repeat(18,60px);
+    grid-template-rows: repeat(10,60px);
+    gap:5px;
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    
+}
+.periodic2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    padding-top: 100px;
+    grid-template-columns: repeat(18,60px);
+    grid-template-rows: repeat(10,60px);
+    gap:5px;
+    width: 100%;
+    height: 305px;
+    background-color: black;
+    
+}
+
+.i1{
+    grid-column: 18;
+}
+
+.i2b{
+    grid-column: 13;
+}
+
+.i3al{
+    grid-column: 13;
+}
+
+.iex1la{
+    grid-column: 4;
+}
+
+.green{
+    background-color: rgb(157, 241, 157);
+}
+
+.blue{
+    background-color: rgb(182, 231, 250);
+}
+.violet{
+    background-color: rgb(250, 197, 250);
+}
+
+.brown{
+    background-color: burlywood;
+}
+
+.white{
+    background-color: rgb(229, 197, 197);
+}
+
+.periodic{
+    background-color: rgb(89, 89, 209);
+}
+
+
+
+
+

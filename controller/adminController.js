@@ -4,7 +4,7 @@ const couponDetails=require("../model/coupon")
 const categoryDetails=require("../model/categoryModel")
 
 module.exports={
-    registerAccount:(req,res)=>{
+    registerAccount:(req,res)=>{    
 
     },
     registerAccountPost:(req,res)=>{
@@ -13,58 +13,81 @@ module.exports={
     loginAdmin:(req,res)=>{
 
     },
-    loginAdminPost:(req,res)=>{
+    loginAdminPost:(req,res)=>{ 
 
     },
     dashboard:(req,res)=>{
-        res.render("dashboard")
+        res.status(200).render("dashboard")
     },
     orders:(req,res)=>{
-
+        res.status(200).render("orders")
     },
-    products:(req,res)=>{
-
+    products: async (req, res) => {
+        try {
+            const result = await productDetails.find();
+            console.log(result);
+            res.status(200).render("products", { products: result });
+        } catch (error) {
+            console.error("Error fetching products:", error);
+            res.status(500).send("Error fetching products");
+        }
     },
+    
     addProduct:(req,res)=>{
-        res.render("addProducts")
+        res.status(200).render("addProducts")
     },
     addProductPost:async (req,res)=>{
-        console.log(req.file.filename);
-        await productDetails.create(req.body)
-        res.redirect("/add-product")
+        const productimg = req.file ? req.file.filename : 'no image';
+        try {
+            await productDetails.create({...req.body, productImage: productimg});
+            res.redirect("/add-product");
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Error adding product");
+        }
+    },
+    deleteProduct:async(req,res)=>{
+        try {
+            const id=req.params.productId
+            const product= await productDetails.findById(id)
+            await productDetails.findByIdAndDelete(id);
+            res.redirect("/products")
+        } catch (error) {
+            res.status(500).send("Error deleting product");
 
+        }
     },
     banner:(req,res)=>{
-
+        res.status(200).render("bannar")
     },    
     addBanner:(req,res)=>{
-        res.render("addBanner")
+        res.status(200).render("addBanner")
     },
     addBannerPost:async (req,res)=>{
         console.log(req.body)
         await  banner.create(req.body)  
     },
     coupon:(req,res)=>{
+        res.status(200).render("coupon")
 
     },
     addCoupon:(req,res)=>{
-        res.render("addCoupon")
+        res.status(200).render("addCoupon")
     },
     addCouponPost:async (req,res)=>{
         console.log(req.body);
         await couponDetails.create(req.body)
     },
     users:(req, res) => {
-
+        res.status(200).render("users")
     },
     category:(req,res)=>{
-        
+        res.status(200).render("category")
     },
     addCategory:(req,res)=> {
-        res.render("addCategory")
+        res.status(200).render("addCategory")
     },
     addCategoryPost:async (req,res)=>{
-        console.log(req.body)
         await categoryDetails.create(req.body)
     },
     logout:(req,res)=>{

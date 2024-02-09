@@ -8,6 +8,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    color:seagreen;
 }
 body{
     padding: 0;
@@ -31,11 +32,11 @@ a{
 /*---------- BS var ----------*/
 :root{
     --bs-body-bg: transparent;
-    --bs-border-color: rgba(255, 255, 255, 0.40);
+    --bs-border-color: black;
     --bs-accordion-btn-focus-border-color: transparent;
 }
 .accordion-button:not(.collapsed) {
-    color: white;
+    color:seagreen;
     background-color: transparent;
     box-shadow: none;
 }
@@ -62,9 +63,18 @@ a{
 /*---------- end of BS var ----------*/
 
 /*---------- header ----------*/
+.metrix{
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    color:black;
+    text-shadow: 5px 5px 15px black;
+}
+
 .header{
     width: 100vw;
     height: 2rem;
+    background-color: #000;
 }
 .topheader{
     display: flex;
@@ -85,7 +95,7 @@ a{
 .topheaderone{
     justify-content: flex-end;
     border-right: 0.8px solid rgba(0, 255, 0, 0.05);
-    background: linear-gradient(44deg, #111216 -4.62%, rgba(91, 99, 120, 0.00) 804.71%);
+    background-color: #000;
 }
 .topheaderone p{
     padding-left: 0.75rem;
@@ -93,7 +103,7 @@ a{
 }
 .topheadertwo{
     justify-content: flex-start;
-    background: linear-gradient(298deg, #111216 -34.19%, rgba(91, 99, 120, 0.00) 1164.24%);
+    background-color: black;
     padding-left: 1.25rem;
 }
 .topheadertwo p{
@@ -102,7 +112,7 @@ a{
 .topheadingimg{
     display: flex;
     align-items: center;
-    color: #FFF;
+    color:seagreen;
     font-family: Inter;
     font-size: 0.65rem;
     font-style: normal;
@@ -121,13 +131,13 @@ a{
     position: fixed;
     width: 75vw;
     height: 100vh;
-    background-color: blue;
+    background-color: black;
     z-index: 1;
     top: 0;
     left: -100%;
     padding: 94px 50px;
-    border: 1px solid #E0E0E0;
-    background-color: #FFF;
+    border: 1px solid white;
+    background-color:black;
     transition: left 0.4s ease-in-out;
 }
 .mobilenavigationList.active{
@@ -144,11 +154,11 @@ a{
 .navigation{
     width: 100vw;
     height: 62px;
-    background: linear-gradient(180deg, #D9D9D9 -406.45%, #000 139.51%);
+    background-color: seagreen;
 }
 .hamburger{
     position: relative;
-    background: transparent;
+    background: black;
     border: transparent;
     width: 30px;
     height: 20px;
@@ -158,7 +168,7 @@ a{
     width: 30px;
     height: 2px;
     margin: 10px 0;
-    background: white;
+    background: black;
     transform-origin: center center;
     transition: all .2s linear .1s;
 }
@@ -181,7 +191,7 @@ a{
     margin-right: 2rem;
 }
 .navigationnavbar ul li a{
-    color: #FFF;
+    color:black;
     font-family: Inter;
     font-size: 0.90rem;
     font-style: normal;
@@ -202,7 +212,7 @@ a{
     background-color: #000;
 }
 .mobilenavigationList ul li a{
-    color: #000;
+    color:seagreen;
     font-family: Inter;
     font-size: 0.90rem;
     font-style: normal;
@@ -214,7 +224,7 @@ a{
     height: 100%;
 }
 .mobilenavigationList h2{
-    color: rgba(0, 0, 0, 0.50);
+    color: black;
     font-family: Inter;
 }
 .mobilenavigationList ul li{
@@ -222,7 +232,7 @@ a{
     padding: 8px 0;
 }
 .mobilenavigationList ul li a:focus{
-    color: #0F0;
+    color:seagreen;
 }
 .mobilenavigationList ul{
     overflow-y: scroll;
@@ -233,7 +243,7 @@ a{
     width: 15px;
 }
 .mobilenavigationList ul::-webkit-scrollbar-thumb{
-    background-color: #0F0;
+    background-color: black;
     border-radius: 10px;
 }
 .mobilenavigationList ul::-webkit-scrollbar-track{
@@ -247,13 +257,14 @@ a{
     width: 100vw;
     min-height: 70vh;
     padding: 8% 0;
+    background:black;
 }
 .loginbox{
     width: 24rem;
-    background-color: #FFF;
+    background-color: transparent;
     stroke-width: 1px;
     stroke: #E0E0E0;
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 0px 0px 10px 1px white inset;
     border-radius: 9px;
     font-family: 'Ubuntu', sans-serif;
     line-height: normal;
@@ -265,7 +276,7 @@ a{
     transform: translateX(-50%);
 }
 .headingLogin p{
-    color: #000;
+    color:seagreen;
     font-size: 1.125rem;
     font-weight: 700;
     line-height: normal;
@@ -277,7 +288,7 @@ a{
 }
 .error p{
     margin-top: 10px;
-    color: red;
+    color:seagreen;
     font-size: 0.8125rem;
     font-weight: bold;
 }
@@ -286,7 +297,7 @@ a{
     padding: 1.5rem 0 0;
 }
 .inputForm label{
-    color: #000;
+    color:seagreen;
     font-size: 0.8125rem;
     font-weight: 400;
 }
@@ -298,10 +309,10 @@ a{
     border-radius: 8px;
     margin: 0.75rem 0;
     border: 1px solid #E0E0E0;
-    background: #FFF;
+    background: transparent;
 }
 .inputForm a{
-    color: rgba(0, 0, 255, 0.75);
+    color:seagreen;
     font-size: 0.8125rem;
     font-weight: 400;
     text-decoration-line: underline;
@@ -310,18 +321,18 @@ a{
     margin-bottom: 1.5rem;
 }
 .loginBtn{
-    color: #000;
+    color:seagreen;
     font-size: 0.9375rem;
     font-weight: bold;
     border-radius: 7px;
     width:172px;
     height: 45px;
-    background: #0F0;
-    border: transparent;
+    background: transparent;
+    border: 1px solid white;
     margin-bottom: 1.5rem;
 }
 .registerText a{
-    color: black;
+    color:seagreen;
     font-size: 0.8125rem;
     font-weight: 500;
     text-decoration: underline;
@@ -336,7 +347,7 @@ footer{
     flex-shrink: 0;
 }
 .subheading h2{
-    color: #FFF;
+    color:seagreen;
     font-family: Ubuntu;
     font-size: 1.25rem;
     font-style: normal;
@@ -348,7 +359,7 @@ footer{
     margin-right: 1.25rem;
 }
 .contact{
-    color: #FFF;
+    color:seagreen;
     font-family: Ubuntu;
     font-size: 0.875rem;
     font-style: normal;
@@ -356,7 +367,7 @@ footer{
     line-height: normal;
 }
 .dateTime{
-    color: rgba(255, 255, 255, 0.40);
+    color:seagreen;
     font-family: Ubuntu;
     font-size: 0.75rem;
     font-style: normal;
@@ -367,7 +378,7 @@ footer{
     margin-bottom: 1.25rem;
 }
 .descriptionTwo a{
-    color: rgba(255, 255, 255, 0.40);
+    color:seagreen;
     font-family: Ubuntu;
     font-size: 0.75rem;
     font-style: normal;
@@ -395,7 +406,7 @@ footer{
 .socialMedia div{
     width: 2.62931rem;
     height: 2.5rem;
-    background: #4C525F;
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -409,7 +420,7 @@ footer{
     width: 90%;
     height: 2.5rem;
     flex-shrink: 0;
-    background: #4C525F;
+    background: black;
     margin-bottom: 10%;
     padding: 0.5%;
 }
@@ -423,7 +434,7 @@ footer{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: #FFF;
+    color:seagreen;
     font-family: Ubuntu;
     font-size: 0.85rem;
     font-style: normal;
@@ -538,7 +549,7 @@ footer{
     }
     .error p{
         margin-top: 10px;
-        color: red;
+        color:seagreen;
         font-size: 0.75rem;
         font-weight: bold;
     }
@@ -549,7 +560,7 @@ footer{
         text-decoration-line: underline;
     }
     .registerText a{
-        color: black;
+        color:seagreen;
         font-size: 0.7rem;
         font-weight: 500;
         text-decoration: underline;

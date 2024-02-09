@@ -1,16 +1,7 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config()
+const otpGenerate=require("./otpGenerator")
 
-const otpGenerator = require('otp-generator')
-
-const otpGenerate=()=>{
-    const OTP=otpGenerator.generate(6, {
-         upperCaseAlphabets: false,
-         lowerCaseAlphabets:false,
-        specialChars: false,
-    });
-    return OTP
-}
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -40,4 +31,4 @@ const sendMail = async (transporter, mailOption) => {
   }
 };
 
-sendMail(transporter, mailOption);
+module.exports=sendMail(transporter, mailOption);
