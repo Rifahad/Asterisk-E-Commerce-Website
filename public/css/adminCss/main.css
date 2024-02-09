@@ -425,7 +425,7 @@ textarea {
     border-collapse: collapse;
 }
 .product_table th {
-    background-color: lightsteelblue;
+    background-color: transparent;
     color: #4D4C7D;
     padding: 10px;
     text-align: left;
@@ -524,7 +524,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.86);
+    background-color: transparent;
     box-shadow: 0px 0px 1.5rem 0.1rem rgba(128, 128, 128, 0.525);
     border: 1px solid rgba(128, 128, 128, 0.351);
 }
@@ -608,7 +608,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.86);
+    background-color:transparent;
     box-shadow: 0px 0px 1.5rem 0.1rem rgba(128, 128, 128, 0.525);
     border: 1px solid rgba(128, 128, 128, 0.351);
 }

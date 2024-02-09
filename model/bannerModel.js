@@ -9,3 +9,6 @@ const bannerDetails=new mongoose.Schema({
     startingDate: Date,
     endingDate: Date,
 })
+
+
+module.exports=mongoose.model("bannerDetails",bannerDetails)

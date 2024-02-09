@@ -5,7 +5,7 @@ const categoryDetails=require("../model/categoryModel")
 
 module.exports={
     registerAccount:(req,res)=>{    
-
+        
     },
     registerAccountPost:(req,res)=>{
 
@@ -57,15 +57,29 @@ module.exports={
 
         }
     },
-    banner:(req,res)=>{
-        res.status(200).render("bannar")
+    banner:async (req,res)=>{
+        try {
+            const result = await banner.find();
+            console.log(result);
+            res.status(200).render("bannar", { products: result });
+        } catch (error) {
+            console.error("Error fetching products:", error);
+            res.status(500).send("Error fetching products");
+        }
     },    
     addBanner:(req,res)=>{
         res.status(200).render("addBanner")
     },
     addBannerPost:async (req,res)=>{
         console.log(req.body)
-        await  banner.create(req.body)  
+        const productimg = req.file ? req.file.filename : 'no image';
+        try {
+            await banner.create({...req.body, productImage: productimg});
+            res.redirect("/add-banner");
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Error adding product");
+        }
     },
     coupon:(req,res)=>{
         res.status(200).render("coupon")
@@ -76,6 +90,7 @@ module.exports={
     },
     addCouponPost:async (req,res)=>{
         console.log(req.body);
+        
         await couponDetails.create(req.body)
     },
     users:(req, res) => {

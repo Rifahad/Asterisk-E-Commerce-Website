@@ -36,7 +36,7 @@
 
                 <div class="products_list_head">
                     <p style="font-size: x-large; padding-left: 1.5rem;">Banners</p>
-                    <button class="add_product_btn_admin">Add Banner</button>
+                    <button class="add_product_btn_admin" onclick="window.location.href='/add-banner'">Add Banner</button>
                 </div>
 
                 <div class="product_list">
@@ -56,20 +56,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <% for(let i = 0; i < products.length; i++) { %>
+
                                 <tr>
                                     <td>1</td>
-                                    <td>56KSVZZZZZ6788666</td>
-                                    <td>AXGY5677554765</td>
-                                    <td>1000</td>                                                                               
-                                    <td>02/01/2023</td>
-                                    <td>02/01/2024</td>
+                                    <td><%= products[i].bannerProduct %></td>
+                                    <td><%= products[i].bannerHeading %></td>
+                                    <td><%= products[i].bannerDescription %></td>
+                                    <td><%= products[i].startingDate %></td>                                                                               
+                                    <td><%= products[i].endingDate %></td>
                                     <td>
-                                        <i class="bi bi-pencil-square"></i>
+                                        <button type="submit" onclick="window.location.href='/product/edit/<%= products[i]._id%>'" class="edit-delete">EDIT</button>
                                     </td>
                                     <td>
-                                        <i class="bi bi-trash-fill"></i>
+                                        <button type="submit" onclick="window.location.href='/product/delete/<%= products[i]._id%>'" class="edit-delete">DELETE</button>
                                     </td>
                                 </tr>
+                                <% } %>  
                             </tbody>
     
                         </table>
