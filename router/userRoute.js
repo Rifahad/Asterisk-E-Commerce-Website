@@ -16,12 +16,13 @@ const {
 }=require("../controller/userController")
 
 const generateMail=require("../utility/nodemailer")
+const validating=require('../middleware/validateRegistration')
 
 router.get("/",login)
       .get("/home",home)
       .post("/home",loginPost)
       .get("/signup",signup)
-      .post("/email",signupPost)
+      .post("/email",validating,signupPost)
       .get("/email",emailVerify)
       .post("/otp",generateMail,emailVerifyPost)
       .get("/otp",otp)

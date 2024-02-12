@@ -1,5 +1,6 @@
 const UserModel = require("../model/registerModel");
 require("dotenv").config();
+const bcrypt=require("bcrypt")
 
 
 
@@ -36,16 +37,22 @@ module.exports = {
     res.render("verifyOtp");
   },
 
-  otpPost: (req, res) => {
+  otpPost: async (req, res) => {
     const{otp}=req.body
     const{generatedOtp}=require("../utility/nodemailer")
 
     if (otp === generatedOtp) {
+      let phone = req.session.phone;
+      const roleUpdate = await UserModel.findOneAndUpdate(
+        { phoneNumber: phone },
+        { $set: { otp: true } },
+        { new: true }
+        );
       res.redirect("/"); 
     }else{
       res.redirect("/otp")
     }
-    console.log(otp, generatedOtp);
+    // console.log(otp, generatedOtp)
   },
 
   forgotPassword: (req, res) => {
@@ -59,8 +66,25 @@ module.exports = {
   login: (req, res) => {
     res.render("userLogin");
   },
-  loginPost: (req, res) => {
-    res.redirect("/home");
+  loginPost: async (req, res) => {
+    try{
+      const {email,password}=req.body
+      console.log(email, password);
+      req.session.email=email;
+      const account=await UserModel.findOne({email})
+      const passwordcheck = await bcrypt.compare(password,account.password)
+      if(!account){
+        req.flash("account doesn't exist");
+      }else if(account.email === email && passwordcheck && account.otp == true){
+        res.redirect("/home"); 
+      }else{
+        res.redirect("/")
+      }
+    }catch(error){
+      
+    }
+      
+
   },
   home:(req, res) => {
     res.render("userHomePage")
