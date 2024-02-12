@@ -11,24 +11,31 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const otp = otpGenerate()
+const mailSender= (req,res,next)=>{
 
-const mailOption = {
-  from: {
-    name: 'Rt-max',
-    address: "nodemailertestmail4@gmail.com",
-  },
-  to: "rifahadmt202@gmail.com",
-  subject: "OTP from Rt-max Application",
-  text: `Your OTP is ${otp}`,
+  const generatedOtp = otpGenerate()
+  module.exports={generatedOtp}
+  const email= req.body.email;
+  
+  const mailOption = {
+    from: {
+      name: 'Rt-max',
+      address: "nodemailertestmail4@gmail.com",
+    },
+    to: email,
+    subject: "OTP from Rt-max Application",
+    text: `Your OTP is ${generatedOtp}`,
 };
-const sendMail = async (transporter, mailOption) => {
-  try {
-    await transporter.sendMail(mailOption);
-    console.log("Mail has been sent successfully");
-  } catch (error) {
+transporter.sendMail(mailOption, (error, info) => {
+  if (error) {
     console.log(`Error occurred while sending email: ${error}`);
+    return res.status(500).json({ error: 'Failed to send email' });
   }
-};
+  console.log("Mail has been sent successfully");
+  next();
+});
 
-module.exports=sendMail(transporter, mailOption);
+
+}
+module.exports=mailSender;
+

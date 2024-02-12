@@ -15,15 +15,17 @@ const {
     home
 }=require("../controller/userController")
 
+const generateMail=require("../utility/nodemailer")
+
 router.get("/",login)
       .get("/home",home)
       .post("/home",loginPost)
       .get("/signup",signup)
       .post("/email",signupPost)
       .get("/email",emailVerify)
-      .post("/otp",emailVerifyPost)
+      .post("/otp",generateMail,emailVerifyPost)
       .get("/otp",otp)
-      .post("/login",otpPost)
+      .post("/login",otpPost)  
       .get("/forgot",forgotPassword)
       .post("/",forgotPasswordPost)
 

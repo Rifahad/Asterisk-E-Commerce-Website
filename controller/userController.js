@@ -29,7 +29,6 @@ module.exports = {
       { $set: { email: email } },
       { new: true }
       );
-      const mailer=require("../utility/nodemailer")
     res.redirect("/otp");
   },
 
@@ -39,12 +38,14 @@ module.exports = {
 
   otpPost: (req, res) => {
     const{otp}=req.body
-    if (true) {
+    const{generatedOtp}=require("../utility/nodemailer")
+
+    if (otp === generatedOtp) {
       res.redirect("/"); 
     }else{
-      res.redirect("/otp")  
+      res.redirect("/otp")
     }
-    console.log(req.body);
+    console.log(otp, generatedOtp);
   },
 
   forgotPassword: (req, res) => {

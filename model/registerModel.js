@@ -6,6 +6,10 @@ const  userSchema = new mongoose.Schema({
     phoneNumber:Number,
     password: String,
     confirmPassword: String,
+    regDate:{
+        default: Date.now(),
+        type : Date
+    },
     email:{
         type :String ,
         default:""

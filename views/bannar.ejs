@@ -11,7 +11,7 @@
     <div class="continer">
         <div class="layer1">
             <div class="logo">
-                <img src="" alt="" class="logoimg">
+                <img src="/images/others/left-arrow.svg" alt="" class="logoimg">
             </div>
             <div class="searchBar">
                 <!-- <input type="text" placeholder="  search product" class="searchBar1"> -->
@@ -59,7 +59,7 @@
                                 <% for(let i = 0; i < products.length; i++) { %>
 
                                 <tr>
-                                    <td>1</td>
+                                    <td><%= i+1%></td>
                                     <td><%= products[i].bannerProduct %></td>
                                     <td><%= products[i].bannerHeading %></td>
                                     <td><%= products[i].bannerDescription %></td>
