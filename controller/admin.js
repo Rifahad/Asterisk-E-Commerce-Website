@@ -8,9 +8,9 @@ module.exports = {
     res.status(200).render("admin/addProducts");
   },
   addProductPost: async (req, res) => {
-    const productimg = req.file ? req.file.filename : "no image";
+    const productImage = req.file ? req.file.filename : "no image";
     try {
-      await productDetails.create({ ...req.body, productImage: productimg });
+      await productDetails.create({ ...req.body, productImage: productImage });
       res.redirect("/add-product");
     } catch (err) {
       console.error(err);
@@ -20,10 +20,9 @@ module.exports = {
   deleteProduct: async (req, res) => {
     try {
       const id = req.params.productId;
-      const product = await productDetails.findById(id);
       await productDetails.findByIdAndDelete(id);
       res.redirect("/products");
-    } catch (error) {
+    } catch(error){
       res.status(500).send("Error deleting product");
     }
   },
@@ -32,9 +31,9 @@ module.exports = {
   },
   addBannerPost: async (req, res) => {
     console.log(req.body);
-    const productimg = req.file ? req.file.filename : "no image";
+    const productImage = req.file ? req.file.filename : "no image";
     try {
-      await banner.create({ ...req.body, productImage: productimg });
+      await banner.create({ ...req.body, productImage: productImage });
       res.redirect("/add-banner");
     } catch (err) {
       console.error(err);
