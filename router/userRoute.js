@@ -1,14 +1,11 @@
 const express = require("express");
 const router = express.Router();
+
 const generateMail = require("../utility/nodemailer");
 const validating = require("../middleware/validateRegistration");
 
-const {
-    home,
-} = require("../controller/user");
-
+const user= require("../controller/user");
 const auth = require("../controller/auth");
-
 
 router
     .get("/", auth.login)
@@ -26,6 +23,6 @@ router
     .get("/forgot", auth.forgotPassword)
     .post("/", auth.forgotPasswordPost)
 
-    .get("/home",home);
+    .get("/home",user.home);
 
-module.exports = router;
+module.exports=router;

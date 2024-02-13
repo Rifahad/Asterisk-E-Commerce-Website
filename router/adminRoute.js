@@ -6,19 +6,7 @@ const upload = multer({ storage })
 
 
 
-const {
-    addCategory,
-    addCategoryPost,
-    addProduct,
-    addProductPost,
-    // editProduct,
-    deleteProduct,
-    addBanner,
-    addBannerPost,
-    addCoupon,
-    addCouponPost,
-    logout
-}=require("../controller/admin")
+const admin=require("../controller/admin")
 
 const auth=require("../controller/auth")
 const view=require("../controller/adminViews")
@@ -33,30 +21,30 @@ router.get("/register",auth.registerAccount)
       .get("/dashboard",view.dashboard)
 
       .get("/category",view.category)
-      .get("/add-category",addCategory)
-      .post('/add-category',upload.single('productImage'),addCategoryPost)
+      .get("/add-category",admin.addCategory)
+      .post('/add-category',upload.single('productImage'),admin.addCategoryPost)
       
       .get("/orders",view.orders)
 
       .get('/products',view.products)
     //   .get('/product/edit/:id',editProduct)
-      .get("/product/delete/:productId",deleteProduct)
+      .get("/product/delete/:productId",admin.deleteProduct)
 
 
-      .get("/add-product",addProduct)
-      .post("/add-product",upload.single('productImage'),addProductPost)
+      .get("/add-product",admin.addProduct)
+      .post("/add-product",upload.single('productImage'),admin.addProductPost)
 
       .get("/banner" , view.banner)
-      .get("/add-banner",addBanner)
-      .post("/add-banner",upload.single('productImage'),addBannerPost)
+      .get("/add-banner",admin.addBanner)
+      .post("/add-banner",upload.single('productImage'),admin.addBannerPost)
 
       .get("/coupon",view.coupon)
-      .get("/add-coupon",addCoupon)
-      .post("/add-coupon",addCouponPost)
+      .get("/add-coupon",admin.addCoupon)
+      .post("/add-coupon",admin.addCouponPost)
 
       .get("/users",view.users)
 
-      .get("/logout",logout)
+      .get("/logout",admin.logout)
 
 module.exports=router
 
