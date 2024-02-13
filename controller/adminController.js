@@ -4,18 +4,6 @@ const couponDetails=require("../model/coupon")
 const categoryDetails=require("../model/categoryModel")
 
 module.exports={
-    registerAccount:(req,res)=>{    
-        
-    },
-    registerAccountPost:(req,res)=>{
-
-    },
-    loginAdmin:(req,res)=>{
-
-    },
-    loginAdminPost:(req,res)=>{ 
-
-    },
     dashboard:(req,res)=>{
         res.status(200).render("dashboard")
     },

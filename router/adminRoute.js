@@ -7,10 +7,6 @@ const upload = multer({ storage })
 
 
 const {
-    registerAccount,
-    registerAccountPost,
-    loginAdmin,
-    loginAdminPost,
     dashboard,
     category,
     addCategory,
@@ -29,15 +25,16 @@ const {
     addCouponPost,
     users,
     logout
-
 }=require("../controller/adminController")
 
-    
-router.get("/register",registerAccount)
-      .post("/login-admin",registerAccountPost)
+const auth=require("../controller/authController")
 
-      .get("login-admin",loginAdmin)
-      .post("/dashboard",loginAdminPost)
+    
+router.get("/register",auth.registerAccount)
+      .post("/login-admin",auth.registerAccountPost)
+
+      .get("login-admin",auth.loginAdmin)
+      .post("/dashboard",auth.loginAdminPost)
 
       .get("/dashboard",dashboard)
 
