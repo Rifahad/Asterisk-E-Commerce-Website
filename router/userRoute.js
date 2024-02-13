@@ -5,9 +5,9 @@ const validating = require("../middleware/validateRegistration");
 
 const {
     home,
-} = require("../controller/userController");
+} = require("../controller/user");
 
-const auth = require("../controller/authController");
+const auth = require("../controller/auth");
 
 
 router

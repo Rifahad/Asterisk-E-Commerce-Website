@@ -1,4 +1,4 @@
-const userDetails=require("../model/registerModel")
+const userDetails=require("../model/register")
 const bcrypt=require("bcrypt")
 
 const passwordSymbols = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;;

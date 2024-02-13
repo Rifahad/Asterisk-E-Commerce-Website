@@ -18,10 +18,10 @@ const {
     addCoupon,
     addCouponPost,
     logout
-}=require("../controller/adminController")
+}=require("../controller/admin")
 
-const auth=require("../controller/authController")
-const view=require("../controller/adminViewsController")
+const auth=require("../controller/auth")
+const view=require("../controller/adminViews")
 
     
 router.get("/register",auth.registerAccount)

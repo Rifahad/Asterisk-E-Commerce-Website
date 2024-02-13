@@ -1,4 +1,4 @@
-const UserModel = require("../model/registerModel");
+const UserModel = require("../model/register");
 require("dotenv").config();
 const bcrypt=require("bcrypt")
 

@@ -1,7 +1,7 @@
-const productDetails = require("../model/productsDetailsModel");
-const banner = require("../model/bannerModel");
+const productDetails = require("../model/products");
+const banner = require("../model/banner");
 const couponDetails = require("../model/coupon");
-const categoryDetails = require("../model/categoryModel");
+const categoryDetails = require("../model/category");
 
 module.exports = {
   addProduct: (req, res) => {
