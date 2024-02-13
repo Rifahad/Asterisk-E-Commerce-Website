@@ -7,27 +7,21 @@ const upload = multer({ storage })
 
 
 const {
-    dashboard,
-    category,
     addCategory,
     addCategoryPost,
-    orders,
-    products,
     addProduct,
     addProductPost,
     // editProduct,
     deleteProduct,
-    banner,
     addBanner,
     addBannerPost,
-    coupon,
     addCoupon,
     addCouponPost,
-    users,
     logout
 }=require("../controller/adminController")
 
 const auth=require("../controller/authController")
+const view=require("../controller/adminViewsController")
 
     
 router.get("/register",auth.registerAccount)
@@ -36,15 +30,15 @@ router.get("/register",auth.registerAccount)
       .get("login-admin",auth.loginAdmin)
       .post("/dashboard",auth.loginAdminPost)
 
-      .get("/dashboard",dashboard)
+      .get("/dashboard",view.dashboard)
 
-      .get("/category",category)
+      .get("/category",view.category)
       .get("/add-category",addCategory)
       .post('/add-category',upload.single('productImage'),addCategoryPost)
       
-      .get("/orders",orders)
+      .get("/orders",view.orders)
 
-      .get('/products',products)
+      .get('/products',view.products)
     //   .get('/product/edit/:id',editProduct)
       .get("/product/delete/:productId",deleteProduct)
 
@@ -52,15 +46,15 @@ router.get("/register",auth.registerAccount)
       .get("/add-product",addProduct)
       .post("/add-product",upload.single('productImage'),addProductPost)
 
-      .get("/banner" , banner )
+      .get("/banner" , view.banner)
       .get("/add-banner",addBanner)
       .post("/add-banner",upload.single('productImage'),addBannerPost)
 
-      .get("/coupon",coupon)
+      .get("/coupon",view.coupon)
       .get("/add-coupon",addCoupon)
       .post("/add-coupon",addCouponPost)
 
-      .get("/users",users)
+      .get("/users",view.users)
 
       .get("/logout",logout)
 

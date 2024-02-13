@@ -1,23 +1,23 @@
-const mongoose=require("mongoose")
-const { use } = require("../router/userRoute")
+const mongoose = require("mongoose");
+const { use } = require("../router/userRoute");
 
-const  userSchema = new mongoose.Schema({
-    fullName: String,
-    phoneNumber:Number,
-    password: String,
-    confirmPassword: String,
-    regDate:{
-        default: Date.now(),
-        type : Date
-    },
-    email:{
-        type :String ,
-        default:""
-    },
-    otp:{
-        type:Boolean,
-        default:false
-    }
-})
+const userSchema = new mongoose.Schema({
+  fullName: String,
+  phoneNumber: Number,
+  password: String,
+  confirmPassword: String,
+  regDate: {
+    default: Date.now(),
+    type: Date,
+  },
+  email: {
+    type: String,
+    default: "",
+  },
+  otp: {
+    type: Boolean,
+    default: false,
+  },
+});
 
-module.exports=mongoose.model("registeredData",userSchema)
+module.exports = mongoose.model("registeredData", userSchema);

@@ -12,7 +12,7 @@ module.exports = {
   //user authentication
 
   signup: (req, res) => {
-    res.render("registerNewAccount");
+    res.render("user/registerNewAccount");
   },
   signupPost: async (req, res) => {
     console.log(req.body);
@@ -24,7 +24,7 @@ module.exports = {
   },
 
   emailVerify: (req, res) => {
-    res.render("emailVerify");
+    res.render("user/emailVerify");
   },
   emailVerifyPost: async (req, res) => {
     let { email } = req.body;
@@ -40,7 +40,7 @@ module.exports = {
   },
 
   otp: (req, res) => {
-    res.render("verifyOtp");
+    res.render("user/verifyOtp");
   },
 
   otpPost: async (req, res) => {
@@ -62,11 +62,11 @@ module.exports = {
   },
 
   forgotPassword: (req, res) => {
-    res.render("forgotPassword");
+    res.render("user/forgotPassword");
   },
   forgotPasswordPost: (req, res) => {},
   login: (req, res) => {
-    res.render("userLogin");
+    res.render("user/userLogin");
   },
 
   loginPost: async (req, res) => {

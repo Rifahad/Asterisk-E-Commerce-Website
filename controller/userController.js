@@ -6,7 +6,7 @@ const bcrypt=require("bcrypt")
 
 module.exports = {
   home:(req, res) => {
-    res.render("userHomePage")
+    res.render("user/userHomePage")
   },  
   account: (req, res) => {
 
