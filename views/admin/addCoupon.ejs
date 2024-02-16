@@ -52,10 +52,6 @@
                                     <input type="tel" id="minOrderAmount" name="minOrderAmount" placeholder="Enter Minimum Order Amount">
                                 </div>
                                 <div class="form-group">
-                                    <label for="maxOrderAmount">Maximum Order Amount</label>
-                                    <input type="tel" id="maxOrderAmount" name="maxOrderAmount" placeholder="Enter Maximum Order Amount">
-                                </div>
-                                <div class="form-group">
                                     <label for="startingDate">Starting Date</label>
                                     <input type="date" id="startingDate" name="startingDate">
                                 </div>
@@ -77,4 +73,16 @@
         </div>
     </div>
 </body>
+<script>
+    function previewImage(input) {
+        var file = input.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 </html>

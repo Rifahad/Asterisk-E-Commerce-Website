@@ -28,7 +28,7 @@ router.get("/register",auth.registerAccount)
 
       .get('/products',view.products)
     //   .get('/product/edit/:id',editProduct)
-      .get("/product/delete/:productId",admin.deleteProduct)
+      .delete("/product/delete/:productId",admin.deleteProduct)
 
 
       .get("/add-product",admin.addProduct)
@@ -37,10 +37,11 @@ router.get("/register",auth.registerAccount)
       .get("/banner" , view.banner)
       .get("/add-banner",admin.addBanner)
       .post("/add-banner",upload.single('productImage'),admin.addBannerPost)
+      .delete("/banner/delete/:bannerId",admin.deleteBanner)
 
       .get("/coupon",view.coupon)
       .get("/add-coupon",admin.addCoupon)
-      .post("/add-coupon",admin.addCouponPost)
+      .post("/add-coupon",upload.single('productImage'),admin.addCouponPost)
 
       .get("/users",view.users)
 

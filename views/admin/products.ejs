@@ -57,13 +57,13 @@
 
                             <tbody>
                                 <% for(let i = 0; i < products.length; i++) { %>
-                                <tr>
+                                <tr class="row_<%=products[i]._id%>">
                                     <td>
                                         <div class="img_product">
                                             <img src="/asset/<%= products[i].productImage%>" alt="" width="100%" height="100%">
                                         </div>
                                     </td>
-                                    <td><%= products[i].productName %></td>
+                                    <td><%= products[i].productName%></td>
                                     <td><%= products[i].price %></td>
                                     <td><%= products[i].discount %></td>
                                     <td><%= products[i].quantity%></td>
@@ -71,7 +71,7 @@
                                         <button type="submit" onclick="window.location.href='/product/edit/<%= products[i]._id%>'" class="edit-delete">EDIT</button>
                                     </td>
                                     <td>
-                                        <button type="submit" onclick="window.location.href='/product/delete/<%= products[i]._id%>'" class="edit-delete">DELETE</button>
+                                        <button type="submit" onclick="deleteProduct(event,'<%=products[i]._id%>')" class="edit-delete">DELETE</button>
                                     </td>
                                 </tr>
                                 <% } %>  
@@ -82,5 +82,56 @@
             </div>
         </div>
     </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
+<script>
+    async function deleteProduct (event,id) {
+        event.preventDefault();
+        const response=await axios.delete('/product/delete/'+ id);
+        console.log(response);
+        try {
+            const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: false
+            });
+            swalWithBootstrapButtons.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
+            }).then(async (result) => {
+            if (result.isConfirmed) {
+                if(response.status ==200){
+                document.querySelector('.row_'+id).remove()
+            }else{
+                console.log("deletion failed at product")
+            }
+            swalWithBootstrapButtons.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire({
+                    title: "Cancelled",
+                    text: "Your imaginary file is safe :)",
+                    icon: "error"
+                });
+            }
+        });
+    } catch (error) {
+        console.log("Error: " + error);
+    }
+    }
+</script>
 </html>

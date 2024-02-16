@@ -15,7 +15,6 @@ submit_Button.addEventListener("click",async(event)=>{
         if(result.success){
             window.location.href= "/login"
         }
-
     }catch (error){
         console.log(error+"forgot clientSide")
     }

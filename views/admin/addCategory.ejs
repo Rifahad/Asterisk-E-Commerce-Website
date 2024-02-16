@@ -34,7 +34,7 @@
             </div>
             <div class="content_part">
 
-                <form action="/add-category" method="post">
+                <form action="/add-category" method="post" enctype="multipart/form-data">
                     <div class="frame">
                         <div class="category_gap_div">
                             <div class="category_div">
@@ -42,18 +42,22 @@
                                 <div class="category_img_div">      
                                     <div class="form-group img_centr">
                                         <div class="category_image_space">
-                                            <img src="" alt="">
+                                            <img src="" alt="" id="imagePreview" width="100%" height="100%">
                                         </div>
                                        <div class="category_image_buttn">
                                           Choose Image
-                                        <input type="file" id="productImage" name="productImage">
+                                        <input type="file" id="productImage" name="productImage" onchange="previewImage(this)">
                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="categoryName">Category Name</label>
-                                    <input type="text" id="categoryName" name="categoryName" placeholder="Enter category name">
+                                    <input type="text" id="categoryName" name="categoryName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="categoryName">Sub Category</label>
+                                    <input type="text" id="subCategory" name="subCategory" required>
                                 </div>
                                 <div style="display:flex; justify-content: center;">
                                     <button type="submit">Submit</button>
@@ -69,4 +73,16 @@
         </div>
     </div>
 </body>
+<script>
+    function previewImage(input) {
+        var file = input.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imagePreview').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 </html>

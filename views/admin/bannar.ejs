@@ -58,18 +58,18 @@
                             <tbody>
                                 <% for(let i = 0; i < products.length; i++) { %>
 
-                                <tr>
+                                <tr class="row<%=products[i]._id%>">
                                     <td><%= i+1%></td>
                                     <td><%= products[i].bannerProduct %></td>
                                     <td><%= products[i].bannerHeading %></td>
                                     <td><%= products[i].bannerDescription %></td>
-                                    <td><%= products[i].startingDate %></td>                                                                               
+                                    <td><%= products[i].startingDate%></td>                                                                               
                                     <td><%= products[i].endingDate %></td>
                                     <td>
                                         <button type="submit" onclick="window.location.href='/product/edit/<%= products[i]._id%>'" class="edit-delete">EDIT</button>
                                     </td>
                                     <td>
-                                        <button type="submit" onclick="window.location.href='/product/delete/<%= products[i]._id%>'" class="edit-delete">DELETE</button>
+                                        <button type="submit" onclick="deleteBanner(event,'<%=products[i]._id%>')" class="edit-delete">DELETE</button>
                                     </td>
                                 </tr>
                                 <% } %>  
@@ -78,10 +78,24 @@
                         </table>
                     </div>
                 </div>
-
-                         
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+    async function deleteBanner(event,id){
+        event.preventDefault()
+        try {
+            let response=await axios.delete('/banner/delete/'+id);
+            if (response.status == 200) {
+                document.querySelector(".row"+id).remove();
+            }
+        } catch (error) {
+            console.log("error found at banner delete"+error)
+        }
+
+    }
+</script>
 </html>

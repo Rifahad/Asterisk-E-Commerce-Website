@@ -2,7 +2,7 @@ const productDetails = require("../model/products");
 const banner = require("../model/banner");
 const couponDetails = require("../model/coupon");
 const categoryDetails = require("../model/category");
-
+const users=require("../model/register")
 module.exports = {
   dashboard: (req, res) => {
     res.status(200).render("admin/dashboard");
@@ -33,8 +33,9 @@ module.exports = {
   coupon: (req, res) => {
     res.status(200).render("admin/coupon");
   },
-  users: (req, res) => {
-    res.status(200).render("admin/users");
+  users:async (req, res) => {
+    const user=await users.find()
+    res.status(200).render("admin/users",{data:user});
   },
   category: (req, res) => {
     res.status(200).render("admin/category");

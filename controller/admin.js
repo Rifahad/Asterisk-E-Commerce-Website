@@ -21,7 +21,7 @@ module.exports = {
     try {
       const id = req.params.productId;
       await productDetails.findByIdAndDelete(id);
-      res.redirect("/products");
+      res.status(200).json({ message: "Deleted Successfully" });
     } catch(error){
       res.status(500).send("Error deleting product");
     }
@@ -38,6 +38,15 @@ module.exports = {
     } catch (err) {
       console.error(err);
       res.status(500).send("Error adding product");
+    }
+  },
+  deleteBanner: async (req, res) => {
+    try {
+      const id = req.params.bannerId;
+      await banner.findByIdAndDelete(id);
+      res.status(200).json({ message: "Deleted Successfully" });
+    } catch(error){
+      res.status(500).send("Error deleting banner");
     }
   },
   addCoupon: (req, res) => {

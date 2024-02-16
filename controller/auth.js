@@ -19,7 +19,6 @@ module.exports = {
     const userStore = await UserModel.create(req.body);
     const { phoneNumber } = req.body;
     req.session.phone = phoneNumber;
-
     res.redirect("/email");
   },
 
@@ -83,9 +82,9 @@ module.exports = {
         passwordcheck &&
         account.otp == true
       ) {
-        res.redirect("/home");
+        res.status(200).redirect("/home");
       } else {
-        res.redirect("/");
+        res.status(200).redirect("/");
       }
     } catch (error) {
       res.error(error).status(404);
