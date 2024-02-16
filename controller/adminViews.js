@@ -13,7 +13,6 @@ module.exports = {
   products: async (req, res) => {
     try {
       const result = await productDetails.find();
-      console.log(result);
       res.status(200).render("admin/products", { products: result });
     } catch (error) {
       console.error("Error fetching products:", error);

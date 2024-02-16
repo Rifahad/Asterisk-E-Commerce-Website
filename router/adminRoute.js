@@ -27,12 +27,11 @@ router.get("/register",auth.registerAccount)
       .get("/orders",view.orders)
 
       .get('/products',view.products)
-    //   .get('/product/edit/:id',editProduct)
       .delete("/product/delete/:productId",admin.deleteProduct)
 
 
       .get("/add-product",admin.addProduct)
-      .post("/add-product",upload.single('productImage'),admin.addProductPost)
+      .post("/add-product",upload.array('productImage'),admin.addProductPost)
 
       .get("/banner" , view.banner)
       .get("/add-banner",admin.addBanner)

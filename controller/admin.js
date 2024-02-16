@@ -2,13 +2,14 @@ const productDetails = require("../model/products");
 const banner = require("../model/banner");
 const couponDetails = require("../model/coupon");
 const categoryModel = require("../model/category");
+const fs=require('fs')
 
 module.exports = {
   addProduct: (req, res) => {
     res.status(200).render("admin/addProducts");
   },
   addProductPost: async (req, res) => {
-    const productImage = req.file ? req.file.filename : "no image";
+    const productImage = req.files.map(img=>img.filename);
     try {
       await productDetails.create({ ...req.body, productImage: productImage });
       res.redirect("/add-product");
@@ -20,6 +21,13 @@ module.exports = {
   deleteProduct: async (req, res) => {
     try {
       const id = req.params.productId;
+      const product = await productDetails.findOne({ _id:id});
+      product.productImage.forEach(element => {
+        const imagePath  ='./public/'+'asset/'+element  
+        if(fs.existsSync(imagePath)){
+            fs.unlinkSync(imagePath)
+          }
+      });
       await productDetails.findByIdAndDelete(id);
       res.status(200).json({ message: "Deleted Successfully" });
     } catch(error){
