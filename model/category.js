@@ -1,8 +1,8 @@
 const mongoose=require("mongoose")
 
 const categoryDetails=new mongoose.Schema({
-    productImage: String,
-    categoryName:String,
+    categoryImage: String,
+    category:String,
     subCategory:Array,
 })
 

@@ -1,7 +1,7 @@
 const productDetails = require("../model/products");
 const banner = require("../model/banner");
 const couponDetails = require("../model/coupon");
-const categoryDetails = require("../model/category");
+const categoryModel = require("../model/category");
 
 module.exports = {
   addProduct: (req, res) => {
@@ -60,8 +60,39 @@ module.exports = {
     res.status(200).render("admin/addCategory");
   },
   addCategoryPost: async (req, res) => {
-    await categoryDetails.create(req.body);
-  },
+    try{
+      console.log("ojdlkds;ip");
+      const { category, subCategory} = req.body
+      const categoryImage = req.file.filename
+      const subCategoryArray = JSON.parse(subCategory)
+      const categories = await categoryModel.find()
+      const existCategory = categories.find( val => val.category === category)
+      if(!category || !categoryImage){
+          return res.status(294).json({ success:false, missingData:true, errorMsg:"Please provide missing datas"})
+      }
+      else if(existCategory){
+          return res.status(289).json({success:false, exist:true, errorMsg:"Category already exist"})
+      }
+      else if(category && categoryImage && subCategoryArray.length > 0){
+          const newSchema = new categoryModel({
+              category,
+              categoryImage,
+              subCategory : subCategoryArray
+          })
+          await newSchema.save()
+          return res.status(200).json({ success:true, allData:true })
+      }
+      else if(category && categoryImage && subCategoryArray.length == 0){
+          const newSchema = new categoryModel({
+              category,
+              categoryImage
+          })
+          await newSchema.save()
+          return res.status(200).json({ success:true, data:true })
+      }
+  } catch (error){
+      console.log("category post ",error.message);
+  }  },
   logout: (req, res) => {
     req.session.destroy();
   },

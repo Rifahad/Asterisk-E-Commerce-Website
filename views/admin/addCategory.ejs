@@ -6,6 +6,8 @@
     <title>ADD CATEGORY</title>
     <link rel="stylesheet" href="/css/adminCss/products.css">
     <link rel="stylesheet" href="/css/adminCss/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
     <div class="continer">
@@ -34,41 +36,46 @@
             </div>
             <div class="content_part">
 
-                <form action="/add-category" method="post" enctype="multipart/form-data">
+                <form method="post" id="category_form">
                     <div class="frame">
                         <div class="category_gap_div">
                             <div class="category_div">
-
-                                <div class="category_img_div">      
-                                    <div class="form-group img_centr">
+                                <div class="category_img_div">
+                                    <div class="form-group category_img_centr">
                                         <div class="category_image_space">
-                                            <img src="" alt="" id="imagePreview" width="100%" height="100%">
+                                            <img src="" alt="" id="imagePreview" style="width: 100%; height: 100%;">
                                         </div>
                                        <div class="category_image_buttn">
                                           Choose Image
-                                        <input type="file" id="productImage" name="productImage" onchange="previewImage(this)">
+                                        <input type="file" id="categoryImage" onchange="previewImage(this)" name="categoryImage">
                                        </div>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="categoryName">Category Name</label>
-                                    <input type="text" id="categoryName" name="categoryName" required>
+                                    <input type="text" id="categoryName" name="category" placeholder="Enter category name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="categoryName">Sub Category</label>
-                                    <input type="text" id="subCategory" name="subCategory" required>
+                                    <label for="categoryName">Sub-Category Name</label>
+                                    <div id="subcatError" style="color: brown;"></div>
+                                    <div style=" display: flex;">
+                                        <div class="subcategoryDropdown" style="width: 100%; display: block; position: relative;">
+                                            <input type="text" id="subcategoryName" name="subCategory" placeholder="Add sub-category"  onfocus="toggleDropdown()" style="width: calc(100% - 2.5rem);">
+                                            <div id="dropdownList" class="li_div">
+                                                <ul></ul>
+                                            </div>
+                                        </div>
+                                        <button id="sub-category_submit_btn" style="width: 2.5rem; display: flex;justify-content: center; margin-left: .5rem;">Add</button>
+                                    </div>
                                 </div>
+                                <div id="errorMessage" style="color: brown; margin-bottom: .5rem;"></div>
                                 <div style="display:flex; justify-content: center;">
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" id="category_submit_btn">Submit</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </form>  
-
-                         
+                </form>
             </div>
         </div>
     </div>
@@ -85,4 +92,5 @@
         }
     }
 </script>
+<script src="/js/addCategory.js"></script>
 </html>

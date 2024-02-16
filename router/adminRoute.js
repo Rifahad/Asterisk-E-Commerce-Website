@@ -22,7 +22,7 @@ router.get("/register",auth.registerAccount)
 
       .get("/category",view.category)
       .get("/add-category",admin.addCategory)
-      .post('/add-category',upload.single('productImage'),admin.addCategoryPost)
+      .post('/add-category',upload.single('categoryImage'),admin.addCategoryPost)
       
       .get("/orders",view.orders)
 

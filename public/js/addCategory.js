@@ -126,7 +126,7 @@ categoryBtn.addEventListener("click", async (event)=>{
                 errormsg.innerHTML = ""
             }, 4000);
         }else{
-            const response = await axios.post("/admin/category/add_Category",categoryForm,{
+            const response = await axios.post("/add-category",categoryForm,{
                 headers: {
                     "content-Type" : "multipart/form-data"
                 }
