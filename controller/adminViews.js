@@ -36,7 +36,8 @@ module.exports = {
     const user=await users.find()
     res.status(200).render("admin/users",{data:user});
   },
-  category: (req, res) => {
-    res.status(200).render("admin/category");
+  category: async(req,res) => {
+    const data=await  categoryDetails.find()
+    res.status(200).render("admin/category",{data:data});
   },
 };

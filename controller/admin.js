@@ -2,11 +2,13 @@ const productDetails = require("../model/products");
 const banner = require("../model/banner");
 const couponDetails = require("../model/coupon");
 const categoryModel = require("../model/category");
+const userModel=require('../model/register')
 const fs=require('fs')
 
 module.exports = {
-  addProduct: (req, res) => {
-    res.status(200).render("admin/addProducts");
+  addProduct:async (req, res) => {
+    const categoryData=await categoryModel.find()
+    res.status(200).render("admin/addProducts",{data:categoryData});
   },
   addProductPost: async (req, res) => {
     const productImage = req.files.map(img=>img.filename);
@@ -16,6 +18,50 @@ module.exports = {
     } catch (err) {
       console.error(err);
       res.status(500).send("Error adding product");
+    }
+  },
+  editProduct:async (req,res)=>{
+    let id=req.params.productId;
+    const data=await productDetails.findById(id)
+    const categoryData=await categoryModel.find()
+    res.status(200).render("admin/editProduct",{data:categoryData,product:data})
+  },
+  editProductPost:async (req,res)=>{
+    try {
+      let id=req.params.productId;
+      const oldImage=await productDetails.findOne({_id:id})
+      const {productName,price,discount,stock,category,subCategory,deliveryDate,colour,size,quantity,description} = req.body;
+      let image;
+      if(req.files.length > 0){
+        oldImage.productImage.forEach(element => {
+          const imagePath  ='./public/'+'asset/'+element  
+          if(fs.existsSync(imagePath)){
+            fs.unlinkSync(imagePath)
+          }
+        });
+         image = req.files.map((img)=>img.filename);
+      }else{
+        image=oldImage.productImage.map((img)=>img)
+      }
+     const data =  await productDetails.findByIdAndUpdate(id, {
+          $set: {
+              productImage: image,
+              productName: productName,
+              price:price,
+              discount: discount,
+              stock:stock,
+              category:category,
+              subCategory:subCategory,
+              deliveryDate:deliveryDate,
+              colour:colour,
+              size:size,
+              quantity:quantity,
+              description:description,
+          }
+        });      
+      res.redirect("/products")
+    } catch (error) {
+      res.status(400).json({message:"No file uploaded"})
     }
   },
   deleteProduct: async (req, res) => {
@@ -45,7 +91,7 @@ module.exports = {
       res.redirect("/add-banner");
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error adding product");
+      res.status(500).send("Error adding banner");
     }
   },
   deleteBanner: async (req, res) => {
@@ -61,7 +107,6 @@ module.exports = {
     res.status(200).render("admin/addCoupon");
   },
   addCouponPost: async (req, res) => {
-    console.log(req.body);
     await couponDetails.create(req.body);
   },
   addCategory: (req, res) => {
@@ -69,7 +114,6 @@ module.exports = {
   },
   addCategoryPost: async (req, res) => {
     try{
-      console.log("ojdlkds;ip");
       const { category, subCategory} = req.body
       const categoryImage = req.file.filename
       const subCategoryArray = JSON.parse(subCategory)
@@ -100,8 +144,24 @@ module.exports = {
       }
   } catch (error){
       console.log("category post ",error.message);
-  }  },
-  logout: (req, res) => {
+  }  
+},
+blockUser:async(req,res)=>{
+  const userid=req.params.userId;
+  const userData=await userModel.findOne({_id:userid});
+  if(userData.isBlocked==false){
+    await userModel.updateOne({_id:userid},{isBlocked:true})
+    res.status(200).json({ message: "Unblock" });
+  }else{
+    await userModel.updateOne({_id:userid},{isBlocked:false})
+    res.status(200).json({ message: "block" });
+
+
+  }
+},
+
+
+logout: (req, res) => {
     req.session.destroy();
   },
 };

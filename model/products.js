@@ -8,7 +8,7 @@ const productDetails=new mongoose.Schema({
     stock: Number,
     category: String,
     subCategory: String,
-    deliveryDate: Date,
+    deliveryDate: String,
     colour: String,
     size: String,
     quantity: Number,

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADD PRODUCTS</title>
+    <title>EDIT PRODUCTS</title>
     <link rel="stylesheet" href="/css/adminCss/products.css">
     <link rel="stylesheet" href="/css/adminCss/main.css">
 </head>
@@ -34,34 +34,34 @@
             </div>
             <div class="content_part">
 
-                <form action="/add-product" method="post" enctype="multipart/form-data">
+                <form action="/product/edit/<%=product._id %>" method="post" enctype="multipart/form-data">
                     <div class="frame">
                         <div class="gap_div">
                             <div class="card_div">
                                 <div class="form-group">
-                                    <label for="productName">Product Name</label>
-                                    <input type="text" id="productName" name="productName" placeholder="Enter Product Name" required>
+                                    <label for="productName">Product Name</label>   
+                                    <input type="text" id="productName" name="productName" value="<%= product.productName %>" required>
                                 </div>
-                
+
                                 <div class="form-group">
                                     <label for="price">Price</label>
-                                    <input type="number" id="price" name="price" placeholder="Enter price" required>
+                                    <input type="number" id="price" name="price" value="<%= product.price %>" required>
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="discount">Discount</label>
-                                    <input type="number" id="discount" name="discount" placeholder="Enter discount">
+                                    <input type="number" id="discount" name="discount" value="<%= product.discount %>">
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="stock">Stock</label>
-                                    <input type="number" id="stock" name="stock" placeholder="Enter stock" required>
+                                    <input type="number" id="stock" name="stock" value="<%= product.stock %>" required>
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="category">Category</label>
                                     <select id="category" name="category" required>
-                                        <option value="" selected disabled>Select category</option>
+                                        <option value="" selected disabled><%= product.category %></option>
                                         <% for (var i = 0; i < data.length; i++) { %>
                                             <option value="<%= data[i].category %>" style="background-color: black; color: white;"><%= data[i].category %></option>
                                         <% } %>
@@ -71,7 +71,7 @@
                                 <div class="form-group">
                                     <label for="subCategory">Sub Category</label>
                                     <select name="subCategory" id="subCategory">
-                                        <option value="" selected disabled style="background-color: black; color: white;">Select sub category</option>
+                                        <option value="" selected disabled style="background-color: black; color: white;"><%= product.subCategory %></option>
                                         <% for (var i = 0; i < data.length; i++) { %>
                                             <% for (var j = 0; j < data[i].subCategory.length; j++) { %>
                                             <option value="Shirts" style="background-color: black; color: white;"><%= data[i].subCategory[j]%></option>
@@ -82,13 +82,13 @@
                 
                                 <div class="form-group">
                                     <label for="deliveryDate">Delivery Date</label>
-                                    <input type="date" id="deliveryDate" name="deliveryDate" placeholder="Enter delivery date">
+                                    <input type="date" id="deliveryDate" name="deliveryDate" placeholder="Enter delivery date" value="<%= product.deliveryDate %>">
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="colour">Colour</label>
                                     <select name="colour" id="colour">
-                                        <option value="" selected disabled>Select color</option>
+                                        <option value="" selected disabled><%= product.colour %></option>
                                         <option value="#ff0000" style="color: #ff0000;">Red</option> 
                                         <option value="#0000ff" style="color: #0000ff;">Blue</option>
                                         <option value="#00ff00" style="color: #00ff00;">Green</option>
@@ -101,7 +101,7 @@
                                 <div class="form-group">
                                     <label for="size">Size</label>
                                     <select name="size" id="size">
-                                        <option value="default" selected disabled>Choose Size</option>                                            
+                                        <option value="default" selected disabled><%= product.size %></option>                                            
                                         <option value="small">Small</option>
                                         <option value="medium">Medium</option>
                                         <option value="large">Large</option>
@@ -112,12 +112,12 @@
                 
                                 <div class="form-group">
                                     <label for="quantity">Quantity</label>
-                                    <input type="text" id="quantity" name="quantity" placeholder="Enter quantity">
+                                    <input type="text" id="quantity" name="quantity" value="<%= product.quantity %>">
                                 </div>
                 
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea id="description" name="description" placeholder="Enter description"></textarea>
+                                    <textarea id="description" name="description" value="<%= product.description %>"></textarea>
                                 </div>
                                 <div class="form-group">
 
@@ -132,7 +132,7 @@
                                     Choose Image
                                     <input type="file" multiple name="productImage" id="" onchange="previewImage(this)">
                                 </div>
-                                <button type="submit" style="background-color: #000000; color: white; margin-top: 20px;">Submit</button>
+                                <button type="submit" id="submitBtn" style="background-color: #000000; color: white; margin-top: 20px;">Submit</button>
                             </div>
                             </div>
                         </div>

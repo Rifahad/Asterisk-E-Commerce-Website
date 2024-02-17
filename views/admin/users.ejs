@@ -6,6 +6,8 @@
     <title>USER DETAILS</title>
     <link rel="stylesheet" href="/css/adminCss/products.css">
     <link rel="stylesheet" href="/css/adminCss/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="continer">
@@ -58,7 +60,7 @@
                                 <td><%=data[i].email %></td>
                                 <td><%=data[i].phoneNumber %></td>
                                 <td><%=data[i].regDate.toDateString() %></td>
-                                <td><button type="submit" class="edit-delete">BLOCK</button></td>
+                                <td><button type="submit" class="edit-delete" id="changeText" onclick="blockUser(event,'<%=data[i]._id %>')">BLOCK</button></td>
                                 </tr>
                             <% }  %>
                            </tbody>
@@ -70,4 +72,48 @@
         </div>
     </div>
 </body>
+<script>
+    async function blockUser(event, userId) {
+        event.preventDefault();
+        try {
+            const response=await axios.patch('/users/block/'+userId)
+            console.log(response)
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "btn btn-success",
+                    cancelButton: "btn btn-danger"
+                },
+                buttonsStyling: false
+                });
+                swalWithBootstrapButtons.fire({
+                title: "Are you sure?",
+                text: "confirm blocking user!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, Block it!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: true
+                }).then(async (result) => {
+                    document.getElementById('changeText').textContent=response.data.message
+                if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire({
+                    title: "Deleted!",
+                    text: "Your user has been blocked.",
+                    icon: "success"
+                    });
+                } else if (
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire({
+                    title: "Cancelled",
+                    text: "Your user is safe :)",
+                    icon: "error"
+                    });
+                }
+                });
+        } catch (error) {
+            
+        }
+    }
+</script>
 </html>

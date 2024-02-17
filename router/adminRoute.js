@@ -28,6 +28,8 @@ router.get("/register",auth.registerAccount)
 
       .get('/products',view.products)
       .delete("/product/delete/:productId",admin.deleteProduct)
+      .get("/product/edit/:productId",admin.editProduct)
+      .post("/product/edit/:productId",upload.array('productImage'),admin.editProductPost)
 
 
       .get("/add-product",admin.addProduct)
@@ -43,6 +45,7 @@ router.get("/register",auth.registerAccount)
       .post("/add-coupon",upload.single('productImage'),admin.addCouponPost)
 
       .get("/users",view.users)
+      .patch("/users/block/:userId",admin.blockUser)
 
       .get("/logout",admin.logout)
 
