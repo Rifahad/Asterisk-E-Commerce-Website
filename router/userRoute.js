@@ -23,6 +23,13 @@ router
     .get("/forgot", auth.forgotPassword)
     .post("/", auth.forgotPasswordPost)
 
-    .get("/home",user.home);
+    .get("/home",user.home)
+
+    .get("/details/:id",user.detailedProduct)
+
+    .get("/userWhislist",user.wishlist)
+    .get("/userWishlist/:id",user.addToWishlist)
+
+    .get("/ usersAddToCart",user.cart)
 
 module.exports=router;

@@ -15,7 +15,6 @@ module.exports = {
     res.render("user/registerNewAccount");
   },
   signupPost: async (req, res) => {
-    console.log(req.body);
     const userStore = await UserModel.create(req.body);
     const { phoneNumber } = req.body;
     req.session.phone = phoneNumber;
@@ -28,8 +27,6 @@ module.exports = {
   emailVerifyPost: async (req, res) => {
     let { email } = req.body;
     let phone = req.session.phone;
-    console.log("Phone Number from Session:", phone);
-
     const emailUpdate = await UserModel.findOneAndUpdate(
       { phoneNumber: phone },
       { $set: { email: email } },
@@ -57,7 +54,6 @@ module.exports = {
     } else {
       res.redirect("/otp");
     }
-    // console.log(otp, generatedOtp)
   },
 
   forgotPassword: (req, res) => {
@@ -72,7 +68,6 @@ module.exports = {
     try {
       const { email, password } = req.body;
       console.log(email, password);
-      req.session.email = email;
       const account = await UserModel.findOne({ email });
       const passwordcheck = await bcrypt.compare(password, account.password);
       if (!account) {
@@ -82,6 +77,7 @@ module.exports = {
         passwordcheck &&
         account.otp == true
       ) {
+        req.session.userId=account._id;
         res.status(200).redirect("/home");
       } else {
         res.status(200).redirect("/");

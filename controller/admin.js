@@ -109,6 +109,18 @@ module.exports = {
   addCouponPost: async (req, res) => {
     await couponDetails.create(req.body);
   },
+  deleteCoupon:async (req,res)=>{
+    try {
+      deleteId=req.params.couponId;
+      console.log(deleteId)
+      await couponDetails.findByIdAndDelete(deleteId)
+      res.status(200).json({message:"deleted successfully"})
+    } catch (error) {
+      console.log(error)
+    }
+
+
+  },
   addCategory: (req, res) => {
     res.status(200).render("admin/addCategory");
   },
@@ -146,6 +158,16 @@ module.exports = {
       console.log("category post ",error.message);
   }  
 },
+deleteCategory:async (req,res)=>{
+  try {
+    const id = req.params.categoryId;
+    await categoryModel.findByIdAndDelete(id);
+    res.status(200).json({ message: "Deleted Successfully" });
+  } catch(error){
+    res.status(500).send("Error deleting category");
+  }
+},
+
 blockUser:async(req,res)=>{
   const userid=req.params.userId;
   const userData=await userModel.findOne({_id:userid});
@@ -155,11 +177,8 @@ blockUser:async(req,res)=>{
   }else{
     await userModel.updateOne({_id:userid},{isBlocked:false})
     res.status(200).json({ message: "block" });
-
-
   }
 },
-
 
 logout: (req, res) => {
     req.session.destroy();

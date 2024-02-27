@@ -7,5 +7,3 @@ const categoryDetails=new mongoose.Schema({
 })
 
 module.exports=mongoose.model("category",categoryDetails)
-
-

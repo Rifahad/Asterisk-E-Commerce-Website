@@ -3,6 +3,7 @@ const banner = require("../model/banner");
 const couponDetails = require("../model/coupon");
 const categoryDetails = require("../model/category");
 const users=require("../model/register")
+
 module.exports = {
   dashboard: (req, res) => {
     res.status(200).render("admin/dashboard");
@@ -29,8 +30,13 @@ module.exports = {
       res.status(500).send("Error fetching products");
     }
   },
-  coupon: (req, res) => {
-    res.status(200).render("admin/coupon");
+  coupon: async (req, res) => {
+    try{
+      const coupons=await couponDetails.find()
+      res.status(200).render("admin/coupon",{data:coupons});
+    }catch(error){
+      console.log("coupon view" + error)
+    }
   },
   users:async (req, res) => {
     const user=await users.find()

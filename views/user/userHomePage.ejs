@@ -48,7 +48,7 @@
               <div class="navigationnavbar">
                 <ul class="d-flex list-unstyled m-0 p-0 align-items-center">
                   <li>
-                    <a href="/"> Home </a>
+                    <a href="/home"> Home </a>
                   </li>
                   <li>
                     <a href="/earbuds"> Earbuds </a>
@@ -64,9 +64,6 @@
                   </li>
                   <li>
                     <a href="/smartWatch"> Smart Watch </a>
-                  </li>
-                  <li>
-                    <a href="/"> Shop By Category </a>
                   </li>
                 </ul>
               </div>
@@ -275,381 +272,38 @@
                     id="newlyLaunched"
                     class="newlyLaunched position-relative p-0 d-flex align-items-center list-unstyled"
                   >
+                  <% products.forEach(products=>{%>
                     <li>
-                      <a href="">
+                      <a href="/details/<%= products._id %>">
                         <div class="newItems">
                           <div class="productImg">
-                            <img src="./images/newlyLaunched/3.png" alt="" />
+                            <img src="/asset/<%=products.productImage[0] %>" alt="" />
                           </div>
                           <div class="text-area">
                             <div class="productTittle">
-                              <p>duopods a250</p>
+                              <p><%=products.productName %></p>
                             </div>
                             <div
                               class="discountPrice d-flex align-items-baseline"
                             >
-                              <p>₹1299</p>
+                              <p>₹<%=products.price %></p>
                               <p>₹2999</p>
                             </div>
                             <div class="property">
                               <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
                                 <p>Swift Charge Technology</p>
                               </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>Dual Connectivity</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>Powered By 13mm Powerful Drivers</p>
-                              </div>
-                            </div>
-                            <div class="colorOptions">
-                              <div class="d-flex align-items-center">
-                                <p>Colors</p>
-                                <div class="d-flex align-items-center">
-                                  <div class="bg-black"></div>
-                                  <div class="bg-white"></div>
-                                  <div class="bg-primary"></div>
-                                </div>
-                              </div>
                             </div>
                             <div class="shopOption">
                               <div class="d-flex align-items-center">
                                 <p>shop Now</p>
-                                <svg
-                                  width="18"
-                                  height="12"
-                                  viewBox="0 0 18 12"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <g clip-path="url(#clip0_28_66)">
-                                    <path
-                                      d="M1 1L6 6L1 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.65"
-                                      d="M6 1L11 6L6 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.4"
-                                      d="M11 1L16 6L11 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                  </g>
-                                  <defs>
-                                    <clipPath id="clip0_28_66">
-                                      <rect
-                                        width="18"
-                                        height="12"
-                                        fill="white"
-                                      />
-                                    </clipPath>
-                                  </defs>
-                                </svg>
                               </div>
                             </div>
                           </div>
                         </div>
                       </a>
                     </li>
-                    <li>
-                      <a href="">
-                        <div class="newItems">
-                          <div class="productImg">
-                            <img src="./images/newlyLaunched/2.png" alt="" />
-                          </div>
-                          <div class="text-area">
-                            <div class="productTittle">
-                              <p>COMMANDO Q9</p>
-                            </div>
-                            <div
-                              class="discountPrice d-flex align-items-baseline"
-                            >
-                              <p>₹1999</p>
-                              <p>₹3999</p>
-                            </div>
-                            <div class="property">
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>Pro Gaming Earbuds</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>35Ms Low Latency</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>Quad Mic ENC</p>
-                              </div>
-                            </div>
-                            <div class="colorOptions">
-                              <div class="d-flex align-items-center">
-                                <p>Colors</p>
-                                <div class="d-flex align-items-center">
-                                  <div class="bg-black"></div>
-                                  <div class="bg-white"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="shopOption">
-                              <div class="d-flex align-items-center">
-                                <p>shop Now</p>
-                                <svg
-                                  width="18"
-                                  height="12"
-                                  viewBox="0 0 18 12"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <g clip-path="url(#clip0_28_66)">
-                                    <path
-                                      d="M1 1L6 6L1 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.65"
-                                      d="M6 1L11 6L6 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.4"
-                                      d="M11 1L16 6L11 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                  </g>
-                                  <defs>
-                                    <clipPath id="clip0_28_66">
-                                      <rect
-                                        width="18"
-                                        height="12"
-                                        fill="white"
-                                      />
-                                    </clipPath>
-                                  </defs>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <div class="newItems">
-                          <div class="productImg">
-                            <img src="./images/newlyLaunched/2c.png" alt="" />
-                          </div>
-                          <div class="text-area">
-                            <div class="productTittle">
-                              <p>SOUNDBAR S48</p>
-                            </div>
-                            <div
-                              class="discountPrice d-flex align-items-baseline"
-                            >
-                              <p>₹3999</p>
-                              <p>₹13799</p>
-                            </div>
-                            <div class="property">
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>48 Watt Soundbar</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>External Subwoofer</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>2.1 Channel</p>
-                              </div>
-                            </div>
-                            <div class="colorOptions">
-                              <div class="d-flex align-items-center">
-                                <p>Colors</p>
-                                <div class="d-flex align-items-center">
-                                  <div class="bg-black"></div>
-                                  <div class="bg-white"></div>
-                                  <div class="bg-primary"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="shopOption">
-                              <div class="d-flex align-items-center">
-                                <p>shop Now</p>
-                                <svg
-                                  width="18"
-                                  height="12"
-                                  viewBox="0 0 18 12"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <g clip-path="url(#clip0_28_66)">
-                                    <path
-                                      d="M1 1L6 6L1 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.65"
-                                      d="M6 1L11 6L6 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.4"
-                                      d="M11 1L16 6L11 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                  </g>
-                                  <defs>
-                                    <clipPath id="clip0_28_66">
-                                      <rect
-                                        width="18"
-                                        height="12"
-                                        fill="white"
-                                      />
-                                    </clipPath>
-                                  </defs>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">
-                        <div class="newItems">
-                          <div class="productImg">
-                            <img src="./images/newlyLaunched/9.png" alt="" />
-                          </div>
-                          <div class="text-area">
-                            <div class="productTittle">
-                              <p>DUOPODS K2</p>
-                            </div>
-                            <div
-                              class="discountPrice d-flex align-items-baseline"
-                            >
-                              <p>₹1199</p>
-                              <p>₹2999</p>
-                            </div>
-                            <div class="property">
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>HDCalling with AI ENC</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>40 HRS Combine Playtime</p>
-                              </div>
-                              <div>
-                                <img
-                                  src="./images/newlyLaunched/hexagon-list-icon.svg"
-                                  alt=""
-                                />
-                                <p>13mm Electroplated Drivers</p>
-                              </div>
-                            </div>
-                            <div class="colorOptions">
-                              <div class="d-flex align-items-center">
-                                <p>Colors</p>
-                                <div class="d-flex align-items-center">
-                                  <div class="bg-black"></div>
-                                  <div class="bg-white"></div>
-                                  <div class="bg-primary"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="shopOption">
-                              <div class="d-flex align-items-center">
-                                <p>shop Now</p>
-                                <svg
-                                  width="18"
-                                  height="12"
-                                  viewBox="0 0 18 12"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <g clip-path="url(#clip0_28_66)">
-                                    <path
-                                      d="M1 1L6 6L1 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.65"
-                                      d="M6 1L11 6L6 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                    <path
-                                      opacity="0.4"
-                                      d="M11 1L16 6L11 11"
-                                      stroke="#4B4955"
-                                      stroke-width="1.5"
-                                    />
-                                  </g>
-                                  <defs>
-                                    <clipPath id="clip0_28_66">
-                                      <rect
-                                        width="18"
-                                        height="12"
-                                        fill="white"
-                                      />
-                                    </clipPath>
-                                  </defs>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </li>
+                    <% }); %>
                   </ul>
                 </div>
               </div>

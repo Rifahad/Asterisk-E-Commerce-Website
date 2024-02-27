@@ -23,14 +23,14 @@ router.get("/register",auth.registerAccount)
       .get("/category",view.category)
       .get("/add-category",admin.addCategory)
       .post('/add-category',upload.single('categoryImage'),admin.addCategoryPost)
-      
+      .delete("/category/delete/:categoryId",admin.deleteCategory)
+
       .get("/orders",view.orders)
 
       .get('/products',view.products)
       .delete("/product/delete/:productId",admin.deleteProduct)
       .get("/product/edit/:productId",admin.editProduct)
       .post("/product/edit/:productId",upload.array('productImage'),admin.editProductPost)
-
 
       .get("/add-product",admin.addProduct)
       .post("/add-product",upload.array('productImage'),admin.addProductPost)
@@ -43,6 +43,7 @@ router.get("/register",auth.registerAccount)
       .get("/coupon",view.coupon)
       .get("/add-coupon",admin.addCoupon)
       .post("/add-coupon",upload.single('productImage'),admin.addCouponPost)
+      .delete("/coupon/delete/:couponId",admin.deleteCoupon)
 
       .get("/users",view.users)
       .patch("/users/block/:userId",admin.blockUser)
