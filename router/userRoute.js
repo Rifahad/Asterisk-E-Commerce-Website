@@ -6,6 +6,7 @@ const validating = require("../middleware/validateRegistration");
 
 const user= require("../controller/user");
 const auth = require("../controller/auth");
+const order=require('../controller/order');
 
 router
     .get("/", auth.login)
@@ -16,7 +17,7 @@ router
 
     .get("/email", auth.emailVerify)
     .post("/otp", generateMail, auth.emailVerifyPost)
-
+    
     .get("/otp", auth.otp)
     .post("/login", auth.otpPost)
 
@@ -30,6 +31,11 @@ router
     .get("/userWhislist",user.wishlist)
     .get("/userWishlist/:id",user.addToWishlist)
 
-    .get("/ usersAddToCart",user.cart)
+    
+    
+    .get("/categories/:category",user.category)
 
-module.exports=router;
+    .get("/usersAddToCart",order.cart) 
+
+
+module.exports=router;  

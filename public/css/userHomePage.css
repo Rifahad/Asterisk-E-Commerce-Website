@@ -8,7 +8,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: seagreen;
 }
 body {
   padding: 0;
@@ -23,7 +22,6 @@ p {
 .row > * {
   padding: 0;
   margin: 0;
-  background-color: #000;
 }
 a {
   text-decoration: none;
@@ -37,7 +35,7 @@ a {
   --carousel-control-color: blue;
 }
 .accordion-button:not(.collapsed) {
-  color: seagreen;
+  color: white;
   background-color: transparent;
   box-shadow: none;
 }
@@ -64,18 +62,9 @@ a {
 /*---------- end of BS var ----------*/
 
 /*---------- header ----------*/
-.metrix{
-  font-size: 3rem;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 900;
-  color:black;
-  text-shadow: 5px 5px 15px black;
-}
-
 .header {
   width: 100vw;
   height: 2rem;
-  background-color: seagreen;
 }
 .topheader {
   display: flex;
@@ -146,7 +135,7 @@ a {
   left: -100%;
   padding: 94px 50px;
   border: 1px solid #e0e0e0;
-  background-color: black;
+  background-color: #fff;
   transition: left 0.4s ease-in-out;
 }
 .mobilenavigationList.active {
@@ -163,7 +152,7 @@ a {
 .navigation {
   width: 100vw;
   height: 62px;
-  background: seagreen;
+  background: linear-gradient(180deg, #d9d9d9 -406.45%, #000 139.51%);
 }
 .hamburger {
   position: relative;
@@ -225,7 +214,6 @@ a {
 }
 .navigation {
   padding: 0 11.5%;
-  background-color: #000;
 }
 .hamburger.active span {
   background-color: #000;
@@ -281,7 +269,7 @@ a {
   border-radius: 2.5rem;
   border: transparent;
   background-color: rgba(255, 255, 255, 1);
-  background-image: url("/images/others/right-arrow.svg");
+  background-image: url("../images/slideImg/arrow-right.svg");
   background-position: center;
   background-size: 70% 70%;
 }
@@ -306,7 +294,6 @@ a {
   padding-top: 5rem;
   line-height: normal;
   font-style: normal;
-  background-color: #000;
 }
 .main-body h2 {
   color: #484955;
@@ -332,15 +319,15 @@ a {
   margin-right: 0;
 }
 .newItems {
-  width: 19rem;
-  min-height: 31.125rem;
+  width: 23.75rem;
+  min-height: 36.125rem;
   background: #f6f6f7;
   box-shadow: 0px 23px 40px -31px rgba(0, 0, 0, 0.33);
   padding: 1.25rem 1.25rem;
 }
 .newItems img {
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 323px;
   margin: 0 1.25rem;
 }
 .text-area {
@@ -458,7 +445,12 @@ a {
 footer {
   width: 100vw;
   padding: 9.25rem 0 9.25rem 9.25rem;
-  background-color: #000;
+  background: radial-gradient(
+    1491.2% 240.19% at -108.46% 256.46%,
+    #d9d9d9 0%,
+    #a3a3a3 0%,
+    #000 100%
+  );
   flex-shrink: 0;
 }
 .subheading h2 {

@@ -8,7 +8,7 @@ module.exports = {
   home:async (req, res) => {
     try{
       if(req.session.userId){
-        let products = await product.find()
+        let products = await product.find().limit(3)
         res.render("user/userHomePage",{products})
       }else{
         res.redirect("/")
@@ -30,7 +30,7 @@ module.exports = {
               wishlistId=productId;
             }
           });
-          if(!wishlistData){
+          if(!wishlistData){0
             wishlistId=null;
           }
         }
@@ -83,58 +83,17 @@ module.exports = {
       console.log(error)
     }
   },
-  cart: (req, res) => {
+  category:async (req, res) => {
     if(req.session.userId){
-      res.render("user/userCart").status(200)
+      const category = req.params.category;
+      console.log(category);
+      const categorizedDetails=await product.find({category:category})
+      res.status(200).render("user/userSingleProductPage",{data:categorizedDetails})
     }else{
-      res.redirect('/')
-    }
-  },
-  category: (req, res) => {
-    if(req.session.userId){
-      res.status(200).render("user/userSingleProductPage")
+      res.redirect('/');
     }
   },
 
-  profile: (req, res) => {
-
-  },
-  profileEdit: (req, res) => {
-
-  },
-  wishlistEdit: (req, res) => {
-
-  },
-  cartPost: (req, res) => {
-
-  },
-  cartEdit: (req, res) => {
-
-  },
-  addToCart: (req, res) => {
-
-  },
-  removeFromCart: (req, res) => {
-
-  },
-  placeOrder: (req, res) => {
-
-  },
-  myOrder: (req, res) => {
-
-  },
-  shippingAddress: (req, res) => {
-
-  },
-  shippingAddressPost: (req, res) => {
-
-  },
-  orderDetails: (req, res) => {
-
-  },
-  search: (req, res) => {
-
-  },
   logout: (req, res) => {
     req.session.destroy();
   },

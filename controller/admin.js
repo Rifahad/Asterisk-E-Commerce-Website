@@ -116,10 +116,8 @@ module.exports = {
       await couponDetails.findByIdAndDelete(deleteId)
       res.status(200).json({message:"deleted successfully"})
     } catch (error) {
-      console.log(error)
+      console.log(error)  
     }
-
-
   },
   addCategory: (req, res) => {
     res.status(200).render("admin/addCategory");
