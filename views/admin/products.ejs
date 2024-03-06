@@ -90,7 +90,6 @@
     async function deleteProduct (event,id) {
         event.preventDefault();
         const response=await axios.delete('/product/delete/'+ id);
-        console.log(response);
         try {
             const swalWithBootstrapButtons = Swal.mixin({
             customClass: {

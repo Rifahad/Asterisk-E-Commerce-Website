@@ -11,14 +11,12 @@ module.exports = {
         }
     },
     addToCart:async (req,res)=>{
-        const user=req.session.userId;
-        const  productId=req.params.productId;
-
-        const product=await productModel.findById(productId);
-        const cart=await cartModel.findById(user)
-        if(cart){
+        if(req.session.userId){
+            const user=req.session.userId;
+            const  productId=req.params.productId;
             
         }
+
 
 
     }

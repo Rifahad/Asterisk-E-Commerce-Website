@@ -787,14 +787,11 @@
     <script >
       const count=document.querySelector('.countwishlist')
      async function removeWishlist(id){
-        console.log(id);
-        const response = await axios.post(/removewishlist?id=${id});
+      console.log(id);
+      const response = await axios.delete('/wishlistDelete/'+id);
       const result = response.data;
-      if (result.removeproduct === true) {
-        const length=result.length;
-      document.querySelector(.delete_tr${id}).remove()
-      count.innerHTML=wishlist(${length})
-      
+      if (result.message === true) {
+      document.querySelector('.delete_tr'+id).remove()
       } else {
         console.log("remove wishlist error");
       }

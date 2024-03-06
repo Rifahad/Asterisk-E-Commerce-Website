@@ -14,7 +14,6 @@
     <!-- end of Bootstrap css cdn link -->
     <!-- Style css -->
     <link rel="stylesheet" href="/css/productDetailPAge.css" />
-    <!-- end of Style css -->
   </head>
   <body>
     <!-- header -->
@@ -168,7 +167,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/userWhislist">
+                    <a href="/wishlist">
                       <svg
                         width="20"
                         height="20"
@@ -276,14 +275,14 @@
                 alt=""
                 />
                 <div class="detail"></div>
-                <a href="/userWishlist/<%= data._id%>"">
+                <a href="/wishlist/<%= data._id%>"">
                   <div
                     class="favIcon position-absolute d-flex justify-content-center align-items-center"
                   >
                   <% if(wishlistId==null || undefined) {%>
-                  <button class=".wishlist" style="color: red; width: 40px; border: none;" onclick="wishlist('<%= data._id%>')"><i class="fa-solid fa-heart"></i></button>
-                  <% }else{ %>
-                  <button class=".wishlist" style="color: white; width: 40px; border: none;" onclick="wishlist('<%= data._id%>')"><i class="fa-solid fa-heart"></i></button>
+                    <button class="wishlist" style="color:white; width: 40px; border: none;" type="button" onclick="wishlist(event,'<%= data._id%>')"><i class="fa-solid fa-heart"></i></button>
+                    <% }else{ %>
+                      <button class="wishlist" style="color:red; width: 40px; border: none;" type="button" onclick="wishlist(event,'<%= data._id%>')"><i class="fa-solid fa-heart"></i></button>
                   <% } %>
                   </div>
                 </a>
@@ -335,7 +334,7 @@
                   <button class="buyBtn">Buy Now</button>
                 </a>
                 <a href="/userCartNow/id">
-                  <button class="cartBtn">add to cart</button>
+                  <button class="cartBtn" >add to cart</button>
                 </a>
               </div>
             </div>
@@ -956,22 +955,27 @@
       crossorigin="anonymous"
     ></script>
     <!--end of Bootstrap script file -->
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     const btn=document.querySelector(".wishlist");
-    function wishlist(id) {
-      if (btn.style.color=='red') {
-        alert("product already added to wishlist")
-      }else{
-        axios.post('/userWishlist/'+id)
-        .then((res)=>{
-          console.log(res);
-          btn.style.color='red';
+    function wishlist(event,id) {
+      event.preventDefault()
+        const response=axios.get('/wishlist/'+id)
+        .then((res)=> res.data)
+        .then((data)=>{
+          if(data.success){
+          if(btn.style.color=='red'){ 
+            btn.style.color='white';
+          }else{
+            btn.style.color='red';
+          }
+        }
         })
         .catch((error)=>{
           console.log(error)
-        })
+        })  
       }
-    }
   </script>
+
+  </body>
 </html>
