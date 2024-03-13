@@ -11,7 +11,6 @@ const admin=require("../controller/admin")
 const auth=require("../controller/auth")
 const view=require("../controller/adminViews")
 
-    
 router.get("/register",auth.registerAccount)
       .post("/login-admin",auth.registerAccountPost)
 

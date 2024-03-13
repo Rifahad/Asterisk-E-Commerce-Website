@@ -19,6 +19,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+
 //requiring routers and set as multer
 const common=require("./router/userRoute")
 const adminRoutes=require("./router/adminRoute")

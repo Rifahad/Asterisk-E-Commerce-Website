@@ -75,6 +75,7 @@ module.exports = {
           }
       });
       await productDetails.findByIdAndDelete(id);
+      
       res.status(200).json({ message: "Deleted Successfully" });
     } catch(error){
       res.status(500).send("Error deleting product");

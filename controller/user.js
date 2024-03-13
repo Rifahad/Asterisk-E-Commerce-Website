@@ -27,11 +27,12 @@ module.exports = {
               wishlistId=productId;
             }
           });
-          if(!wishlistData){0
+          if(!wishlistData){
             wishlistId=null;
           }
         }
         let data = await product.findById(productId)
+        console.log("wishlistID",wishlistId)
         res.render("user/productDetailPage",{data, wishlistId})
       }else{
         res.redirect("/")
@@ -44,8 +45,8 @@ module.exports = {
   category:async (req, res) => {
     if(req.session.userId){
       const category = req.params.category;
-      console.log(category);
       const categorizedDetails=await product.find({category:category})
+      console.log(categorizedDetails);
       res.status(200).render("user/userSingleProductPage",{data:categorizedDetails})
     }else{
       res.redirect('/');

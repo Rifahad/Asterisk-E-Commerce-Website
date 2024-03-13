@@ -63,7 +63,7 @@ module.exports = {
         const productId = req.params.id;
         await wishlist.findOneAndUpdate(
           { user: userId },
-          { $pull: { product: productId } },
+          { $pull: { product: productId} },
           { new: true }
         );
         res.status(200).json({ message: true });

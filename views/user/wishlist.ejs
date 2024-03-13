@@ -81,22 +81,19 @@
                     <a href="/home"> Home </a>
                   </li>
                   <li>
-                    <a href="/category"> Earbuds </a>
+                    <a href="/categories/men"> Men </a>
                   </li>
                   <li>
-                    <a href="/category"> Earphones </a>
+                    <a href="/categories/women"> Women </a>
                   </li>
                   <li>
-                    <a href="/category"> Speakers </a>
+                    <a href="/categories/kids"> Kids </a>
                   </li>
                   <li>
-                    <a href="/category"> Soundbars </a>
+                    <a href="/categories/accessories"> Accessories </a>
                   </li>
                   <li>
-                    <a href="/category"> Smart Watch </a>
-                  </li>
-                  <li>
-                    <a href="/allproducts"> Shop By Category </a>
+                    <a href="/categories/Electronics">Electronics</a>
                   </li>
                 </ul>
               </div>
@@ -105,19 +102,22 @@
                 <h2>Shop By Category</h2>
                 <ul class="m-0 list-unstyled">
                   <li>
-                    <a href="/category"> Earbuds </a>
+                    <a href="/home"> Home </a>
                   </li>
                   <li>
-                    <a href="/category"> Earphones </a>
+                    <a href="/categories/men"> Men </a>
                   </li>
                   <li>
-                    <a href="/category"> Speakers </a>
+                    <a href="/categories/women"> Women </a>
                   </li>
                   <li>
-                    <a href="/category"> Soundbars </a>
+                    <a href="/categories/kids"> Kids </a>
                   </li>
                   <li>
-                    <a href="/category"> Smart Watch </a>
+                    <a href="/categories/accessories"> Accessories </a>
+                  </li>
+                  <li>
+                    <a href="/categories/Electronics">Electronics</a>
                   </li>
                 </ul>
               </div>
@@ -125,7 +125,7 @@
               <div class="useroptions d-flex">
                 <ul class="m-0 p-0 d-flex align-items-center list-unstyled">
                   <li>
-                    <a href="/userAccont">
+                    <a href="/userAccount">
                       <svg
                         width="20"
                         height="20"
@@ -259,7 +259,6 @@
                       </div>
                       <div class="productDetails">
                         <h2><%=data.productName%></h2>
-                        
                         <p class="color">COLOR</p>
                         <p class="cName"><%=data.colour%></p>
                         <div class="price d-flex align-items-baseline gap-2">
@@ -788,12 +787,16 @@
       const count=document.querySelector('.countwishlist')
      async function removeWishlist(id){
       console.log(id);
-      const response = await axios.delete('/wishlistDelete/'+id);
-      const result = response.data;
-      if (result.message === true) {
-      document.querySelector('.delete_tr'+id).remove()
-      } else {
-        console.log("remove wishlist error");
+      try {
+        const response = await axios.delete('/wishlistDelete/'+id);
+        const result = response.data;
+        if (result.message === true) {
+        document.querySelector('.delete_tr'+id).remove()
+        } else {
+          console.log("remove wishlist error");
+        }
+      } catch (error) {
+        console.log(error)
       }
      }
     </script>

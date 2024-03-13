@@ -8,6 +8,7 @@ const user= require("../controller/user");
 const auth = require("../controller/auth");
 const cart=require('../controller/cart');
 const wishlist=require('../controller/wishlist')
+const profile=require('../controller/profile')
 
 router.get("/", auth.login)
     .post("/home", auth.loginPost)
@@ -34,7 +35,11 @@ router.get("/", auth.login)
     
     .get("/categories/:category",user.category)
 
-    .get("/usersAddToCart",cart.cart) 
+    .get("/usersAddToCart",cart.cart)
+    .get('/userCartNow/:id',cart.addToCart)
+
+    .get('/userAccount',profile.userProfile)
+     
 
 
-module.exports=router;  
+module.exports=router;

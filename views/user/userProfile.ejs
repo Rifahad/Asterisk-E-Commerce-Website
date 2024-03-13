@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Account</title>
+    <title>Account</title>
     <!-- <link rel="shortcut icon" href="#" type="image/x-icon" /> -->
     <!-- Bootstrap css cdn link -->
     <link
@@ -14,10 +14,11 @@
     />
     <!-- end of Bootstrap css cdn link -->
     <!-- Style css -->
-    <link rel="stylesheet" href="./css/userCart.css" />
+    <link rel="stylesheet" href="./css/userProfile.css" />
     <!-- end of Style css -->
   </head>
   <body>
+
     <!-- header -->
     <header>
       <div class="container-fluid">
@@ -77,24 +78,23 @@
               <div class="navigationnavbar">
                 <ul class="d-flex list-unstyled m-0 p-0 align-items-center">
                   <li>
-                    <a href="/"> Home </a>
+                    <a href="/home"> Home </a>
                   </li>
                   <li>
-                    <a href="/category"> Earbuds </a>
+                    <a href="/categories/men"> Men </a>
                   </li>
                   <li>
-                    <a href="/category"> Earphones </a>
+                    <a href="/categories/women"> Women </a>
                   </li>
                   <li>
-                    <a href="/category"> Speakers </a>
+                    <a href="/categories/kids"> Kids </a>
                   </li>
                   <li>
-                    <a href="/category"> Soundbars </a>
+                    <a href="/categories/accessories"> Accessories </a>
                   </li>
                   <li>
-                    <a href="/category"> Smart Watch </a>
+                    <a href="/categories/Electronics">Electronics</a>
                   </li>
-                  
                 </ul>
               </div>
 
@@ -102,19 +102,22 @@
                 <h2>Shop By Category</h2>
                 <ul class="m-0 list-unstyled">
                   <li>
-                    <a href="/category"> Earbuds </a>
+                    <a href="/home"> Home </a>
                   </li>
                   <li>
-                    <a href="/category"> Earphones </a>
+                    <a href="/categories/men"> Men </a>
                   </li>
                   <li>
-                    <a href="/category"> Speakers </a>
+                    <a href="/categories/women"> Women </a>
                   </li>
                   <li>
-                    <a href="/category"> Soundbars </a>
+                    <a href="/categories/kids"> Kids </a>
                   </li>
                   <li>
-                    <a href="/category"> Smart Watch </a>
+                    <a href="/categories/accessories"> Accessories </a>
+                  </li>
+                  <li>
+                    <a href="/categories/Electronics">Electronics</a>
                   </li>
                 </ul>
               </div>
@@ -212,171 +215,87 @@
     <!-- main -->
     <main>
       <div class="container-fluid main">
-        <div class="row mainContainer">
-          <div class="col-12">
+        <div class="row justify-content-center">
+          <div class="col-6 mainContainer">
             <div class="cartHead">
               <div class="d-flex align-items-center gap-2">
-                <h2 class="m-0 p-0">Cart(2)</h2>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 7.41421C4 7.20984 4 7.10765 4.03806 7.01577C4.07612 6.92388 4.14838 6.85162 4.29289 6.70711L5.82843 5.17157C6.40649 4.59351 6.69552 4.30448 7.06306 4.15224C7.4306 4 7.83935 4 8.65685 4H15.3431C16.1606 4 16.5694 4 16.9369 4.15224C17.3045 4.30448 17.5935 4.59351 18.1716 5.17157L19.7071 6.70711C19.8516 6.85162 19.9239 6.92388 19.9619 7.01577C20 7.10765 20 7.20984 20 7.41421V8H4V7.41421Z"
-                    stroke="black"
-                    stroke-width="2"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M21 8H3V17C3 18.8856 3 19.8284 3.58579 20.4142C4.17157 21 5.11438 21 7 21H17C18.8856 21 19.8284 21 20.4142 20.4142C21 19.8284 21 18.8856 21 17V8ZM10 11C10 10.4477 9.55228 10 9 10C8.44772 10 8 10.4477 8 11C8 12.0609 8.42143 13.0783 9.17157 13.8284C9.92172 14.5786 10.9391 15 12 15C13.0609 15 14.0783 14.5786 14.8284 13.8284C15.5786 13.0783 16 12.0609 16 11C16 10.4477 15.5523 10 15 10C14.4477 10 14 10.4477 14 11C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11Z"
-                    fill="black"
-                  />
-                </svg>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 24C21.8 24 19.9167 23.2167 18.35 21.65C16.7833 20.0833 16 18.2 16 16C16 13.8 16.7833 11.9167 18.35 10.35C19.9167 8.78333 21.8 8 24 8C26.2 8 28.0833 8.78333 29.65 10.35C31.2167 11.9167 32 13.8 32 16C32 18.2 31.2167 20.0833 29.65 21.65C28.0833 23.2167 26.2 24 24 24ZM8 40V34.4C8 33.2667 8.29167 32.225 8.875 31.275C9.45833 30.325 10.2333 29.6 11.2 29.1C13.2667 28.0667 15.3667 27.2917 17.5 26.775C19.6333 26.2583 21.8 26 24 26C26.2 26 28.3667 26.2583 30.5 26.775C32.6333 27.2917 34.7333 28.0667 36.8 29.1C37.7667 29.6 38.5417 30.325 39.125 31.275C39.7083 32.225 40 33.2667 40 34.4V40H8ZM12 36H36V34.4C36 34.0333 35.9083 33.7 35.725 33.4C35.5417 33.1 35.3 32.8667 35 32.7C33.2 31.8 31.3833 31.125 29.55 30.675C27.7167 30.225 25.8667 30 24 30C22.1333 30 20.2833 30.225 18.45 30.675C16.6167 31.125 14.8 31.8 13 32.7C12.7 32.8667 12.4583 33.1 12.275 33.4C12.0917 33.7 12 34.0333 12 34.4V36ZM24 20C25.1 20 26.0417 19.6083 26.825 18.825C27.6083 18.0417 28 17.1 28 16C28 14.9 27.6083 13.9583 26.825 13.175C26.0417 12.3917 25.1 12 24 12C22.9 12 21.9583 12.3917 21.175 13.175C20.3917 13.9583 20 14.9 20 16C20 17.1 20.3917 18.0417 21.175 18.825C21.9583 19.6083 22.9 20 24 20Z" fill="black"/>
+                  </svg>                  
+                <h2 class="m-0 p-0 text-capitalize">Hey , <%=user.fullName%></h2>
               </div>
             </div>
             <div class="cartBody d-flex">
+              <div class="col-6 oneSection lSide">
+                <div class="pInfo">
+                  <h2>Personal Information</h2>
+                  <p>Full Name: <span class="text-capitalize"><%=user.fullName%></span></p>
+                  <p>Email : <span><%=user.email%></span></p>
+                  <p>Phone : <span class=""><%=user.phoneNumber%></span></p>
+                  <p>Address : <span class="">Abc house, abc street,PIN: 673478</span></p>
+                </div>
+                <form action="/userLogOut" method="post" class="logOutBtn">
+                  <button type="submit">Logout</button>
+                </a>
+              </div>
               <div class="col-6 oneSection">
-                <div class="cartItems">
-                  <% cart.items.forEach((item)=>{ %>
-                  <div class="items position-relative">
-                    <a
-                      class="position-absolute deleteBtn"
-                      href="/userCartDelete/id"
-                    >
-                      <svg
-                        viewBox="0 0 15 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.07143 16.8889C1.07143 18.05 2.03571 19 3.21429 19H11.7857C12.9643 19 13.9286 18.05 13.9286 16.8889V4.22222H1.07143V16.8889ZM15 1.05556H11.25L10.1786 0H4.82143L3.75 1.05556H0V3.16667H15V1.05556Z"
-                          fill="black"
-                        />
-                      </svg>
-                    </a>
-                    <div class="contentDiv d-flex gap-4">
-                      <div class="itemImg">
-                        <img src="/asset/<%= item.productId.productImage[0] %>" alt="" />
-                      </div>
-                      <div class="productDetails">
-                        <h2><%= item.productId.productName%></h2>
-                        <div class="quandity d-flex align-items-center">
-                          <div
-                            class="dec d-flex justify-content-center align-items-center"
-                          >
-                            <i class="fa-solid fa-minus"></i>
-                          </div>
-                          <div
-                            class="qty d-flex justify-content-center align-items-center"
-                          >
-                            <p class="m-0 p-0 qtyOne"><%= item.quantity%></p>
-                          </div>
-                          <div
-                            class="inc d-flex justify-content-center align-items-center"
-                          >
-                            <i class="fa-solid fa-plus"></i>
-                          </div>
+                <div class="orderSummary mb-0">
+                  <div class="d-flex justify-content-center gap-4">
+                    <div>
+                      <a href="/userOrders">
+                        <div class="cardOptions text-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 76" fill="none">
+                            <path d="M52.2183 72.0417H23.75C18.3033 72.0417 14.2184 70.585 11.685 67.7033C9.15171 64.8217 8.17002 60.6417 8.83502 55.2267L11.685 31.4767C12.5084 24.4783 14.2817 18.2083 26.6317 18.2083H49.4316C61.7499 18.2083 63.5233 24.4783 64.3783 31.4767L67.2283 55.2267C67.8616 60.6417 66.9116 64.8533 64.3783 67.7033C61.7499 70.585 57.6966 72.0417 52.2183 72.0417ZM26.6 22.9583C17.48 22.9583 17.0367 26.5683 16.3717 32.015L13.5217 55.765C13.0467 59.7867 13.6167 62.7317 15.2317 64.5367C16.8467 66.3417 19.6967 67.26 23.75 67.26H52.2183C56.2716 67.26 59.1216 66.3417 60.7366 64.5367C62.3516 62.7317 62.9216 59.7867 62.4466 55.765L59.5966 32.015C58.9316 26.5366 58.5199 22.9583 49.3683 22.9583H26.6Z" fill="black"/>
+                            <path d="M50.6673 27.7083C49.369 27.7083 48.2923 26.6317 48.2923 25.3333V14.25C48.2923 10.83 46.1707 8.70833 42.7507 8.70833H33.2507C29.8307 8.70833 27.709 10.83 27.709 14.25V25.3333C27.709 26.6317 26.6323 27.7083 25.334 27.7083C24.0357 27.7083 22.959 26.6317 22.959 25.3333V14.25C22.959 8.20166 27.2023 3.95833 33.2507 3.95833H42.7507C48.799 3.95833 53.0423 8.20166 53.0423 14.25V25.3333C53.0423 26.6317 51.9657 27.7083 50.6673 27.7083Z" fill="black"/>
+                            <path d="M64.6323 56.3033H25.334C24.0357 56.3033 22.959 55.2267 22.959 53.9283C22.959 52.63 24.0357 51.5533 25.334 51.5533H64.6323C65.9306 51.5533 67.0073 52.63 67.0073 53.9283C67.0073 55.2267 65.9306 56.3033 64.6323 56.3033Z" fill="black"/>
+                          </svg>
+                          <p>My Orders</p>
                         </div>
-                        <p class="color">COLOR</p>
-                        <p class="cName"><%= item.productId.colour%></p>
-                        <div class="price d-flex align-items-baseline gap-2">
-                          <p class="lPrice"><%= item.productId.price%></p>
-                          <p class="fPrice"><%= item.productId.price%></p>
-                          <p><%= item.productId.discount%>% OFF</p>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="/wishlist">
+                        <div class="cardOptions text-center">
+                          <svg viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.666 63.2311L28.3486 62.8892L6.10645 38.7044C2.20898 34.468 0 28.5221 0 22.2938V21.8033C0 11.3385 6.34766 2.36026 15.1328 0.398126C20.1348 -0.73159 25.251 0.621095 29.3262 3.98051C30.4688 4.93185 31.5352 6.03184 32.5 7.29533C33.0332 6.58183 33.6045 5.92778 34.2139 5.31833C34.6836 4.84266 35.166 4.39672 35.6738 3.98051C39.749 0.621095 44.8652 -0.731589 49.8672 0.383261C58.6523 2.3454 65 11.3385 65 21.8033V22.2938C65 28.5221 62.791 34.468 58.8936 38.7044L36.6514 62.8892L36.334 63.2311C35.293 64.3608 33.9219 65 32.5 65C31.0781 65 29.707 64.3757 28.666 63.2311ZM30.3545 15.1885C30.3037 15.1439 30.2656 15.0844 30.2275 15.025L27.9678 12.052L27.9551 12.0372C25.0225 8.18722 20.5918 6.43318 16.2754 7.39939C10.3594 8.72234 6.09375 14.7574 6.09375 21.8033V22.2938C6.09375 26.5302 7.60449 30.5883 10.2578 33.472L32.5 57.6569L54.7422 33.472C57.3955 30.5883 58.9062 26.5302 58.9062 22.2938V21.8033C58.9062 14.7723 54.6406 8.72234 48.7373 7.39939C44.4209 6.43318 39.9775 8.20208 37.0576 12.0372C37.0576 12.0372 37.0576 12.0372 37.0449 12.052C37.0322 12.0669 37.0449 12.052 37.0322 12.0669L34.7725 15.0398C34.7344 15.0993 34.6836 15.1439 34.6455 15.2033C34.0742 15.8723 33.2998 16.2439 32.5 16.2439C31.7002 16.2439 30.9258 15.8723 30.3545 15.2033V15.1885Z" fill="black"/>
+                            </svg>                            
+                          <p>Wishlist</p>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   </div>
-                  <% }) %>
-                  <div class="coupons">
-                    <form
-                      action="/userApplyCoupon"
-                      class="d-flex align-items-center"
-                      method="post"
-                    >
-                      <div class="input">
-                        <input type="text" placeholder="Enter Coupon Code" />
-                      </div>
-                      <div>
-                        <button type="submit">APPLY</button>
-                      </div>
-                    </form>
+                  <div class="d-flex justify-content-center gap-4">
+                    <div>
+                      <a href="/userEditAddress">
+                        <div class="cardOptions text-center m-0">
+                          <svg viewBox="0 0 69 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_395_60)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M55.0401 52.279C63.5259 54.6811 68.9764 58.5193 68.9764 62.847C68.9764 70.1122 53.5388 76 34.4915 76C15.4441 76 0 70.1122 0 62.847C0 58.4148 5.7377 54.4983 14.5368 52.1158L15.5029 53.4213C16.1556 54.3156 16.8932 55.2033 17.6308 56.0715C11.4754 57.5597 7.53277 59.8574 7.53277 62.4358C7.53277 66.9267 19.4716 70.5691 34.2042 70.5691C48.9369 70.5691 60.8757 66.9267 60.8757 62.4358C60.8757 60.0402 57.4553 57.8665 52.0244 56.3913C53.0949 55.0858 54.1001 53.6889 55.0401 52.279Z" fill="black"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M45.8175 54.0349C42.9344 57.2115 39.6133 59.9611 35.9544 62.2008C35.7259 62.3684 35.4518 62.4626 35.1684 62.4708C34.8851 62.4789 34.606 62.4007 34.3682 62.2465C29.1499 58.9551 24.5171 54.8165 20.6604 50.0009C15.6669 43.7344 12.488 36.7761 11.4109 30.0723C10.3339 23.3685 11.3391 16.7431 14.7204 11.4297C16.0944 9.2679 17.8222 7.35256 19.8314 5.76381C24.5965 1.95826 30.0274 -0.0391647 35.4714 5.10248e-07C39.265 0.104301 42.9723 1.15493 46.2566 3.05641C49.5409 4.95789 52.2979 7.64994 54.2772 10.8879C57.913 16.8737 58.6963 24.5109 57.1036 32.246C55.3363 40.374 51.4414 47.8867 45.8175 54.0153V54.0349ZM34.44 12.0825C36.7487 12.0825 39.0054 12.7671 40.9249 14.0499C42.8444 15.3326 44.3403 17.1558 45.2235 19.2888C46.1066 21.4218 46.3374 23.7688 45.8865 26.033C45.4356 28.2972 44.3234 30.3768 42.6905 32.0088C41.0576 33.6408 38.9774 34.7518 36.713 35.2014C34.4485 35.651 32.1016 35.419 29.9691 34.5346C27.8366 33.6502 26.0143 32.1533 24.7326 30.2331C23.4509 28.3129 22.7675 26.0558 22.7688 23.7471C22.7688 22.2148 23.0707 20.6974 23.6574 19.2818C24.244 17.8661 25.1038 16.5799 26.1876 15.4967C27.2715 14.4134 28.5582 13.5543 29.9741 12.9685C31.3901 12.3827 32.9077 12.0816 34.44 12.0825Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_395_60">
+                            <rect width="68.9764" height="76" fill="white"/>
+                            </clipPath>
+                            </defs>
+                            </svg>                            
+                          <p>Edit Address</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div>
+                      <a href="/userUpdateAccount">
+                        <div class="cardOptions text-center m-0">
+                          <svg viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.6673 38C28.184 38 25.202 36.7597 22.7215 34.2792C20.2409 31.7986 19.0007 28.8167 19.0007 25.3333C19.0007 21.85 20.2409 18.8681 22.7215 16.3875C25.202 13.9069 28.184 12.6667 31.6673 12.6667C35.1507 12.6667 38.1326 13.9069 40.6132 16.3875C43.0937 18.8681 44.334 21.85 44.334 25.3333C44.334 28.8167 43.0937 31.7986 40.6132 34.2792C38.1326 36.7597 35.1507 38 31.6673 38ZM6.33398 63.3333V54.4667C6.33398 52.725 6.7826 51.0889 7.67982 49.5583C8.57704 48.0278 9.81732 46.8667 11.4007 46.075C14.0923 44.7028 17.127 43.5417 20.5048 42.5917C23.8826 41.6417 27.6034 41.1667 31.6673 41.1667H32.7757C33.0923 41.1667 33.409 41.2194 33.7257 41.325C33.3034 42.275 32.9472 43.2646 32.6569 44.2937C32.3666 45.3229 32.1423 46.3917 31.984 47.5H31.6673C27.9201 47.5 24.5555 47.975 21.5736 48.925C18.5916 49.875 16.1507 50.825 14.2507 51.775C13.7757 52.0389 13.393 52.4083 13.1027 52.8833C12.8125 53.3583 12.6673 53.8861 12.6673 54.4667V57H32.6173C32.934 58.1083 33.3562 59.2035 33.884 60.2854C34.4118 61.3674 34.9923 62.3833 35.6257 63.3333H6.33398ZM50.6673 66.5L49.7173 61.75C49.084 61.4861 48.4902 61.209 47.9361 60.9187C47.3819 60.6285 46.8145 60.2722 46.234 59.85L41.6423 61.275L38.4757 55.8917L42.1173 52.725C42.0118 51.9861 41.959 51.3 41.959 50.6667C41.959 50.0333 42.0118 49.3472 42.1173 48.6083L38.4757 45.4417L41.6423 40.0583L46.234 41.4833C46.8145 41.0611 47.3819 40.7049 47.9361 40.4146C48.4902 40.1243 49.084 39.8472 49.7173 39.5833L50.6673 34.8333H57.0006L57.9506 39.5833C58.584 39.8472 59.1777 40.1375 59.7319 40.4542C60.2861 40.7708 60.8534 41.1667 61.434 41.6417L66.0257 40.0583L69.1923 45.6L65.5507 48.7667C65.6562 49.4 65.709 50.0597 65.709 50.7458C65.709 51.4319 65.6562 52.0917 65.5507 52.725L69.1923 55.8917L66.0257 61.275L61.434 59.85C60.8534 60.2722 60.2861 60.6285 59.7319 60.9187C59.1777 61.209 58.584 61.4861 57.9506 61.75L57.0006 66.5H50.6673ZM53.834 57C55.5756 57 57.0666 56.3799 58.3069 55.1396C59.5472 53.8993 60.1673 52.4083 60.1673 50.6667C60.1673 48.925 59.5472 47.434 58.3069 46.1938C57.0666 44.9535 55.5756 44.3333 53.834 44.3333C52.0923 44.3333 50.6013 44.9535 49.3611 46.1938C48.1208 47.434 47.5007 48.925 47.5007 50.6667C47.5007 52.4083 48.1208 53.8993 49.3611 55.1396C50.6013 56.3799 52.0923 57 53.834 57ZM31.6673 31.6667C33.409 31.6667 34.9 31.0465 36.1402 29.8063C37.3805 28.566 38.0007 27.075 38.0007 25.3333C38.0007 23.5917 37.3805 22.1007 36.1402 20.8604C34.9 19.6201 33.409 19 31.6673 19C29.9257 19 28.4347 19.6201 27.1944 20.8604C25.9541 22.1007 25.334 23.5917 25.334 25.3333C25.334 27.075 25.9541 28.566 27.1944 29.8063C28.4347 31.0465 29.9257 31.6667 31.6673 31.6667Z" fill="black"/>
+                          </svg>                                                       
+                          <p>Update Account</p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-6 oneSection">
-                <div class="orderSummary">
-                  <div class="orderHeading">
-                    <h2>order summary</h2>
-                  </div>
-                  <div class="orderContent">
-                    <div
-                      class="sTotal d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Subtotal</p>
-                      <p class="commonSub m-0 p-0" id="sTotal">₹</p>
-                    </div>
-
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Shipping</p>
-                      <p class="commonSub m-0 p-0" id="free">FREE</p>
-                    </div>
-
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Discount</p>
-                      <p class="commonSub m-0 p-0" id="dPrice">-21,100</p>
-                    </div>
-
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Coupon Discount</p>
-                      <p class="commonSub m-0 p-0" id="cDPrice">0</p>
-                    </div>
-                  </div>
-                  <div
-                    class="commonText tPrice d-flex justify-content-between align-items-center"
-                  >
-                    <p class="m-0 p-0">Total</p>
-                    <p class="m-0 p-0" id="tPrice">₹9,497</p>
-                  </div>
-                </div>
-                <!-- <div class="ms-auto orderSummary mb-0">
-                                <div class="orderHeading">
-                                    <h2>Delivery Address</h2>
-                                </div>
-                                <div class="deleviryContent">
-                                    <div class="chooseAdd position-relative">
-                                        <div class="existingAddress">
-                                            <p class="name">John D</p>
-                                            <p>Abc house, abc street,PIN: 673478</p>
-                                            <p class="phone">Phone: 98675555568</p>
-                                        </div>
-                                        <a href="/userChangeAddress">
-                                            <button class="position-absolute button">Change</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="checkOut">
-              <form action="/userCartCheckOut">
-                <button>CHECKOUT</button>
-              </form>
             </div>
           </div>
         </div>
@@ -885,7 +804,7 @@
     <!-- end of footer -->
 
     <!-- custom js -->
-    <script src="./js/userCart.js"></script>
+    <script src="./js/userProfile.js"></script>
     <!-- end of custom js -->
     <!-- fontawesome -->
     <script

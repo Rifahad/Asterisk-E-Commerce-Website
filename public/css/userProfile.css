@@ -1,0 +1,951 @@
+/*---------- font family ----------*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lemon&family=Ubuntu:wght@300;400;500;700&display=swap");
+/*---------- end of font family ----------*/
+
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+p {
+  margin: 0;
+}
+.row > * {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/*---------- BS var ----------*/
+:root {
+  --bs-body-bg: transparent;
+  --bs-border-color: rgba(255, 255, 255, 0.4);
+  --bs-accordion-btn-focus-border-color: transparent;
+}
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+}
+.accordion-button:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+}
+.accordion-button::after {
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 11.3258L8.67417 11.3258V20H11.3258L11.3258 11.3258L20 11.3258V8.67418L11.3258 8.67417L11.3258 8.9407e-07L8.67418 0L8.67417 8.67417L0 8.67418V11.3258Z' fill='%2300FF00'/%3E%3C/svg%3E%0A");
+  background-size: cover;
+  background-position: center;
+}
+.accordion-button:not(.collapsed)::after {
+  width: 16px;
+  height: 16px;
+  transform: rotate(45deg);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 11.3258L8.67417 11.3258V20H11.3258L11.3258 11.3258L20 11.3258V8.67418L11.3258 8.67417L11.3258 8.9407e-07L8.67418 0L8.67417 8.67417L0 8.67418V11.3258Z' fill='%2300FF00'/%3E%3C/svg%3E%0A");
+  background-size: cover;
+  background-position: center;
+}
+/*---------- end of BS var ----------*/
+
+/*---------- header ----------*/
+.header {
+  width: 100vw;
+  height: 2rem;
+}
+.topheader {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.topheadingimgone img {
+  width: 2rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.topheadingimgtwo img {
+  width: 0.75rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.topheaderone {
+  justify-content: flex-end;
+  border-right: 0.8px solid rgba(0, 255, 0, 0.05);
+  background: linear-gradient(
+    44deg,
+    #111216 -4.62%,
+    rgba(91, 99, 120, 0) 804.71%
+  );
+}
+.topheaderone p {
+  padding-left: 0.75rem;
+  padding-right: 1.25rem;
+}
+.topheadertwo {
+  justify-content: flex-start;
+  background: linear-gradient(
+    298deg,
+    #111216 -34.19%,
+    rgba(91, 99, 120, 0) 1164.24%
+  );
+  padding-left: 1.25rem;
+}
+.topheadertwo p {
+  padding-left: 0.5rem;
+}
+.topheadingimg {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: Inter;
+  font-size: 0.65rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.topheadingimgone {
+  justify-content: flex-end;
+}
+.topheadingimgtwo {
+  justify-content: flex-start;
+}
+
+.mobilenavigationList {
+  display: none;
+  position: fixed;
+  width: 75vw;
+  height: 100vh;
+  background-color: blue;
+  z-index: 1;
+  top: 0;
+  left: -100%;
+  padding: 94px 50px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  transition: left 0.4s ease-in-out;
+}
+.mobilenavigationList.active {
+  left: 0;
+}
+.mobilenavigation.active {
+  position: fixed;
+  z-index: 2;
+}
+.mobilenavigation {
+  display: none;
+  margin-right: 20px;
+}
+.navigation {
+  width: 100vw;
+  height: 62px;
+  background: linear-gradient(180deg, #d9d9d9 -406.45%, #000 139.51%);
+}
+.hamburger {
+  position: relative;
+  background: transparent;
+  border: transparent;
+  width: 30px;
+  height: 20px;
+  z-index: 2;
+}
+.hamburger span {
+  width: 30px;
+  height: 2px;
+  margin: 10px 0;
+  background: white;
+  transform-origin: center center;
+  transition: all 0.2s linear 0.1s;
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(11.5px) rotate(45deg);
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-11.5px) rotate(-45deg);
+}
+.logo svg {
+  height: 2rem;
+}
+.navigationnavbar ul li {
+  margin-left: 2rem;
+}
+.navigationnavbar ul li:last-child {
+  margin-right: 2rem;
+}
+.navigationnavbar ul li a {
+  color: #fff;
+  font-family: Inter;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.useroptions ul li {
+  margin-left: 1.3rem;
+}
+.useroptions ul li a svg {
+  width: 20px;
+  height: 20px;
+}
+.navigation {
+  padding: 0 11.5%;
+}
+.hamburger.active span {
+  background-color: #000;
+}
+.mobilenavigationList ul li a {
+  color: #000;
+  font-family: Inter;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.mobilenavigationList ul {
+  width: 100%;
+  height: 100%;
+}
+.mobilenavigationList h2 {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Inter;
+}
+.mobilenavigationList ul li {
+  border-bottom: 1pt solid #e0e0e0;
+  padding: 8px 0;
+}
+.mobilenavigationList ul li a:focus {
+  color: #0f0;
+}
+.mobilenavigationList ul {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 2% 0 0;
+}
+.mobilenavigationList ul::-webkit-scrollbar {
+  width: 15px;
+}
+.mobilenavigationList ul::-webkit-scrollbar-thumb {
+  background-color: #0f0;
+  border-radius: 10px;
+}
+.mobilenavigationList ul::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: none;
+}
+/*---------- end of header ----------*/
+
+/*---------- main COntent ----------*/
+.main {
+  padding: 3% 4%;
+}
+.mainContainer {
+  border: 1px solid #e0e0e0;
+  background: #fff;
+}
+.cartHead {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.cartHead h2 {
+  color: #000;
+  font-family: Ubuntu;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.cartBody {
+  padding: 1.25rem;
+}
+.cartHead svg {
+  width: 35px;
+  height: 35px;
+}
+.orderSummary {
+  margin-left: auto;
+  width: 80%;
+  background: #fff;
+  margin-bottom: 2rem;
+}
+.orderHeading {
+  padding: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.orderHeading h2 {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Ubuntu;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.orderContent {
+  padding: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: Ubuntu;
+  font-style: normal;
+  line-height: normal;
+}
+.orderContent div {
+  margin-bottom: 1.75rem;
+}
+.orderContent div:last-child {
+  margin-bottom: 0;
+}
+.commonText {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.commonSub {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.ship p:nth-child(2) {
+  color: #3cb77c;
+}
+.tPrice {
+  padding: 1.2rem;
+}
+.tPrice p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.deleviryContent {
+  padding: 2rem;
+}
+.chooseAdd {
+  border: 1px solid #e0e0e0;
+  padding: 2rem 1.5rem;
+}
+.existingAddress {
+  width: 65%;
+}
+.existingAddress p {
+  color: rgba(0, 0, 0, 0.75);
+  font-family: Ubuntu;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.button {
+  color: #000;
+  font-family: Ubuntu;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: transparent;
+  outline: none;
+  background-color: #0f0;
+  padding: 0.4rem 1.25rem;
+  top: 20px;
+  right: 20px;
+}
+.phone {
+  width: max-content;
+}
+.checkOut {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 12vh;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  padding: 0 3%;
+}
+.checkOut button {
+    width: 10rem;
+    border: transparent;
+    outline: transparent;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.175rem;
+    text-transform: uppercase;
+    background-color: #0f0;
+    padding: 1rem;
+}
+.pInfo{
+    padding: 1rem;
+    border-radius: 9px;
+    border: 1px solid #e0e0e0;
+}
+.pInfo h2{
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1.25rem;
+}
+.pInfo p{
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+}
+.pInfo span{
+    font-weight: 400;
+}
+.pInfo{
+    margin-bottom: 1.25rem;
+}
+.logOutBtn button{
+    border: transparent;
+    outline: transparent;
+    background-color: #000;
+    color: #fff;
+    color: #FFF;
+    font-family: Ubuntu;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 4px;
+}
+.cardOptions{
+    border-radius: 9px;
+    width: 8rem;
+    border: 1px solid #e0e0e0;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+.cardOptions svg{
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.2rem;
+}
+.cardOptions p{
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+/*---------- end of main COntent ----------*/
+
+/*---------- footer ----------*/
+footer {
+  width: 100vw;
+  padding: 9.25rem 0 9.25rem 9.25rem;
+  background: radial-gradient(
+    1491.2% 240.19% at -108.46% 256.46%,
+    #d9d9d9 0%,
+    #a3a3a3 0%,
+    #000 100%
+  );
+  flex-shrink: 0;
+}
+.subheading h2 {
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+.descriptionOne svg {
+  margin-right: 1.25rem;
+}
+.contact {
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.dateTime {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Ubuntu;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
+  margin-bottom: 1.25rem;
+}
+.descriptionTwo a {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Ubuntu;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.descriptionTwo {
+  gap: 0.75rem;
+}
+.descriptionThree {
+  gap: 2rem;
+}
+.mediumScreen {
+  display: none;
+}
+.social {
+  margin-top: 4rem;
+}
+.socialMedia {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 1.58rem;
+}
+.socialMedia div {
+  width: 2.62931rem;
+  height: 2.5rem;
+  background: #4c525f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.catgory {
+  width: 100%;
+  height: 100%;
+}
+.catgoryDiv {
+  position: relative;
+  width: 90%;
+  height: 2.5rem;
+  flex-shrink: 0;
+  background: #4c525f;
+  margin-bottom: 10%;
+  padding: 0.5%;
+}
+.catgoryDiv:nth-child(2),
+.catgoryDiv:nth-child(4),
+.catgoryDiv:nth-child(6) {
+  margin: 0;
+}
+.catgoryDiv a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.smallScreenSocial {
+  display: none;
+  padding-bottom: 1rem;
+}
+/*---------- end of footer ----------*/
+
+/*---------- media query ----------*/
+@media (max-width: 1536px) {
+    .mainContainer{
+        width: 699px;
+    }
+}
+@media (max-width: 1472px) {
+  .navigation {
+    padding: 0 9.5%;
+  }
+}
+@media (max-width: 1401px) {
+  .navigation {
+    padding: 0 6.5%;
+  }
+}
+@media (max-width: 1305px) {
+  .navigation {
+    padding: 0 3.5%;
+  }
+}
+@media (max-width: 1223px) {
+  .navigation {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1179px) {
+  .navigationnavbar ul li a {
+    font-size: 12px;
+  }
+  .logo svg {
+    width: 87.85px;
+    height: 1.5rem;
+  }
+}
+@media (max-width: 1158px) {
+  .footerdescription {
+    display: none;
+  }
+  footer {
+    padding: 1.5rem 0 2rem 0;
+  }
+  .mediumScreen {
+    display: block;
+  }
+  .subheading h2 {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .descriptionOne svg:first {
+    margin-bottom: 1.25rem;
+  }
+  .dateTime {
+    border: none;
+    font-size: 0.68rem;
+  }
+  .contact {
+    font-size: 0.75rem;
+  }
+  .accordion-flush .accordion-item:last-child {
+    border-bottom: 1px solid var(--bs-border-color);
+  }
+  .largeScreenSocial {
+    display: none;
+  }
+  .smallScreenSocial {
+    display: block;
+  }
+}
+@media (max-width: 1048px) {
+  .navigationnavbar ul li {
+    margin-left: 1rem;
+  }
+  .navigationnavbar ul li:last-child {
+    margin-right: 1rem;
+  }
+  .tPrice p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .productDetails h2 {
+    color: #000;
+    font-family: Ubuntu;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0.75rem;
+  }
+  .quandity div {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+    margin-bottom: 0.75rem;
+  }
+  .quandity div i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8px;
+    height: 8px;
+    object-fit: contain;
+  }
+  .quandity div:first-child,
+  .quandity div:last-child {
+    width: 24px;
+    cursor: pointer;
+    background-color: #eee;
+  }
+  #qty {
+    color: #000;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    user-select: none;
+  }
+  .color {
+    color: rgba(0, 0, 0, 0.4);
+    font-family: Inter;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .cName {
+    text-transform: capitalize;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.65rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 1.2rem;
+  }
+  .price {
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: Ubuntu;
+  }
+  .price p:nth-child(1) {
+    color: #212121;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .price p:nth-child(2) {
+    color: #bdbdbd;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration-line: line-through;
+  }
+  .price p:nth-child(3) {
+    color: #3cb77c;
+    font-size: 0.8rem;
+    width: max-content;
+    font-weight: 500;
+  }
+  .deleteBtn {
+    top: 14px;
+    right: 14px;
+  }
+  .deleteBtn svg {
+    width: 11px;
+    height: 15px;
+  }
+  .checkOut button {
+    width: 8rem;
+    border: transparent;
+    outline: transparent;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.175rem;
+    text-transform: uppercase;
+    background-color: #0f0;
+    padding: 0.8rem;
+  }
+  .checkOut {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+    padding: 0 3%;
+  }
+}
+@media (max-width: 871px) {
+  .itemImg {
+    width: 120px;
+  }
+}
+@media (max-width: 771px) {
+  .cartBody {
+    flex-direction: column;
+    align-items: center;
+  }
+  .orderSummary {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-left: 0;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 2rem;
+  }
+  .oneSection {
+    width: 100%;
+  }
+  .cartHead {
+    padding: 0.9rem 1.25rem;
+  }
+  .cartHead h2 {
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .cartHead svg {
+    width: 30px;
+    height: 30px;
+  }
+  .cartBody {
+    padding: 0.9rem 1.25rem;
+  }
+  .quandity div i {
+    font-size: x-small;
+  }
+  .productDetails h2 {
+    font-size: 15px;
+  }
+  .price p:nth-child(1) {
+    font-size: 15px;
+  }
+  .price p:nth-child(2) {
+    font-size: 0.6rem;
+  }
+  .price p:nth-child(3) {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 861px) {
+  .navigationnavbar {
+    display: none;
+  }
+  .mobilenavigation {
+    display: block;
+  }
+  .mobilenavigationList {
+    display: block;
+  }
+  .logo.active a {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 654px) {
+    .cardOptions{
+        border-radius: 9px;
+        width: 7rem;
+        border: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    .cardOptions svg{
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.2rem;
+    }
+    .cardOptions p{
+        color: #000;
+        font-family: Ubuntu;
+        font-size: 0.7rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
+@media (max-width: 600px) {
+  .loginbox {
+    width: 21rem;
+  }
+  .loginBtn {
+    width: 100px;
+    height: 42px;
+  }
+  .inputForm input {
+    font-size: small;
+  }
+  .useroptions ul li:nth-child(2) {
+    display: none;
+  }
+  .error p {
+    margin-top: 10px;
+    color: red;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  .inputForm a {
+    color: rgba(0, 0, 255, 0.75);
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-decoration-line: underline;
+  }
+  .registerText a {
+    color: black;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+@media (max-width: 585px) {
+    .cardOptions{
+        border-radius: 9px;
+        width: 6rem;
+        border: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    .cardOptions svg{
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.2rem;
+    }
+    .cardOptions p{
+        color: #000;
+        font-family: Ubuntu;
+        font-size: 0.65rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
+@media (max-width: 481px) {
+  .orderHeading {
+    padding: 0.65rem;
+  }
+  .orderHeading h2 {
+    font-size: 15px;
+  }
+  .orderContent {
+    padding: 0.65rem;
+  }
+  .orderContent div {
+    margin-bottom: 17px;
+  }
+  .tPrice {
+    padding: 0.65rem;
+  }
+  .ship p:nth-child(2) {
+    font-size: 0.8rem;
+  }
+  .checkOut button {
+    width: 7rem;
+    border: transparent;
+    outline: transparent;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.175rem;
+    text-transform: uppercase;
+    background-color: #0f0;
+    padding: 0.6rem;
+  }
+}
+@media (min-width: 1537px) {
+  .catgoryDiv {
+    height: 4em;
+  }
+}
+/*---------- end of media query ----------*/
