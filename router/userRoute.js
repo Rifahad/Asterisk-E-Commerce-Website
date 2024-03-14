@@ -37,8 +37,12 @@ router.get("/", auth.login)
 
     .get("/usersAddToCart",cart.cart)
     .get('/userCartNow/:id',cart.addToCart)
+    .delete('/userCartDelete',cart.deleteFromCart)
+
+    .get('/userCartCheckOut',cart.checkOut)
 
     .get('/userAccount',profile.userProfile)
+
      
 
 

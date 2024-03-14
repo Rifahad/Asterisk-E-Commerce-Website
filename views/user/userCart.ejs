@@ -15,6 +15,8 @@
     <!-- end of Bootstrap css cdn link -->
     <!-- Style css -->
     <link rel="stylesheet" href="./css/userCart.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- end of Style css -->
   </head>
   <body>
@@ -240,21 +242,8 @@
               <div class="col-6 oneSection">
                 <div class="cartItems">
                   <% cart.items.forEach((item)=>{ %>
-                  <div class="items position-relative">
-                    <a
-                      class="position-absolute deleteBtn"
-                      href="/userCartDelete/id"
-                    >
-                      <svg
-                        viewBox="0 0 15 19"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.07143 16.8889C1.07143 18.05 2.03571 19 3.21429 19H11.7857C12.9643 19 13.9286 18.05 13.9286 16.8889V4.22222H1.07143V16.8889ZM15 1.05556H11.25L10.1786 0H4.82143L3.75 1.05556H0V3.16667H15V1.05556Z"
-                          fill="black"
-                        />
-                      </svg>
+                  <div class="items position-relative delete_tr<%=item.productId._id%>">
+                      <i class="fa-solid fa-trash-can position-absolute deleteBtn" style="cursor: alias;" onclick="removeFromCart('<%=item.productId._id%>')"></i>
                     </a>
                     <div class="contentDiv d-flex gap-4">
                       <div class="itemImg">
@@ -344,26 +333,9 @@
                     class="commonText tPrice d-flex justify-content-between align-items-center"
                   >
                     <p class="m-0 p-0">Total</p>
-                    <p class="m-0 p-0" id="tPrice">₹9,497</p>
+                    <p class="m-0 p-0" id="tPrice">₹</p>
                   </div>
                 </div>
-                <!-- <div class="ms-auto orderSummary mb-0">
-                                <div class="orderHeading">
-                                    <h2>Delivery Address</h2>
-                                </div>
-                                <div class="deleviryContent">
-                                    <div class="chooseAdd position-relative">
-                                        <div class="existingAddress">
-                                            <p class="name">John D</p>
-                                            <p>Abc house, abc street,PIN: 673478</p>
-                                            <p class="phone">Phone: 98675555568</p>
-                                        </div>
-                                        <a href="/userChangeAddress">
-                                            <button class="position-absolute button">Change</button>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> -->
               </div>
             </div>
           </div>
@@ -901,4 +873,21 @@
     ></script>
     <!--end of Bootstrap script file -->
   </body>
+  <script>
+    
+
+async function removeFromCart(id) {
+    try {
+      console.log(id)
+        const response = await axios.delete(`/userCartDelete?id=${id}`)
+        const result =response.data
+        if (result.success === true) {
+          document.querySelector(`.delete_tr${id}`).remove();
+            console.log('deleted successfully')
+        }
+    } catch (error) {
+        console.log('cart product not deleted'+error);  
+    }
+}
+  </script>
 </html>

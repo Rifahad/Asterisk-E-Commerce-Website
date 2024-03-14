@@ -51,8 +51,30 @@ module.exports = {
         } else {
             res.status(403).json({ error: 'Unauthorized' });
         }
+    },
+    deleteFromCart:async (req,res) => {
+        try {
+            const id =req.query.id
+            const userId = req.session.userId;
+            console.log(id)
+            await cartModel.updateOne(
+              { userId },
+              { $pull: { items: { productId: id } } }
+            );
+            const cart = await cartModel.findOne({ userId });
+            let length = cart.items.length;
+            res.status(200).json({ success: true, message:"product deleted",length});
+          } catch (err) {
+            console.log("delete cart error", err);
+          }
+    },
+    checkOut:(req,res)=>{
+        if(req.session.userId){
+            res.status(200).render('user/userPayment')
+        }else{
+            res.redirect('/')
+        }
     }
-    
 
 
 
