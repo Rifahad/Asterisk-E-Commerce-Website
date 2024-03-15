@@ -15,7 +15,53 @@ const incBtn = document.querySelectorAll(".inc");
 const qty = document.querySelectorAll(".qtyOne");
 const lPrice = document.querySelectorAll(".lPrice");
 const fPrice = document.querySelectorAll(".fPrice");
-const sTotal = document.querySelector("#sTotal");
 const dPrice = document.querySelector("#dPrice");
 const tPrice = document.querySelector("#tPrice");
+const subTotal = document.querySelector("#subTotal");
+
+
+sub=subTotal.innerHTML.replace('')
+
+
+
+
+
+
+
+function decreaseQuantity(event,productID,price,stock) {
+  event.preventDefault()
+  console.log(productID);
+  const quantityShowArea = document.querySelector(`.qtyOne${productID}`);
+  if(quantityShowArea.innerHTML>1){
+    quantityShowArea.innerHTML=+quantityShowArea.innerHTML -1;
+    const quantityValue=parseInt(quantityShowArea.innerHTML)
+    console.log(quantityValue)
+    const response=axios.post('/quantityUpdate', {
+      productId:productID,
+      qty:quantityValue,
+    });
+    if(response.status==200){
+     
+    }
+
+  }else{
+    removeFromCart(productID)
+  }
+}
+
+
+
+function increaseQuantity(event,productID,price,stock) {
+  event.preventDefault()
+  console.log(productID);
+  const quantityShowArea = document.querySelector(`.qtyOne${productID}`);
+    quantityShowArea.innerHTML=+quantityShowArea.innerHTML +1;
+    const quantityValue=parseInt(quantityShowArea.innerHTML)
+    console.log(quantityValue)
+    const response=axios.post('/quantityUpdate', {
+      productId:productID,
+      qty:quantityValue,
+    });
+}
+
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Account</title>
+    <title>Add Address</title>
     <!-- <link rel="shortcut icon" href="#" type="image/x-icon" /> -->
     <!-- Bootstrap css cdn link -->
     <link
@@ -14,13 +14,14 @@
     />
     <!-- end of Bootstrap css cdn link -->
     <!-- Style css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/userCart.css" />
+    <link rel="stylesheet" href="./css/addAddress.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <!-- end of Style css -->
   </head>
   <body>
+
     <!-- header -->
     <header>
       <div class="container-fluid">
@@ -83,21 +84,23 @@
                     <a href="/"> Home </a>
                   </li>
                   <li>
-                    <a href="/category"> Earbuds </a>
+                    <a href="/earbuds"> Earbuds </a>
                   </li>
                   <li>
-                    <a href="/category"> Earphones </a>
+                    <a href="/earphones"> Earphones </a>
                   </li>
                   <li>
-                    <a href="/category"> Speakers </a>
+                    <a href="/speakers"> Speakers </a>
                   </li>
                   <li>
-                    <a href="/category"> Soundbars </a>
+                    <a href="/soundbars"> Soundbars </a>
                   </li>
                   <li>
-                    <a href="/category"> Smart Watch </a>
+                    <a href="/smartWatch"> Smart Watch </a>
                   </li>
-                  
+                  <li>
+                    <a href="/"> Shop By Category </a>
+                  </li>
                 </ul>
               </div>
 
@@ -105,19 +108,19 @@
                 <h2>Shop By Category</h2>
                 <ul class="m-0 list-unstyled">
                   <li>
-                    <a href="/category"> Earbuds </a>
+                    <a href="/earbuds"> Earbuds </a>
                   </li>
                   <li>
-                    <a href="/category"> Earphones </a>
+                    <a href="/earphones"> Earphones </a>
                   </li>
                   <li>
-                    <a href="/category"> Speakers </a>
+                    <a href="/speakers"> Speakers </a>
                   </li>
                   <li>
-                    <a href="/category"> Soundbars </a>
+                    <a href="/soundbars"> Soundbars </a>
                   </li>
                   <li>
-                    <a href="/category"> Smart Watch </a>
+                    <a href="/smartWatch"> Smart Watch </a>
                   </li>
                 </ul>
               </div>
@@ -125,7 +128,7 @@
               <div class="useroptions d-flex">
                 <ul class="m-0 p-0 d-flex align-items-center list-unstyled">
                   <li>
-                    <a href="/userAccount">
+                    <a href="/userAccont">
                       <svg
                         width="20"
                         height="20"
@@ -172,7 +175,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="/wishlist">
+                    <a href="/userWhislist">
                       <svg
                         width="20"
                         height="20"
@@ -215,118 +218,53 @@
     <!-- main -->
     <main>
       <div class="container-fluid main">
-        <div class="row mainContainer">
-          <div class="col-12">
+        <div class="row justify-content-center">
+          <div class="col-6 mainContainer">
             <div class="cartHead">
               <div class="d-flex align-items-center gap-2">
-                <h2 class="m-0 p-0">Cart(2)</h2>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 7.41421C4 7.20984 4 7.10765 4.03806 7.01577C4.07612 6.92388 4.14838 6.85162 4.29289 6.70711L5.82843 5.17157C6.40649 4.59351 6.69552 4.30448 7.06306 4.15224C7.4306 4 7.83935 4 8.65685 4H15.3431C16.1606 4 16.5694 4 16.9369 4.15224C17.3045 4.30448 17.5935 4.59351 18.1716 5.17157L19.7071 6.70711C19.8516 6.85162 19.9239 6.92388 19.9619 7.01577C20 7.10765 20 7.20984 20 7.41421V8H4V7.41421Z"
-                    stroke="black"
-                    stroke-width="2"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M21 8H3V17C3 18.8856 3 19.8284 3.58579 20.4142C4.17157 21 5.11438 21 7 21H17C18.8856 21 19.8284 21 20.4142 20.4142C21 19.8284 21 18.8856 21 17V8ZM10 11C10 10.4477 9.55228 10 9 10C8.44772 10 8 10.4477 8 11C8 12.0609 8.42143 13.0783 9.17157 13.8284C9.92172 14.5786 10.9391 15 12 15C13.0609 15 14.0783 14.5786 14.8284 13.8284C15.5786 13.0783 16 12.0609 16 11C16 10.4477 15.5523 10 15 10C14.4477 10 14 10.4477 14 11C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11Z"
-                    fill="black"
-                  />
-                </svg>
+                <svg viewBox="0 0 69 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_395_60)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M55.0401 52.279C63.5259 54.6811 68.9764 58.5193 68.9764 62.847C68.9764 70.1122 53.5388 76 34.4915 76C15.4441 76 0 70.1122 0 62.847C0 58.4148 5.7377 54.4983 14.5368 52.1158L15.5029 53.4213C16.1556 54.3156 16.8932 55.2033 17.6308 56.0715C11.4754 57.5597 7.53277 59.8574 7.53277 62.4358C7.53277 66.9267 19.4716 70.5691 34.2042 70.5691C48.9369 70.5691 60.8757 66.9267 60.8757 62.4358C60.8757 60.0402 57.4553 57.8665 52.0244 56.3913C53.0949 55.0858 54.1001 53.6889 55.0401 52.279Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M45.8175 54.0349C42.9344 57.2115 39.6133 59.9611 35.9544 62.2008C35.7259 62.3684 35.4518 62.4626 35.1684 62.4708C34.8851 62.4789 34.606 62.4007 34.3682 62.2465C29.1499 58.9551 24.5171 54.8165 20.6604 50.0009C15.6669 43.7344 12.488 36.7761 11.4109 30.0723C10.3339 23.3685 11.3391 16.7431 14.7204 11.4297C16.0944 9.2679 17.8222 7.35256 19.8314 5.76381C24.5965 1.95826 30.0274 -0.0391647 35.4714 5.10248e-07C39.265 0.104301 42.9723 1.15493 46.2566 3.05641C49.5409 4.95789 52.2979 7.64994 54.2772 10.8879C57.913 16.8737 58.6963 24.5109 57.1036 32.246C55.3363 40.374 51.4414 47.8867 45.8175 54.0153V54.0349ZM34.44 12.0825C36.7487 12.0825 39.0054 12.7671 40.9249 14.0499C42.8444 15.3326 44.3403 17.1558 45.2235 19.2888C46.1066 21.4218 46.3374 23.7688 45.8865 26.033C45.4356 28.2972 44.3234 30.3768 42.6905 32.0088C41.0576 33.6408 38.9774 34.7518 36.713 35.2014C34.4485 35.651 32.1016 35.419 29.9691 34.5346C27.8366 33.6502 26.0143 32.1533 24.7326 30.2331C23.4509 28.3129 22.7675 26.0558 22.7688 23.7471C22.7688 22.2148 23.0707 20.6974 23.6574 19.2818C24.244 17.8661 25.1038 16.5799 26.1876 15.4967C27.2715 14.4134 28.5582 13.5543 29.9741 12.9685C31.3901 12.3827 32.9077 12.0816 34.44 12.0825Z" fill="black"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_395_60">
+                  <rect width="68.9764" height="76" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>                                             
+                <h2 class="m-0 p-0 text-capitalize">Add Address</h2>
               </div>
             </div>
-            <div class="cartBody d-flex">
-              <div class="col-6 oneSection">
-                <div class="cartItems">
-                  <% cart.items.forEach((item)=>{ %>
-                  <div class="items position-relative delete_tr<%=item.productId._id%>">
-                      <i class="fa-solid fa-trash-can position-absolute deleteBtn" style="cursor: grab;" onclick="removeFromCart('<%=item.productId._id%>')"></i>
-                    </a>
-                    <div class="contentDiv d-flex gap-4">
-                      <div class="itemImg">
-                        <img src="/asset/<%= item.productId.productImage[0] %>" alt="" />
-                      </div>
-                      <div class="productDetails">
-                        <h2><%= item.productId.productName%></h2>
-                        <div class="quandity d-flex align-items-center">
-                          <div
-                            class="dec d-flex justify-content-center align-items-center" onclick="decreaseQuantity(event,'<%=item.productId._id%>','<%=item.productId.price%>','<%=item.productId.quantity%>')"
-                          >
-                            <i class="fa-solid fa-minus"></i>
+            <form id="addAddress" method="post">
+                <div class="editBody">
+                    <div class="d-flex uAcc">
+                        <div class="sides">
+                            <div>
+                                <label for="locality">Locality</label>
+                                <input name="locality" class="d-block text-capitalize" type="text">
+                                <label for="country">Country</label>
+                                <input name="country" class="d-block" type="text">
+                                <label for="district">District</label>
+                                <input name="district" class="d-block" type="text">
+                                <label for="state">State</label>
+                                <input name="state" class="d-block" type="text">
+                            </div>
                           </div>
-                          <div
-                            class="qty d-flex justify-content-center align-items-center"
-                          >
-                            <p class="m-0 p-0 qtyOne<%=item.productId._id%>"><%= item.quantity%></p>
-                          </div>
-                          <div
-                            class="inc d-flex justify-content-center align-items-center"onclick="increaseQuantity(event,'<%=item.productId._id%>','<%=item.productId.price%>','<%=item.productId.quantity%>')"
-                          >
-                            <i class="fa-solid fa-plus"></i>
-                          </div>
+                          <div class="sides">
+                            <div class="left">
+                              <label for="city">City</label>
+                              <input name="city" class="d-block text-capitalize" type="text">
+                              <label for="hNo">House NO</label>
+                              <input name="hNo" class="d-block" type="number">
+                              <label for="pin">PIN Code</label>
+                              <input name="pin" class="d-block" type="number">
+                            </div>
+                            <button type="submit" id="addAddressBtn" class="saveBtn oneBtn">Add Address</button>
                         </div>
-                        <p class="color">COLOR</p>
-                        <p class="cName"><%= item.productId.colour%></p>
-                        <div class="price d-flex align-items-baseline gap-2">
-                          <p class="lPrice"><%const result = (item.productId.price * item.productId.discount) / 100;
-                            const discountedPrice = Math.ceil(item.productId.price-result);%>
-                           <%= discountedPrice %></p>
-                          <p class="fPrice"><%= item.productId.price%></p>
-                          <p><%= item.productId.discount%>% OFF</p>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                  <% }) %>
                 </div>
-              </div>
-              <div class="col-6 oneSection">
-                <div class="orderSummary">
-                  <div class="orderHeading">
-                    <h2>order summary</h2>
-                  </div>
-                  <div class="orderContent">
-                    <div
-                      class="sTotal d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Subtotal</p>
-                      <p class="commonSub m-0 p-0" id="subTotal">₹<%=total%></p>
-                    </div>
-
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Shipping</p>
-                      <p class="commonSub m-0 p-0" id="free">FREE</p>
-                    </div>
-
-        
-                  </div>
-                  <div
-                    class="commonText tPrice d-flex justify-content-between align-items-center"
-                  >
-                    <p class="m-0 p-0">Total</p>
-                    <p class="m-0 p-0" id="tPrice">₹<%=total%></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="checkOut">
-              <form action="/userCartCheckOut">
-                <button>CHECKOUT</button>
-              </form>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -834,7 +772,7 @@
     <!-- end of footer -->
 
     <!-- custom js -->
-    <script src="./js/userCart.js"></script>
+    <script src="./js/addAddress.js"></script>
     <!-- end of custom js -->
     <!-- fontawesome -->
     <script
@@ -851,18 +789,28 @@
     <!--end of Bootstrap script file -->
   </body>
   <script>
-async function removeFromCart(id) {
-    try {
-      console.log(id)
-        const response = await axios.delete(`/userCartDelete?id=${id}`)
-        const result =response.data
-        if (result.success === true) {
-          document.querySelector(`.delete_tr${id}`).remove();
-            console.log('deleted successfully')
-        }
-    } catch (error) {
-        console.log('cart product not deleted'+error);  
+const addAddress = document.getElementById('addAddress');
+const addBtn = document.getElementById('addAddressBtn');
+
+addBtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  const form = new FormData(addAddress);
+  const data = Object.fromEntries(form.entries())
+  console.log(data);
+  try {
+
+    const response = await axios.post('/addAddress',data);
+    if (response.status==200) {
+      swal("Address added successfully", {
+      icon: "success",
+      button: "OK",
+    });
     }
-}
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+
   </script>
 </html>

@@ -9,22 +9,27 @@ module.exports = {
         if(req.session.userId){
             const userId=new ObjectId(req.session.userId)
             const cart=await cartModel.findOne({userId:userId}).populate({path:'items.productId',model:'Products'})
-            console.log(cart)
-            res.status(200).render("user/userCart",{cart:cart || ''})
+            const totalAmount=cart.items.reduce((acc,data)=>{
+                let discountAmount=(data.productId.discount * data.productId.price)/100
+                let discountedPrice=data.productId.price-discountAmount
+                return acc+=discountedPrice * data.quantity
+                  
+            },0)
+            console.log(totalAmount)
+
+            res.status(200).render("user/userCart",{cart:cart || '',total:totalAmount})
         }else{
             res.redirect('/')
         }
     },
-    addToCart: async (req, res) => {
+    addToCart: async (req,res) => {
         if (req.session.userId) {
             const user = req.session.userId;
             const product = req.params.id;
             const userObjId = new mongoose.Types.ObjectId(user);
             const productObjId = new mongoose.Types.ObjectId(product);
-    
             try {
                 let cart = await cartModel.findOne({ userId: userObjId });
-    
                 if (!cart) {
                     const newCart = new cartModel({
                         userId: userObjId,
@@ -32,9 +37,8 @@ module.exports = {
                     });
                     await newCart.save();
                 } else {
-                    // Check if the product already exists in the cart
                     const productExist = cart.items.find(item =>
-                        item.productId.equals(productObjId)
+                        item.productId?.equals(productObjId)
                     );
     
                     if (!productExist) {
@@ -68,23 +72,20 @@ module.exports = {
             console.log("delete cart error", err);
           }
     },
-    checkOut:(req,res)=>{
-        if(req.session.userId){
-            res.status(200).render('user/userPayment')
-        }else{
-            res.redirect('/')
-        }
-    }
+    quantityUpdate:async (req,res)=>{
+        const user=req.session.userId
+        const quantity=req.body.qty
+        const productId=req.body.productId
 
-
-
-
-
-
-
-
-
-
+        const cart=await cartModel.updateOne(
+            {userId:user,'items.productId':productId},
+            {$set:{'items.$.quantity':quantity}}
+        )
+        res.status(200).json({success:true,message:'quantity updated'})
+        
+        
+    },
+    
 
 
 }

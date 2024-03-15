@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -238,34 +238,18 @@
               ></button>
             </div>
             <div class="modal-body">
+              <% data.address.forEach((data)=>{ %>
               <div class="chooseAdd existingAddress p-3 w-100 mb-3 position-relative">
-                <p class="name">John D</p>
-                <p>Abc house, abc street,PIN: 673478</p>
-                <p class="phone">Phone: 98675555568</p>
-                <input name="adId" class="position-absolute radio" type="radio" value="proId1">
+                <p class="name"><%= userName.fullName %></p>
+                <p><%= data.locality %>, <%= data.hNo %>, <%= data.district %>,PIN: <%= data.pin %></p>
+                <p class="phone">Phone: <%= userName.phoneNumber %></p>
+                <input name="adId" class="position-absolute radio" type="radio" value="<%= data.locality %>, <%= data.hNo %>, <%= data.district %>,PIN: <%= data.pin %>">
               </div>
-              <div class="chooseAdd existingAddress p-3 w-100 mb-3 position-relative">
-                <p class="name">John D</p>
-                <p>Abc house, abc street,PIN: 673478</p>
-                <p class="phone">Phone: 98675555568</p>
-                <input name="adId" class="position-absolute radio" type="radio" value="proId2">
-              </div>
-              <div class="chooseAdd existingAddress p-3 w-100 mb-3 position-relative">
-                <p class="name">John D</p>
-                <p>Abc house, abc street,PIN: 673478</p>
-                <p class="phone">Phone: 98675555568</p>
-                <input name="adId" class="position-absolute radio" type="radio" value="proId3">
-              </div>
-              <div class="chooseAdd existingAddress p-3 w-100 mb-3 position-relative">
-                <p class="name">John D</p>
-                <p>Abc house, abc street,PIN: 673478</p>
-                <p class="phone">Phone: 98675555568</p>
-                <input name="adId" class="position-absolute radio" type="radio" value="proId4">
-              </div>
-              
-              <p class="m-0"><a href="/" class="button">Add Address</a></p>
+              <% }) %>
+                            
+              <p class="m-0"><a href="/addAddress" class="button">Add Address</a></p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer">  
               <button
                 type="button"
                 class="btn btn-secondary bg-danger text-white"
@@ -294,7 +278,7 @@
                         type="radio"
                         id="creditCard"
                       />
-                      <h2 class="m-0">Credit Card</h2>
+                      <h2 class="m-0">Razore Pay</h2>
                     </div>
                     <div class="credit">
                       <label for="cCNo" class="d-block"
@@ -331,6 +315,21 @@
                     </div>
                   </div>
 
+                  <div class="coupons">
+                    <form
+                      action="/userApplyCoupon"
+                      class="d-flex align-items-center"
+                      method="post"
+                    >
+                      <div class="input">
+                        <input type="text" placeholder="Enter Coupon Code" />
+                      </div>
+                      <div>
+                        <button type="submit">APPLY</button>
+                      </div>
+                    </form>
+                  </div>
+
                   <div class="orderSummary m-0 w-100">
                     <div class="orderHeading">
                       <h2>Delivery Address</h2>
@@ -338,8 +337,8 @@
                     <div class="deleviryContent">
                       <div class="chooseAdd position-relative">
                         <div class="existingAddress">
-                          <p class="name">John D</p>
-                          <p>Abc house, abc street,PIN: 673478</p>
+                          <p class="name"><%= userName.fullName %></p>
+                          <p id="addressSlot"><%= data.address[0].hNo %>, <%= data.address[0].district%>, PIN: <%= data.address[0].pin %></p>
                           <p class="phone">Phone: 98675555568</p>
                         </div>
                         <a
@@ -366,7 +365,7 @@
                       class="sTotal d-flex justify-content-between align-items-center"
                     >
                       <p class="commonText m-0 p-0">Subtotal</p>
-                      <p class="commonSub m-0 p-0" id="sTotal">₹27,598</p>
+                      <p class="commonSub m-0 p-0" id="sTotal">₹<%= total %></p>
                     </div>
 
                     <div
@@ -374,13 +373,6 @@
                     >
                       <p class="commonText m-0 p-0">Shipping</p>
                       <p class="commonSub m-0 p-0" id="free">FREE</p>
-                    </div>
-
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
-                      <p class="commonText m-0 p-0">Discount</p>
-                      <p class="commonSub m-0 p-0" id="dPrice">-19,600</p>
                     </div>
 
                     <div
@@ -394,7 +386,7 @@
                     class="commonText tPrice d-flex justify-content-between align-items-center"
                   >
                     <p class="m-0 p-0">Total</p>
-                    <p class="m-0 p-0" id="tPrice">₹7,998</p>
+                    <p class="m-0 p-0" id="tPrice">₹<%= total %></p>
                   </div>
                 </div>
               </div>

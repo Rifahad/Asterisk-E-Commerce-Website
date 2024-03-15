@@ -93,10 +93,12 @@ COD.addEventListener('click', () => {
 })
 
 const radio = document.querySelectorAll('.radio');
+const viewAddress=document.getElementById('addressSlot')
 
 radio.forEach((element) => {
   element.addEventListener('change', () => {
     const data = element.value;
+    viewAddress.innerHTML=data
     console.log(data);
   })
 }); 

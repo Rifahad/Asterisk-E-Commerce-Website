@@ -9,6 +9,8 @@ const auth = require("../controller/auth");
 const cart=require('../controller/cart');
 const wishlist=require('../controller/wishlist')
 const profile=require('../controller/profile')
+const address=require('../controller/addressController')
+const payment=require('../controller/paymentController')
 
 router.get("/", auth.login)
     .post("/home", auth.loginPost)
@@ -38,10 +40,16 @@ router.get("/", auth.login)
     .get("/usersAddToCart",cart.cart)
     .get('/userCartNow/:id',cart.addToCart)
     .delete('/userCartDelete',cart.deleteFromCart)
+    .post('/quantityUpdate',cart.quantityUpdate)
 
-    .get('/userCartCheckOut',cart.checkOut)
+    .get('/userCartCheckOut',payment.checkOut)
 
     .get('/userAccount',profile.userProfile)
+    .get('/addAddress',address.addAddress)
+    .post('/addAddress',address.addAddressPost)
+    .get('/userEditAddress',address.listAddress)
+    .delete('/deleteAddress/:addressId',address.deleteAddress)
+
 
      
 
