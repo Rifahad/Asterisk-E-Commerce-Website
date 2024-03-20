@@ -5,8 +5,7 @@ const form=document.getElementById("form")
 submit_Button.addEventListener("click",async(event)=>{
     event.preventDefault()
     const forgotForm=new FormData(form)
-    const formOtp=Object.fromEntries(forgotForm)
-
+    const formOtp=Object.fromEntries(forgotForm)    
     try{
         const url=`/forgot`
         const response=axios.post(url,formOtp)

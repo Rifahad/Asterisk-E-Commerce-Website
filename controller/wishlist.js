@@ -13,7 +13,6 @@ module.exports = {
           const item = await product.findById(i);
           products.push(item);
         }
-        console.log(products);
         res.render("user/wishlist", { products });
       } else {
         res.redirect("/");

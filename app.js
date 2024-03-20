@@ -23,7 +23,6 @@ app.use(session({
 //requiring routers and set as multer
 const common=require("./router/userRoute")
 const adminRoutes=require("./router/adminRoute")
-
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(express.static("public"))

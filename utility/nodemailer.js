@@ -34,8 +34,7 @@ transporter.sendMail(mailOption, (error, info) => {
   console.log("Mail has been sent successfully");
   next();
 });
-
-
 }
+
 module.exports=mailSender;
 

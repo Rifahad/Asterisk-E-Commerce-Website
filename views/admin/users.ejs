@@ -1,122 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USER DETAILS</title>
-    <link rel="stylesheet" href="/css/adminCss/products.css">
-    <link rel="stylesheet" href="/css/adminCss/main.css">
+    <meta charset="utf-8">
+    <title>ASTERISK - Users</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/adminCss/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/adminCss/style.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="continer">
-        <div class="layer1">
-            <div class="logo">
-                <h2 class="rt">Rt-Store</h2>
-            </div>
-            <div class="searchBar">
-                <!-- <input type="text" placeholder="  search product" class="searchBar1"> -->
-            </div>
-            <div class="logout">
-                <button class="btn1">LOGOUT</button>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="layer2">
-            <div class="tabs">
-                <ul>
-                    <li onclick="window.location.href='/dashboard'">DASHBOARD</li>
-                    <li onclick="window.location.href='/users'" style="background-color:#F4F8FF;">USERS</li>
-                    <li onclick="window.location.href='/products'">PRODUCTS</li>
-                    <li onclick="window.location.href='/category'">CATEGORY</li>
-                    <li onclick="window.location.href='/coupon'">COUPONS</li>
-                    <li onclick="window.location.href='/orders'">ORDERS</li>
-                    <li onclick="window.location.href='/banner'">BANNERS</li>
-                </ul>
-            </div>
-            <div class="content_part">
-            
-                <div class="user_list_head">
-                    <p style="font-size: x-large; padding-left: 1.5rem;">Users</p>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="bi bi-asterisk"></i> ASTERISK</h3>
+                </a>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-people-fill me-2"></i>Users</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/users" class="dropdown-item">View Users</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown"><i class="bi bi-bag-check-fill me-2"></i>Products</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/products" class="dropdown-item">View Products</a>
+                            <a href="/add-product" class="dropdown-item">Add Products</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-shop-window me-2 me-2"></i>Categories</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/category" class="dropdown-item">View Category</a>
+                            <a href="/add-category" class="dropdown-item">Add Category</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-handbag-fill me-2"></i>Orders</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/orders" class="dropdown-item">View Orders</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-chart-bar me-2"></i>Coupons</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/coupon" class="dropdown-item">View coupons</a>
+                            <a href="/add-coupon" class="dropdown-item">Add Coupon</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Banners</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/banner" class="dropdown-item">View banners</a>
+                            <a href="/add-banner" class="dropdown-item">Add Banner</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="user_list">
-                    <div class="user_table">
-    
-                        <table>
-                           <thead>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="d-none d-lg-inline-flex">More</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            <!-- Footer Start -->
+<!-- Navbar End -->
+
+
+<!-- Table Start -->
+<div class="container-fluid pt-4 px-4"> 
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Responsive Table</h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Reg.Date</th>
-                                <th>Action</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone No</th>
+                                <th scope="col">Registration Date</th>
+                                <th scope="col">Action</th>
                             </tr>
-                           </thead>
-         
-                           <tbody>
+                        </thead>
+                        <tbody>
                             <%for (let i = 0; i < data.length; i++) {%>
-                                <tr>
-                                <td><%=data[i].fullName %></td>
+                            <tr>
+                                <th scope="row"><%=data[i].fullName %></th>
                                 <td><%=data[i].email %></td>
                                 <td><%=data[i].phoneNumber %></td>
                                 <td><%=data[i].regDate.toDateString() %></td>
                                 <% if(data[i].isBlocked == false) {%>
-                                <td><button type="submit" class="edit-delete" id="changeText" onclick="blockUser(event,'<%=data[i]._id %>')">BLOCK</button></td>
+                                <td><button type="submit" class="btn btn-outline-primary m-2" id="changeText" onclick="blockUser(event,'<%=data[i]._id %>')">BLOCK</button></td>
                                 <% }else{ %>
-                                <td><button type="submit" class="edit-delete" id="changeText" onclick="blockUser(event,'<%=data[i]._id %>')">UnBlock</button></td>
+                                <td><button type="submit" class="btn btn-outline-primary m-2" id="changeText" onclick="blockUser(event,'<%=data[i]._id %>')">UnBlock</button></td>
                                 <% } %>
-                                </tr>
-                            <% }  %>
-                           </tbody>
-                       </table>
-                    </div>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
                 </div>
-    
             </div>
         </div>
     </div>
-</body>
-<script>
-    async function blockUser(event, userId) {
-        event.preventDefault();
-        try {
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: "btn btn-success",
-                    cancelButton: "btn btn-danger"
-                },
-                buttonsStyling: false
-            });
-            swalWithBootstrapButtons.fire({
-                title: "Are you sure?",
-                text: "confirm blocking user!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Yes, Block it!",
-                cancelButtonText: "No, cancel!",
-                reverseButtons: true
-            }).then(async (result) => {
-                    const response=await axios.patch('/users/block/'+userId)
-                    console.log(response)
-                    if (result.isConfirmed) {
-                        document.getElementById('changeText').textContent=response.data.message;
-                        swalWithBootstrapButtons.fire({
-                            title: "Deleted!",
-                            text: "Your user has been blocked.",
-                            icon: "success"
-                    });
-                }else if (result.dismiss === Swal.DismissReason.cancel)
-                {
-                    swalWithBootstrapButtons.fire({
-                    title: "Cancelled",
-                    text: "Your user is safe :)",
-                    icon: "error"
-                    });
-                }
+
+<!-- Table End -->
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/admin/common.js"></script>
+    <script>
+        async function blockUser(event, userId) {
+            event.preventDefault();
+            try {
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-success",
+                        cancelButton: "btn btn-danger"
+                    },
+                    buttonsStyling: false
                 });
-        } catch (error) {
-            console.log(error)
+                swalWithBootstrapButtons.fire({
+                    title: "Are you sure?",
+                    text: "confirm blocking user!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, Block it!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                }).then(async (result) => {
+                        const response=await axios.patch('/users/block/'+userId)
+                        console.log(response)
+                        if (result.isConfirmed) {
+                            document.getElementById('changeText').textContent=response.data.message;
+                            swalWithBootstrapButtons.fire({
+                                title: "Deleted!",
+                                text: "Your user has been blocked.",
+                                icon: "success"
+                        });
+                    }else if (result.dismiss === Swal.DismissReason.cancel)
+                    {
+                        swalWithBootstrapButtons.fire({
+                        title: "Cancelled",
+                        text: "Your user is safe :)",
+                        icon: "error"
+                        });
+                    }
+                    });
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
-</script>
+    </script>
+</body>
+
 </html>

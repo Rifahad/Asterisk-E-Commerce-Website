@@ -32,7 +32,7 @@ module.exports = {
           }
         }
         let data = await product.findById(productId)
-        console.log("wishlistID",wishlistId)
+    
         res.render("user/productDetailPage",{data, wishlistId})
       }else{
         res.redirect("/")

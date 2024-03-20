@@ -42,7 +42,8 @@ router.get("/", auth.login)
     .delete('/userCartDelete',cart.deleteFromCart)
     .post('/quantityUpdate',cart.quantityUpdate)
 
-    .get('/userCartCheckOut',payment.checkOut)
+    .get('/userCartCheckOut',payment.cartCheckOut)
+    .get('/userBuyNow/:id',payment.buyNow)
 
     .get('/userAccount',profile.userProfile)
     .get('/addAddress',address.addAddress)

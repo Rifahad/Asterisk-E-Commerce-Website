@@ -67,14 +67,13 @@ module.exports = {
   loginPost: async (req, res) => {
     try {
       const { email, password } = req.body;
-      console.log(email, password);
       const account = await UserModel.findOne({ email });
       const passwordcheck = await bcrypt.compare(password, account.password);
       if (!account) {
         req.flash("account doesn't exist");
       } else if (
         account.email === email &&
-        passwordcheck &&
+        passwordcheck &
         account.otp == true
       ) {
         req.session.userId=account._id;

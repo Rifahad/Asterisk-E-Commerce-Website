@@ -57,7 +57,6 @@ function increaseQuantity(event,productID,price,stock) {
   const quantityShowArea = document.querySelector(`.qtyOne${productID}`);
     quantityShowArea.innerHTML=+quantityShowArea.innerHTML +1;
     const quantityValue=parseInt(quantityShowArea.innerHTML)
-    console.log(quantityValue)
     const response=axios.post('/quantityUpdate', {
       productId:productID,
       qty:quantityValue,

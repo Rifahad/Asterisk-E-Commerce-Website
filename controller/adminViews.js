@@ -13,8 +13,18 @@ module.exports = {
   },
   products: async (req, res) => {
     try {
-      const result = await productDetails.find();
-      res.status(200).render("admin/products", { products: result });
+      const page=parseInt(req.query.page) || 1
+      const limit=parseInt(req.query.limit) || 2
+      const skip = (page - 1) * limit;
+
+      console.log("Page:", page);
+        console.log("Limit:", limit);
+        console.log("Skip:", skip);
+
+      const result = await productDetails.find().skip(skip).limit(limit);
+      const totalProducts = await productDetails.countDocuments();
+      const totalPages = Math.ceil(totalProducts / limit);
+      res.status(200).render("admin/products", { products: result, totalProducts:totalProducts, currentPage: page, totalPages: totalPages  });
     } catch (error) {
       console.error("Error fetching products:", error);
       res.status(500).send("Error fetching products");

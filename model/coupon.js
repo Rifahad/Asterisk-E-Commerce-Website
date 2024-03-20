@@ -2,9 +2,8 @@ const mongoose=require("mongoose")
 
 const couponDetails=new mongoose.Schema({
     couponName: String,
-    couponDiscount: String,
+    couponDiscount: Number,
     minOrderAmount: Number,
-    maxOrderAmount: Number,
     startingDate:Date,
     endingDate: Date,
 })

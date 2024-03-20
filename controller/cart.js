@@ -15,8 +15,6 @@ module.exports = {
                 return acc+=discountedPrice * data.quantity
                   
             },0)
-            console.log(totalAmount)
-
             res.status(200).render("user/userCart",{cart:cart || '',total:totalAmount})
         }else{
             res.redirect('/')
