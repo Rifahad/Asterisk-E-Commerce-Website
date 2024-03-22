@@ -1,73 +1,60 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Account</title>
-    <!-- <link rel="shortcut icon" href="#" type="image/x-icon" /> -->
-    <!-- Bootstrap css cdn link -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <!-- end of Bootstrap css cdn link -->
-    <!-- Style css -->
-    <link rel="stylesheet" href="./css/userPayment.css" />
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <!-- end of Style css -->
-  </head>
-  <body>
-    <!-- header -->
-    <%- include('header') -%>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Account</title>
+  <!-- <link rel="shortcut icon" href="#" type="image/x-icon" /> -->
+  <!-- Bootstrap css cdn link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- end of Bootstrap css cdn link -->
+  <!-- Style css -->
+  <link rel="stylesheet" href="./css/userPayment.css" />
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <!-- end of Style css -->
+</head>
+
+<body>
+  <!-- header -->
+  <%- include('header') -%>
     <!-- end of header -->
 
     <!-- main -->
     <main>
       <!-- Modal -->
-      <div
-        class="modal fade"
-        id="changeAddressModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="changeAddressModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-white eachAdd border-0">
             <div class="modal-header">
-              <h5
-                class="modal-title"
-                id="exampleModalLabel"
-              >
+              <h5 class="modal-title" id="exampleModalLabel">
                 Address
               </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <% data.address.forEach((data)=>{ %>
-              <div class="chooseAdd existingAddress p-3 w-100 mb-3 position-relative">
-                <p class="name"><%= userName.fullName %></p>
-                <p><%= data.locality %>, <%= data.hNo %>, <%= data.district %>,PIN: <%= data.pin %></p>
-                <p class="phone">Phone: <%= userName.phoneNumber %></p>
-                <input name="adId" class="position-absolute radio" type="radio" value="<%= data.locality %>, <%= data.hNo %>, <%= data.district %>,PIN: <%= data.pin %>">
-              </div>
-              <% }) %>
-                            
-              <p class="m-0"><a href="/addAddress" class="button">Add Address</a></p>
+                <div class="chooseAdd existingAddress p-3 w-100 mb-3 position-relative">
+                  <p class="name">
+                    <%= userName.fullName %>
+                  </p>
+                  <p>
+                    <%= data.locality %>, <%= data.hNo %>, <%= data.district %>,PIN: <%= data.pin %>
+                  </p>
+                  <p class="phone">Phone: <%= userName.phoneNumber %>
+                  </p>
+                  <input name="adId" class="position-absolute radio" type="radio"
+                    value="<%= data.locality %>, <%= data.hNo %>, <%= data.district %>,PIN: <%= data.pin %>">
+                </div>
+                <% }) %>
+
+                  <p class="m-0"><a href="/addAddress" class="button">Add Address</a></p>
             </div>
-            <div class="modal-footer">  
-              <button
-                type="button"
-                class="btn btn-secondary bg-danger text-white"
-                data-bs-dismiss="modal"
-              >
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary bg-danger text-white" data-bs-dismiss="modal">
                 Close
               </button>
               <!-- Add additional buttons or actions as needed -->
@@ -84,37 +71,23 @@
                 <div class="cartItems">
                   <div class="items position-relative mb-3">
                     <div class="d-flex payOptions align-items-center gap-3">
-                      <input
-                        class="pay"
-                        name="payMethode"
-                        value="OP"
-                        type="radio"
-                        id="creditCard"
-                      />
+                      <input class="pay" name="payMethode" value="razorpay" type="radio" id="creditCard"
+                        onchange="payment('COD')" />
                       <h2 class="m-0">Razore Pay</h2>
                     </div>
-                   
+
                   </div>
 
                   <div class="items position-relative mb-3">
                     <div class="d-flex payOptions align-items-center gap-3">
-                      <input
-                        class="pay"
-                        name="payMethode"
-                        value="COD"
-                        type="radio"
-                        id="COD"
-                      />
+                      <input class="pay" name="payMethode" value="COD" type="radio" id="COD"
+                        onchange="payment('razorpay')" />
                       <h2 class="m-0">Cash On Delivery (COD)</h2>
                     </div>
                   </div>
 
                   <div class="coupons">
-                    <form
-                      action="/userApplyCoupon"
-                      class="d-flex align-items-center"
-                      method="post"
-                    >
+                    <form action="/userApplyCoupon" class="d-flex align-items-center" method="post">
                       <div class="input">
                         <input type="text" placeholder="Enter Coupon Code" />
                       </div>
@@ -131,15 +104,15 @@
                     <div class="deleviryContent">
                       <div class="chooseAdd position-relative">
                         <div class="existingAddress">
-                          <p class="name"><%= userName.fullName %></p>
-                          <p id="addressSlot"><%= data.address[0].hNo %>, <%= data.address[0].district%>, PIN: <%= data.address[0].pin %></p>
+                          <p class="name">
+                            <%= userName.fullName %>
+                          </p>
+                          <p id="addressSlot">
+                            <%= data.address[0].hNo %>, <%= data.address[0].district%>, PIN: <%= data.address[0].pin %>
+                          </p>
                           <p class="phone">Phone: 98675555568</p>
                         </div>
-                        <a
-                          href="/userChangeAddress"
-                          data-bs-toggle="modal"
-                          data-bs-target="#changeAddressModal"
-                        >
+                        <a href="/userChangeAddress" data-bs-toggle="modal" data-bs-target="#changeAddressModal">
                           <button class="position-absolute button">
                             Change
                           </button>
@@ -155,32 +128,26 @@
                     <h2>order summary</h2>
                   </div>
                   <div class="orderContent">
-                    <div
-                      class="sTotal d-flex justify-content-between align-items-center"
-                    >
+                    <div class="sTotal d-flex justify-content-between align-items-center">
                       <p class="commonText m-0 p-0">Subtotal</p>
-                      <p class="commonSub m-0 p-0" id="sTotal">₹<%= total %></p>
+                      <p class="commonSub m-0 p-0" id="sTotal">₹<%= total %>
+                      </p>
                     </div>
 
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
+                    <div class="ship d-flex justify-content-between align-items-center">
                       <p class="commonText m-0 p-0">Shipping</p>
                       <p class="commonSub m-0 p-0" id="free">FREE</p>
                     </div>
 
-                    <div
-                      class="ship d-flex justify-content-between align-items-center"
-                    >
+                    <div class="ship d-flex justify-content-between align-items-center">
                       <p class="commonText m-0 p-0">Coupon Discount</p>
                       <p class="commonSub m-0 p-0" id="cDPrice">0</p>
                     </div>
                   </div>
-                  <div
-                    class="commonText tPrice d-flex justify-content-between align-items-center"
-                  >
+                  <div class="commonText tPrice d-flex justify-content-between align-items-center">
                     <p class="m-0 p-0">Total</p>
-                    <p class="m-0 p-0" id="tPrice">₹<%= total %></p>
+                    <p class="m-0 p-0" id="tPrice">₹<%= total %>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -194,7 +161,7 @@
           <div class="col-12">
             <div class="checkOut">
               <form action="/userCartCheckOut">
-                <button>Proceed to payment</button>
+                <button class="proceedBtn">Proceed to payment</button>
               </form>
             </div>
           </div>
@@ -205,47 +172,57 @@
 
     <!-- footer -->
     <%- include('footers') -%>
-    <!-- end of footer -->
+      <!-- end of footer -->
 
-    <!-- custom js -->
-    <script src="./js/userPayment.js"></script>
-    
-    <!-- end of custom js -->
-    <!-- fontawesome -->
-    <script
-      src="https://kit.fontawesome.com/23d1247997.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- end of fontawesome -->
-    <!-- Bootstrap script file -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      async function applyCoupon(event, totalPrice) {
-        event.preventDefault()
-        try {
-          const CouponName = document.querySelector('.couponName').value;
-          const discount = document.getElementById('cDPrice')
-          const response = await axios.post('/applyCoupon', {
-            couponCode: CouponName,
-            Amount: totalPrice
+      <!-- custom js -->
+      <!-- <script src="./js/userPayment.js"></script> -->
 
-          })
-          const result = response.data.Total
-          const discountPercentage = response.data.discount
-          if (result) {
-            document.getElementById('tPrice').innerHTML = result
-            document.getElementById('cDPrice').innerHTML = discountPercentage + '%'
+      <!-- end of custom js -->
+      <!-- fontawesome -->
+      <script src="https://kit.fontawesome.com/23d1247997.js" crossorigin="anonymous"></script>
+      <!-- end of fontawesome -->
+      <!-- Bootstrap script file -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+      <script>
+        async function applyCoupon(event, totalPrice) {
+          event.preventDefault()
+          try {
+            const CouponName = document.querySelector('.couponName').value;
+            const discount = document.getElementById('cDPrice')
+            const response = await axios.post('/applyCoupon', {
+              couponCode: CouponName,
+              Amount: totalPrice
+
+            })
+            const result = response.data.Total
+            const discountPercentage = response.data.discount
+            if (result) {
+              document.getElementById('tPrice').innerHTML = result
+              document.getElementById('cDPrice').innerHTML = discountPercentage + '%'
+            }
+            console.log(result);
+
+          } catch (error) {
+            console.log(error);
           }
-          console.log(result);
-
-        } catch (error) {
-          console.log(error);
         }
-      }
+    //  uieklihe3,kkulkwhmjehhkeb,kh
+        let payOption; 
+
+        function payment(paymentMethod) {
+          payOption = paymentMethod;
+          console.log(payOption); 
+        }
+        let proceedButton = document.querySelector('.proceedBtn')
+        proceedButton.addEventListener('click', async (e) => {
+          e.preventDefault()
+          console.log(payOption)
+        });
+
+
       </script>
-  </body>
+</body>
+
 </html>

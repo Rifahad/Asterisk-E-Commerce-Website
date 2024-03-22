@@ -21,6 +21,7 @@
     "nodemailer": "^6.9.9",
     "nodemon": "^3.0.3",
     "otp-generator": "^4.0.1",
+    "razorpay": "^2.9.2",
     "sweetalert": "^2.1.2",
     "twilio": "^4.21.0"
   }
