@@ -62,184 +62,7 @@ a{
 /*---------- end of BS var ----------*/
 
 /*---------- header ----------*/
-.header{
-    width: 100vw;
-    height: 2rem;
-}
-.topheader{
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: 100%;
-}
-.topheadingimgone img{
-    width: 2rem;
-    height: 1rem;
-    flex-shrink: 0;
-}
-.topheadingimgtwo img{
-    width: 0.75rem;
-    height: 1rem;
-    flex-shrink: 0;
-}
-.topheaderone{
-    justify-content: flex-end;
-    border-right: 0.8px solid rgba(0, 255, 0, 0.05);
-    background: linear-gradient(44deg, #111216 -4.62%, rgba(91, 99, 120, 0.00) 804.71%);
-}
-.topheaderone p{
-    padding-left: 0.75rem;
-    padding-right: 1.25rem;
-}
-.topheadertwo{
-    justify-content: flex-start;
-    background: linear-gradient(298deg, #111216 -34.19%, rgba(91, 99, 120, 0.00) 1164.24%);
-    padding-left: 1.25rem;
-}
-.topheadertwo p{
-    padding-left: 0.5rem;
-}
-.topheadingimg{
-    display: flex;
-    align-items: center;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 0.65rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.topheadingimgone{
-    justify-content: flex-end;
-}
-.topheadingimgtwo{
-    justify-content: flex-start;
-}
 
-.mobilenavigationList{
-    display: none;
-    position: fixed;
-    width: 75vw;
-    height: 100vh;
-    background-color: blue;
-    z-index: 1;
-    top: 0;
-    left: -100%;
-    padding: 94px 50px;
-    border: 1px solid #E0E0E0;
-    background-color: #FFF;
-    transition: left 0.4s ease-in-out;
-}
-.mobilenavigationList.active{
-    left: 0;
-}
-.mobilenavigation.active{
-    position: fixed;
-    z-index: 2;
-}
-.mobilenavigation{
-    display: none;
-    margin-right: 20px;
-}
-.navigation{
-    width: 100vw;
-    height: 62px;
-    background: linear-gradient(180deg, #D9D9D9 -406.45%, #000 139.51%);
-}
-.hamburger{
-    position: relative;
-    background: transparent;
-    border: transparent;
-    width: 30px;
-    height: 20px;
-    z-index: 2;
-}
-.hamburger span{
-    width: 30px;
-    height: 2px;
-    margin: 10px 0;
-    background: white;
-    transform-origin: center center;
-    transition: all .2s linear .1s;
-}
-.hamburger.active span:nth-child(2){
-    opacity: 0;
-}
-.hamburger.active span:nth-child(1){
-    transform: translateY(11.5px) rotate(45deg);
-}
-.hamburger.active span:nth-child(3){
-    transform: translateY(-11.5px) rotate(-45deg);
-}
-.logo svg{
-    height: 2rem;
-}
-.navigationnavbar ul li{
-    margin-left: 2rem;
-}
-.navigationnavbar ul li:last-child{
-    margin-right: 2rem;
-}
-.navigationnavbar ul li a{
-    color: #FFF;
-    font-family: Inter;
-    font-size: 0.90rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-.useroptions ul li{
-    margin-left: 1.3rem;
-}
-.useroptions ul li a svg{
-    width: 20px;
-    height: 20px;
-}
-.navigation{
-    padding: 0 11.5%;
-}
-.hamburger.active span{
-    background-color: #000;
-}
-.mobilenavigationList ul li a{
-    color: #000;
-    font-family: Inter;
-    font-size: 0.90rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.mobilenavigationList ul{
-    width: 100%;
-    height: 100%;
-}
-.mobilenavigationList h2{
-    color: rgba(0, 0, 0, 0.50);
-    font-family: Inter;
-}
-.mobilenavigationList ul li{
-    border-bottom: 1pt solid #E0E0E0;
-    padding: 8px 0;
-}
-.mobilenavigationList ul li a:focus{
-    color: #0F0;
-}
-.mobilenavigationList ul{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 0 2% 0 0;
-}
-.mobilenavigationList ul::-webkit-scrollbar{
-    width: 15px;
-}
-.mobilenavigationList ul::-webkit-scrollbar-thumb{
-    background-color: #0F0;
-    border-radius: 10px;
-}
-.mobilenavigationList ul::-webkit-scrollbar-track{
-    border-radius: 10px;
-    box-shadow: none;
-}
 /*---------- end of header ----------*/
 
 /*---------- main COntent ----------*/
@@ -304,13 +127,13 @@ a{
     margin-bottom: 1.5rem;
 }
 .loginBtn{
-    color: #000;
+    color: white;
     font-size: 0.9375rem;
     font-weight: bold;
     border-radius: 7px;
     width:150px;
     height: 45px;
-    background: #0F0;
+    background:  #0c0808;
     border: transparent;
 }
 /*---------- end of main COntent ----------*/

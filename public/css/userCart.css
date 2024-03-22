@@ -230,7 +230,7 @@ a {
   padding: 8px 0;
 }
 .mobilenavigationList ul li a:focus {
-  color: #0f0;
+  color:  #0c0808;
 }
 .mobilenavigationList ul {
   overflow-y: scroll;
@@ -241,7 +241,7 @@ a {
   width: 15px;
 }
 .mobilenavigationList ul::-webkit-scrollbar-thumb {
-  background-color: #0f0;
+  background-color:  #0c0808;
   border-radius: 10px;
 }
 .mobilenavigationList ul::-webkit-scrollbar-track {
@@ -513,7 +513,7 @@ a {
   line-height: normal;
   border: transparent;
   outline: none;
-  background-color: #0f0;
+  background-color:  #0c0808;
   padding: 0.4rem 1.25rem;
   top: 20px;
   right: 20px;
@@ -543,123 +543,11 @@ a {
   line-height: normal;
   letter-spacing: 0.175rem;
   text-transform: uppercase;
-  background-color: #0f0;
+  background-color:  #0c0808;
   padding: 1rem;
 }
 /*---------- end of main COntent ----------*/
 
-/*---------- footer ----------*/
-footer {
-  width: 100vw;
-  padding: 9.25rem 0 9.25rem 9.25rem;
-  background: radial-gradient(
-    1491.2% 240.19% at -108.46% 256.46%,
-    #d9d9d9 0%,
-    #a3a3a3 0%,
-    #000 100%
-  );
-  flex-shrink: 0;
-}
-.subheading h2 {
-  color: #fff;
-  font-family: Ubuntu;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-  margin-bottom: 2rem;
-}
-.descriptionOne svg {
-  margin-right: 1.25rem;
-}
-.contact {
-  color: #fff;
-  font-family: Ubuntu;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-.dateTime {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: Ubuntu;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  padding-bottom: 2.25rem;
-  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
-  margin-bottom: 1.25rem;
-}
-.descriptionTwo a {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: Ubuntu;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-}
-.descriptionTwo {
-  gap: 0.75rem;
-}
-.descriptionThree {
-  gap: 2rem;
-}
-.mediumScreen {
-  display: none;
-}
-.social {
-  margin-top: 4rem;
-}
-.socialMedia {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  gap: 1.58rem;
-}
-.socialMedia div {
-  width: 2.62931rem;
-  height: 2.5rem;
-  background: #4c525f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.catgory {
-  width: 100%;
-  height: 100%;
-}
-.catgoryDiv {
-  position: relative;
-  width: 90%;
-  height: 2.5rem;
-  flex-shrink: 0;
-  background: #4c525f;
-  margin-bottom: 10%;
-  padding: 0.5%;
-}
-.catgoryDiv:nth-child(2),
-.catgoryDiv:nth-child(4),
-.catgoryDiv:nth-child(6) {
-  margin: 0;
-}
-.catgoryDiv a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-family: Ubuntu;
-  font-size: 0.85rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.5rem;
-}
-.smallScreenSocial {
-  display: none;
-  padding-bottom: 1rem;
-}
-/*---------- end of footer ----------*/
 
 /*---------- media query ----------*/
 @media (max-width: 1472px) {
@@ -836,7 +724,7 @@ footer {
     line-height: normal;
     letter-spacing: 0.175rem;
     text-transform: uppercase;
-    background-color: #0f0;
+    background-color:  #0c0808;
     padding: 0.8rem;
   }
   .checkOut {
@@ -978,7 +866,7 @@ footer {
     line-height: normal;
     letter-spacing: 0.175rem;
     text-transform: uppercase;
-    background-color: #0f0;
+    background-color:  #0c0808;
     padding: 0.6rem;
   }
 }

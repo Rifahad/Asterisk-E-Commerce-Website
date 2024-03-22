@@ -11,6 +11,7 @@ const wishlist=require('../controller/wishlist')
 const profile=require('../controller/profile')
 const address=require('../controller/addressController')
 const payment=require('../controller/paymentController')
+const coupon=require('../controller/couponController')
 
 router.get("/", auth.login)
     .post("/home", auth.loginPost)
@@ -50,6 +51,14 @@ router.get("/", auth.login)
     .post('/addAddress',address.addAddressPost)
     .get('/userEditAddress',address.listAddress)
     .delete('/deleteAddress/:addressId',address.deleteAddress)
+
+    .get('/showAllproducts',user.searchingGet)
+    .get('/sort',user.sort)
+
+    .get('/userProductRate/:id',user.userReviewGet)
+    .post('/review/:id',user.userReviewPost)
+
+    router.post('/applyCoupon',coupon.applyCoupon)
 
 
      

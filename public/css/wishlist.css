@@ -230,7 +230,7 @@ a {
   padding: 8px 0;
 }
 .mobilenavigationList ul li a:focus {
-  color: #0f0;
+  color:  #0c0808;
 }
 .mobilenavigationList ul {
   overflow-y: scroll;
@@ -241,7 +241,7 @@ a {
   width: 15px;
 }
 .mobilenavigationList ul::-webkit-scrollbar-thumb {
-  background-color: #0f0;
+  background-color:  #0c0808;
   border-radius: 10px;
 }
 .mobilenavigationList ul::-webkit-scrollbar-track {
@@ -513,7 +513,7 @@ a {
   line-height: normal;
   border: transparent;
   outline: none;
-  background-color: #0f0;
+  background-color:  #0c0808;
   padding: 0.4rem 1.25rem;
   top: 20px;
   right: 20px;
@@ -543,7 +543,7 @@ a {
   line-height: normal;
   letter-spacing: 0.175rem;
   text-transform: uppercase;
-  background-color: #0f0;
+  background-color:  #0c0808;
   padding: 1rem;
 }
 /---------- end of main COntent ----------/
@@ -839,7 +839,7 @@ color: red;
     line-height: normal;
     letter-spacing: 0.175rem;
     text-transform: uppercase;
-    background-color: #0f0;
+    background-color:  #0c0808;
     padding: 0.8rem;
   }
   .checkOut {
@@ -981,7 +981,7 @@ color: red;
     line-height: normal;
     letter-spacing: 0.175rem;
     text-transform: uppercase;
-    background-color: #0f0;
+    background-color:  #0c0808;
     padding: 0.6rem;
   }
 }

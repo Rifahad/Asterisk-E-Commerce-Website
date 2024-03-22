@@ -80,8 +80,6 @@ module.exports = {
             {$set:{'items.$.quantity':quantity}}
         )
         res.status(200).json({success:true,message:'quantity updated'})
-        
-        
     },
     
 
