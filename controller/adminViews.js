@@ -5,8 +5,11 @@ const categoryDetails = require("../model/category");
 const users=require("../model/register")
 
 module.exports = {
-  dashboard: (req, res) => {
-    res.status(200).render("admin/dashboard");
+  dashboard: async (req, res) => {
+    const products=await productDetails.find()
+    const userDetails= await users.find()
+    console.log(products)
+    res.status(200).render("admin/dashboard",{products,userDetails});
   },
   orders: (req, res) => {
     res.status(200).render("admin/orders");
