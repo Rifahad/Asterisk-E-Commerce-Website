@@ -1,103 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADD BANNER</title>
-    <link rel="stylesheet" href="/css/adminCss/products.css">
-    <link rel="stylesheet" href="/css/adminCss/main.css">
+    <meta charset="utf-8">
+    <title>ASTERISK - Add Banner</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/adminCss/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/adminCss/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <div class="continer">
-        <div class="layer1">
-            <div class="logo">
-                <h2 class="rt">Rt-Store</h2>
-            </div>
-            <div class="searchBar">
-                <!-- <input type="text" placeholder="  search product" class="searchBar1"> -->
-            </div>
-            <div class="logout">
-                <button class="btn1">LOGOUT</button>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="layer2">
-            <div class="tabs">
-                <ul>
-                    <li onclick="window.location.href='/dashboard'">DASHBOARD</li>
-                    <li onclick="window.location.href='/users'">USERS</li>
-                    <li onclick="window.location.href='/products'">PRODUCTS</li>
-                    <li onclick="window.location.href='/category'">CATEGORY</li>
-                    <li onclick="window.location.href='/coupon'">COUPONS</li>
-                    <li onclick="window.location.href='/orders'">ORDERS</li>
-                    <li onclick="window.location.href='/banner'" style="background-color:#F4F8FF;">BANNERS</li>
-                </ul>
-            </div>
-            <div class="content_part">
+        <!-- Spinner End -->
 
-                <form action="/add-banner" method="post" enctype="multipart/form-data">
-                    <div class="frame">
-                        <div class="banner_gap_div">
-                            <div class="banner_div">
 
-                                <div class="banner_img_div">      
-                                    <div class="form-group img_centr">
-                                        <div class="banner_image_space">
-                                            <img src="" alt="" id="imagePreview" width="100%" height="100%">
-                                        </div>
-                                       <div class="banner_image_buttn">
-                                           Choose Image
-                                        <input type="file" id="productImage" name="productImage" onchange="previewImage(this)">
-                                       </div>
-                                    </div>
-                                </div>
-
-                                <div style="width: 100%;">
-                                    <div class="form-group">
-                                        <label for="bannerProduct">Banner Product</label>
-                                        <input type="text" id="bannerProduct" name="bannerProduct" placeholder="Enter banner product name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="bannerHeading">Banner Heading</label>
-                                        <input type="text" id="bannerHeading" name="bannerHeading" placeholder="Enter banner heading name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="bannerDescription">Banner Description</label>
-                                        <input type="text" id="bannerDescription" name="bannerDescription" placeholder="Enter banner description">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="buttonLink">Button Link</label>
-                                        <input type="text" id="buttonLink" name="buttonLink" placeholder="Enter button link">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="startingDate">Starting Date</label>
-                                        <input type="date" id="startingDate" name="startingDate">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="endingDate">Starting Date</label>
-                                        <input type="date" id="endingDate" name="endingDate">
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit">Add Banner</button>
-                                    </div>
-                                </div>              
-                            </div>
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="bi bi-asterisk"></i> ASTERISK</h3>
+                </a>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-people-fill me-2"></i>Users</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/users" class="dropdown-item">View Users</a>
                         </div>
                     </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-bag-check-fill me-2"></i>Products</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/products" class="dropdown-item">View Products</a>
+                            <a href="/add-product" class="dropdown-item">Add Products</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-shop-window me-2 me-2"></i>Categories</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/category" class="dropdown-item">View Category</a>
+                            <a href="/add-category" class="dropdown-item">Add Category</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-handbag-fill me-2"></i>Orders</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/orders" class="dropdown-item">View Orders</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-chart-bar me-2"></i>Coupons</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/coupon" class="dropdown-item">View coupons</a>
+                            <a href="/add-coupon" class="dropdown-item">Add Coupon</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Banners</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/banner" class="dropdown-item">View banners</a>
+                            <a href="/add-banner" class="dropdown-item">Add Banner</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="d-none d-lg-inline-flex">More</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            <!-- Footer Start -->
+<!-- Navbar End -->
+
+
+<!-- Table Start -->
+<div class="container-fluid pt-4 px-4"> 
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Add Banner Form</h6>
+                <form action="/add-banner" method="post" enctype="multipart/form-data">
+                    <div>
+                        <img src="" class="rounded w-25" alt="..." id="imagePreview">
+                      </div>
+                      <br>
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Select banner images here</label>
+                        <input class="form-control form-control-sm bg-dark" name="productImage" id="formFileSm" type="file" onchange="previewImage(this)">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bannerProduct" class="form-label">Banner Name</label>
+                        <input type="text" class="form-control"name="bannerProduct" id="bannerProduct"
+                            aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Please enter your product name here.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="buttonLink" class="form-label">Banner Link</label>
+                        <input type="text" class="form-control" name="buttonLink" id="buttonLink"
+                            aria-describedby="buttonLink">
+                        <div id="buttonLink" class="form-text">Please enter your link here.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="startingDate" class="form-label">Starting Date</label>
+                        <input type="date" class="form-control"name="startingDate" id="startingDate"
+                            aria-describedby="startingDate">
+                        <div id="emailHelp" class="form-text">Please enter your starting date here.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endingDate" class="form-label">Ending Date</label>
+                        <input type="date" class="form-control"name="endingDate" id="endingDate"
+                            aria-describedby="endingDate">
+                        <div id="emailHelp" class="form-text">Please enter your ending date here.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Click here to add banner details</button>
                 </form>
             </div>
+        </div>      
+</div>
+
+<!-- Table End -->
+            <!-- Footer End -->
         </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-</body>
-<script>
-    function previewImage(input) {
-        var file = input.files[0];
-        if (file) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('imagePreview').src = e.target.result;
-            };
-            reader.readAsDataURL(file);
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/js/admin/common.js"></script>
+    <script>
+        function previewImage(input) {
+            var file = input.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
         }
-    }
-</script>
+    </script>
+</body>
+
 </html>

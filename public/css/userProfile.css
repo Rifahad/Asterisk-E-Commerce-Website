@@ -349,7 +349,7 @@ a {
   line-height: normal;
 }
 .button {
-  color: #000;
+  color: white;
   font-family: Ubuntu;
   font-size: 0.75rem;
   font-style: normal;
@@ -379,7 +379,7 @@ a {
     width: 10rem;
     border: transparent;
     outline: transparent;
-    color: #000;
+    color: white;
     font-family: Inter;
     font-size: 0.7rem;
     font-style: normal;
@@ -629,7 +629,7 @@ a {
     width: 8rem;
     border: transparent;
     outline: transparent;
-    color: #000;
+    color: white;
     font-family: Inter;
     font-size: 0.7rem;
     font-style: normal;
@@ -819,7 +819,7 @@ a {
     width: 7rem;
     border: transparent;
     outline: transparent;
-    color: #000;
+    color: white;
     font-family: Inter;
     font-size: 0.6rem;
     font-style: normal;

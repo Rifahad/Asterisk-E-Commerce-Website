@@ -1,5 +1,6 @@
 /*---------- font family ----------*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lemon&family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;700&display=swap');
 /*---------- end of font family ----------*/
 
 *::after,
@@ -31,7 +32,6 @@ a {
 /*---------- BS var ----------*/
 :root {
   --bs-body-bg: transparent;
-  --bs-border-color: rgba(255, 255, 255, 0.4);
   --bs-accordion-btn-focus-border-color: transparent;
 }
 .accordion-button:not(.collapsed) {
@@ -62,308 +62,46 @@ a {
 /*---------- end of BS var ----------*/
 
 /*---------- header ----------*/
+
 /*---------- end of header ----------*/
 
 /*---------- main COntent ----------*/
 .main {
   padding: 3% 4%;
 }
-.mainContainer {
-  border: 1px solid #e0e0e0;
-  background: #fff;
+main{
+  height: 100vh;
 }
-.cartHead {
-  padding: 1.5rem 1.25rem;
-  border-bottom: 1px solid #e0e0e0;
-}
-.cartHead h2 {
-  color: #000;
-  font-family: Ubuntu;
-  font-size: 1.125rem;
+main p:first-child{
+  color: #484955;
+  font-family: Akshar;
+  font-size: 3.75rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
-.cartBody {
-  padding: 1.5rem 1.25rem;
-}
-.contentDiv {
-  width: 100%;
-  height: 100%;
-}
-.items {
-  width: 80%;
-  min-width: -webkit-fill-available;
-  height: 11.5rem;
-  border: 1px solid #e0e0e0;
-  padding: 1.25rem;
-  margin-bottom: 2rem;
-}
-.itemImg {
-  width: 30%;
-  height: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(75, 73, 85, 0.1) 0%,
-    rgba(75, 73, 85, 0.1) 100%
-  );
-}
-.itemImg img {
-  aspect-ratio: 3/2;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.productDetails {
-  height: 100%;
-}
-.productDetails h2 {
-  color: #000;
-  font-family: Ubuntu;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 0.75rem;
-}
-.quandity div {
-  width: 36px;
-  height: 25px;
-  border: 1px solid #e0e0e0;
-  background-color: white;
-  margin-bottom: 0.75rem;
-}
-.quandity div i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 8px;
-  height: 8px;
-  object-fit: contain;
-}
-.quandity div:first-child,
-.quandity div:last-child {
-  width: 24px;
-  cursor: pointer;
-  background-color: #eee;
-}
-#qty {
-  color: #000;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  user-select: none;
-}
-.color {
-  color: rgba(0, 0, 0, 0.4);
-  font-family: Inter;
-  font-size: 0.9rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: uppercase;
-}
-.cName {
-  text-transform: capitalize;
-  color: #000;
-  font-family: Inter;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 1.2rem;
-}
-.price {
-  font-style: normal;
-  line-height: normal;
-  text-transform: uppercase;
-  font-family: Ubuntu;
-}
-.price p:nth-child(1) {
-  color: #212121;
-  font-size: 1.125rem;
-  font-weight: 700;
-}
-.price p:nth-child(2) {
-  color: #bdbdbd;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration-line: line-through;
-}
-.price p:nth-child(3) {
-  color: #3cb77c;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-.deleteBtn {
-  top: 14px;
-  right: 14px;
-}
-.deleteBtn svg {
-  width: 13px;
-  height: 17px;
-}
-.coupons {
-  margin-bottom: 2rem;
-}
-.coupons input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
-  font-family: Ubuntu;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: capitalize;
-}
-.coupons input {
-  outline: none;
-  width: 100%;
-  border: 1px solid #e0e0e0;
-  background: #fff;
-  height: 2.5rem;
-  padding: 0.5rem;
-}
-.coupons button {
-  outline: none;
-  padding: 0.5rem;
-  height: 2.5rem;
-  border: 1px solid #e0e0e0;
-  border-left: 0;
-  background: rgba(238, 238, 238, 0.93);
-  color: #424242;
-  font-family: Ubuntu;
-  font-size: 0.9rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
-}
-.input {
-  width: 100%;
-}
-.cartHead svg {
-  width: 24px;
-  height: 24px;
-}
-.orderSummary {
-  margin-left: auto;
-  width: 80%;
-  border: 1px solid #e0e0e0;
-  background: #fff;
-  margin-bottom: 2rem;
-}
-.orderHeading {
-  padding: 1.2rem;
-  border-bottom: 1px solid #e0e0e0;
-}
-.orderHeading h2 {
   margin: 0;
-  color: rgba(0, 0, 0, 0.5);
-  font-family: Ubuntu;
-  font-size: 1rem;
+}
+main p:last-child{
+  color: #484955;
+  margin: 0;
+  font-family: Akshar;
+  font-size: 1.09375rem;
   font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: capitalize;
-}
-.orderContent {
-  padding: 1.2rem;
-  border-bottom: 1px solid #e0e0e0;
-  font-family: Ubuntu;
-  font-style: normal;
-  line-height: normal;
-}
-.orderContent div {
-  margin-bottom: 1.75rem;
-}
-.orderContent div:last-child {
-  margin-bottom: 0;
-}
-.commonText {
-  color: rgba(0, 0, 0, 0.75);
-  font-size: 0.9rem;
   font-weight: 400;
-}
-.commonSub {
-  color: #000;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.ship p:nth-child(2) {
-  color: #3cb77c;
-}
-.tPrice {
-  padding: 1.2rem;
-}
-.tPrice p {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-.deleviryContent {
-  padding: 2rem;
-}
-.chooseAdd {
-  border: 1px solid #e0e0e0;
-  padding: 2rem 1.5rem;
-}
-.existingAddress {
-  width: 65%;
-}
-.existingAddress p {
-  color: rgba(0, 0, 0, 0.75);
-  font-family: Ubuntu;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 600;
   line-height: normal;
-}
-.button {
-  color: white;
-  font-family: Ubuntu;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  border: transparent;
-  outline: none;
-  background-color:  #0c0808;
-  padding: 0.4rem 1.25rem;
-  top: 20px;
-  right: 20px;
-}
-.phone {
-  width: max-content;
-}
-.checkOut {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  width: 100%;
-  height: 12vh;
-  border: 1px solid #e0e0e0;
-  margin-bottom: 2rem;
-  padding: 0 3%;
-}
-.checkOut button {
-  width: 10rem;
-  border: transparent;
-  outline: transparent;
-  color: white;
-  font-family: Inter;
-  font-size: 0.7rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  letter-spacing: 0.175rem;
-  text-transform: uppercase;
-  background-color:  #0c0808;
-  padding: 1rem;
 }
 /*---------- end of main COntent ----------*/
 
+/*---------- footer ----------*/
+
+/*---------- end of footer ----------*/
 
 /*---------- media query ----------*/
+@media (max-width: 1536px) {
+    .mainContainer{
+        width: 699px;
+    }
+}
 @media (max-width: 1472px) {
   .navigation {
     padding: 0 9.5%;
@@ -530,7 +268,7 @@ a {
     width: 8rem;
     border: transparent;
     outline: transparent;
-    color: white;
+    color: #000;
     font-family: Inter;
     font-size: 0.7rem;
     font-style: normal;
@@ -538,7 +276,7 @@ a {
     line-height: normal;
     letter-spacing: 0.175rem;
     text-transform: uppercase;
-    background-color:  #0c0808;
+    background-color: #0f0;
     padding: 0.8rem;
   }
   .checkOut {
@@ -563,9 +301,13 @@ a {
     align-items: center;
   }
   .orderSummary {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     margin-left: 0;
     width: 100%;
-    border: 1px solid #e0e0e0;
     background: #fff;
     margin-bottom: 2rem;
   }
@@ -580,8 +322,8 @@ a {
     font-size: 17px;
   }
   .cartHead svg {
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
   }
   .cartBody {
     padding: 0.9rem 1.25rem;
@@ -616,6 +358,28 @@ a {
     margin-left: 50px;
   }
 }
+@media (max-width: 654px) {
+    .cardOptions{
+        border-radius: 9px;
+        width: 7rem;
+        border: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    .cardOptions svg{
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.2rem;
+    }
+    .cardOptions p{
+        color: #000;
+        font-family: Ubuntu;
+        font-size: 0.7rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
 @media (max-width: 600px) {
   .loginbox {
     width: 21rem;
@@ -649,6 +413,28 @@ a {
     text-decoration: underline;
   }
 }
+@media (max-width: 585px) {
+    .cardOptions{
+        border-radius: 9px;
+        width: 6rem;
+        border: 1px solid #e0e0e0;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    .cardOptions svg{
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.2rem;
+    }
+    .cardOptions p{
+        color: #000;
+        font-family: Ubuntu;
+        font-size: 0.65rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}
 @media (max-width: 481px) {
   .orderHeading {
     padding: 0.65rem;
@@ -672,7 +458,7 @@ a {
     width: 7rem;
     border: transparent;
     outline: transparent;
-    color: white;
+    color: #000;
     font-family: Inter;
     font-size: 0.6rem;
     font-style: normal;
@@ -680,7 +466,7 @@ a {
     line-height: normal;
     letter-spacing: 0.175rem;
     text-transform: uppercase;
-    background-color:  #0c0808;
+    background-color: #0f0;
     padding: 0.6rem;
   }
 }

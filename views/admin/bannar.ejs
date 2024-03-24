@@ -214,9 +214,9 @@
                             <% for(let i = 0; i < products.length; i++) { %>
                             <tr class="row<%=products[i]._id%>">
                                 <th><img class="rounded-circle d-flex align-items-center" src="/asset/<%= products[i].productImage%>" alt="" style="width: 40px; height: 40px;"></th>
-                                <td><%= products[i].bannerHeading %></td>
-                                <td><%= products[i].startingDate%></td>
-                                <td><%= products[i].endingDate%></td>
+                                <td><%= products[i].buttonLink %></td>
+                                <td><%= products[i].startingDate.toDateString()%></td>
+                                <td><%= products[i].endingDate.toDateString()%></td>
                                 <td><button type="submit" onclick="deleteBanner(event,'<%=products[i]._id%>')" class="btn btn-outline-primary m-2">Delete</button></td>
                             </tr>
                             <% } %>

@@ -10,4 +10,7 @@ module.exports={
             res.redirect('/')
         }
     },
+    userOrders:(req,res)=>{
+        res.status(200).render('user/userOrderPage')
+    }
 }

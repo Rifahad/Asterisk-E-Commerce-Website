@@ -29,6 +29,7 @@ router.get("/", auth.login)
     .post("/", auth.forgotPasswordPost)
 
     .get("/home",user.home)
+    .get('/userOrders',profile.userOrders)
 
     .get("/details/:id",user.detailedProduct)
 
