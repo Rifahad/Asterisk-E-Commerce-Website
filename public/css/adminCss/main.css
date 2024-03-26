@@ -10,8 +10,9 @@
 .rt{
     color: black;
     font-size: 3rem;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-style: italic;
+    font-family: "Rubik Maps", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 .container{
     height: 100vh;

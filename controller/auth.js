@@ -77,6 +77,7 @@ module.exports = {
         account.otp == true
       ) {
         req.session.userId=account._id;
+        req.session.email=account.email
         res.status(200).redirect("/home");
       } else {
         res.status(200).redirect("/");

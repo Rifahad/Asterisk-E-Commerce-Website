@@ -1,159 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADD PRODUCTS</title>
-    <link rel="stylesheet" href="/css/adminCss/products.css">
-    <link rel="stylesheet" href="/css/adminCss/main.css">
+    <meta charset="utf-8">
+    <title>ASTERISK - Add Product</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/adminCss/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/adminCss/style.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="continer">
-        <div class="layer1">
-            <div class="logo">
-                <h2 class="rt">Rt-Store</h2>
-            </div>
-            <div class="searchBar">
-                <!-- <input type="text" placeholder="  search product" class="searchBar1"> -->
-            </div>
-            <div class="logout">
-                <button class="btn1">LOGOUT</button>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <div class="layer2">
-            <div class="tabs">
-                <ul>
-                    <li onclick="window.location.href='/dashboard'">DASHBOARD</li>
-                    <li onclick="window.location.href='/users'">USERS</li>
-                    <li onclick="window.location.href='/products'" style="background-color:#F4F8FF;">PRODUCTS</li>
-                    <li onclick="window.location.href='/category'">CATEGORY</li>
-                    <li onclick="window.location.href='/coupon'">COUPONS</li>
-                    <li onclick="window.location.href='/orders'">ORDERS</li>
-                    <li onclick="window.location.href='/banner'">BANNERS</li>
-                </ul>
-            </div>
-            <div class="content_part">
+        <!-- Spinner End -->
 
-                <form action="/add-product" method="post" enctype="multipart/form-data">
-                    <div class="frame">
-                        <div class="gap_div">
-                            <div class="card_div">
-                                <div class="form-group">
-                                    <label for="productName">Product Name</label>
-                                    <input type="text" id="productName" name="productName" placeholder="Enter Product Name" required>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="price">Price</label>
-                                    <input type="number" id="price" name="price" placeholder="Enter price" required>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="discount">Discount</label>
-                                    <input type="number" id="discount" name="discount" placeholder="Enter discount">
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="stock">Stock</label>
-                                    <input type="number" id="stock" name="stock" placeholder="Enter stock" required>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="category">Category</label>
-                                    <select id="category" name="category" required>
-                                        <option value="" selected disabled>Select category</option>
-                                        <% for (var i = 0; i < data.length; i++) { %>
-                                            <option value="<%= data[i].category %>" style="background-color: black; color: white;"><%= data[i].category %></option>
-                                        <% } %>
-                                    </select>
-                                </div>
 
-                                <div class="form-group">
-                                    <label for="subCategory">Sub Category</label>
-                                    <select name="subCategory" id="subCategory">
-                                        <option value="" selected disabled style="background-color: black; color: white;">Select sub category</option>
-                                        <% for (var i = 0; i < data.length; i++) { %>
-                                            <% for (var j = 0; j < data[i].subCategory.length; j++) { %>
-                                            <option value="Shirts" style="background-color: black; color: white;"><%= data[i].subCategory[j]%></option>
-                                            <% } %>
-                                        <% } %>
-                                    </select>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="deliveryDate">Delivery Date</label>
-                                    <input type="date" id="deliveryDate" name="deliveryDate" placeholder="Enter delivery date">
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="colour">Colour</label>
-                                    <select name="colour" id="colour">
-                                        <option value="" selected disabled>Select color</option>
-                                        <option value="#ff0000" style="color: #ff0000;">Red</option> 
-                                        <option value="#0000ff" style="color: #0000ff;">Blue</option>
-                                        <option value="#00ff00" style="color: #00ff00;">Green</option>
-                                        <option value="#000000" style="color: #000000;">Black</option>
-                                        <option value="#f98000" style="color: #f98000;">Orange</option>
-                                        <option value="#ffea00" style="color: #ffea00;">Yellow</option>     
-                                    </select>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="size">Size</label>
-                                    <select name="size" id="size">
-                                        <option value="default" selected disabled>Choose Size</option>                                            
-                                        <option value="small">Small</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="large">Large</option>
-                                        <option value="xl">X-Large</option>
-                                        <option value="xxl">XX-Large</option>
-                                    </select>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="quantity">Quantity</label>
-                                    <input type="text" id="quantity" name="quantity" placeholder="Enter quantity">
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea id="description" name="description" placeholder="Enter description"></textarea>
-                                </div>
-                                <div class="form-group">
-
-                                </div>
-                            </div>
-                            <div class="img_div">      
-                                <div class="form-group img_centr">
-                                    <div class="image_space">
-                                        <img src="" alt=""  id="imagePreview" width="100%" height="100%">
-                                    </div>
-                                   <div class="image_buttn">
-                                    Choose Image
-                                    <input type="file" multiple name="productImage" id="" onchange="previewImage(this)">
-                                </div>
-                                <button type="submit" style="background-color: #000000; color: white; margin-top: 20px;">Submit</button>
-                            </div>
-                            </div>
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="bi bi-asterisk"></i> ASTERISK</h3>
+                </a>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-people-fill me-2"></i>Users</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/users" class="dropdown-item">View Users</a>
                         </div>
                     </div>
-                </form>
-
-                         
-            </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="bi bi-bag-check-fill me-2"></i>Products</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/products" class="dropdown-item">View Products</a>
+                            <a href="/add-product" class="dropdown-item">Add Products</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-shop-window me-2 me-2"></i>Categories</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/category" class="dropdown-item">View Category</a>
+                            <a href="/add-category" class="dropdown-item">Add Category</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-handbag-fill me-2"></i>Orders</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/orders" class="dropdown-item">View Orders</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-chart-bar me-2"></i>Coupons</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/coupon" class="dropdown-item">View coupons</a>
+                            <a href="/add-coupon" class="dropdown-item">Add Coupon</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Banners</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/banner" class="dropdown-item">View banners</a>
+                            <a href="/add-banner" class="dropdown-item">Add Banner</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="d-none d-lg-inline-flex">More</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            <!-- Footer Start -->
+<!-- Navbar End -->
+
+
+<!-- Table Start -->
+<div class="container-fluid pt-4 px-4"> 
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">Add Product Form</h6>
+                <form action="/add-product" method="post" enctype="multipart/form-data">
+                    <div>
+                        <img src="" class="rounded w-25" alt="..." id="imagePreview">
+                      </div>
+                      <br>
+                    <div class="mb-3">
+                        <label for="formFileSm" class="form-label">Select product images here</label>
+                        <input class="form-control form-control-sm bg-dark" name="productImage" id="formFileSm" type="file" onchange="previewImage(this)" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <input type="text" class="form-control"name="productName" id="productName"
+                            aria-describedby="productName">
+                        <div id="productName" class="form-text">Please enter your product name here.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Product Price</label>
+                        <input type="number" class="form-control"name="price" id="price"
+                            aria-describedby="price">
+                        <div id="price" class="form-text">Please enter your product price here.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="discount" class="form-label">Product Discount</label>
+                        <input type="text" class="form-control"name="discount" id="discount"
+                            aria-describedby="discount">
+                        <div id="discount" class="form-text">Please enter your product discount here.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Product Category</label>
+                            <select class="form-select form-select-sm mb-3" name="category" id="category" aria-label=".form-select-sm example">
+                                <option selected>Open this select menu</option>
+                                <% for (var i = 0; i < data.length; i++) { %>
+                                <option value="<%= data[i].category %>"><%= data[i].category %></option>
+                                <% } %>
+                            </select>
+                            <div id="category" class="form-text">Please enter your product category here.
+                    </div>
+                    <div class="mb-3">
+                        <label for="subCategory" class="form-label">Product Sub-Category</label>
+                            <select class="form-select form-select-sm mb-3" name="subCategory" id="subCategory" aria-label=".form-select-sm example">
+                                <option selected>Open this select menu</option>
+                                <% for (var i = 0; i < data.length; i++) { %>
+                                    <% for (var j = 0; j < data[i].subCategory.length; j++) { %>
+                                <option value="<%= data[i].subCategory[j]%>"><%= data[i].subCategory[j]%></option>
+                                <% } %>
+                                <% } %>
+                            </select>
+                            <div id="subCategory" class="form-text">Please enter your product sub-category here.
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="colour"  class="form-label">Product Color</label>
+                            <select class="form-select form-select-sm mb-3" name="colour" id="colour" aria-label=".form-select-sm example">
+                                <option selected>Open this select menu</option>
+                                <option value="red"  style="color: red;">Red</option>
+                                <option value="yellow"  style="color:yellow;">Yellow</option>
+                                <option value="green"  style="color:green;">Green</option>
+                                <option value="blue"  style="color:blue;">Blue</option>
+                                <option value="black"  style="color: rgb(65, 62, 62);">Black</option>
+                                <option value="white"  style="color: white;">White</option>
+                                <option value="orange"  style="color:orange;">Orange</option>
+                                <option value="pink"  style="color: pink;">Pink</option>
+                                <option value="violet"  style="color: violet;">Violet</option>
+                            </select>
+                            <div id="colour" class="form-text">Please select product color here.
+                    </div>
+                    <br>
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0" value="default" name="size" id="size">Size</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size" id="size" value="small">
+                                <label class="form-check-label" for="gridRadios1">
+                                    Small
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size"
+                                    id="medium" value="medium">
+                                <label class="form-check-label" for="size">
+                                    Medium
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size"
+                                    id="large" value="large">
+                                <label class="form-check-label" for="size">
+                                    Large
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size"
+                                    id="xl" value="xl">
+                                <label class="form-check-label" for="size">
+                                    XL
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="size"
+                                    id="xxl" value="xxl">
+                                <label class="form-check-label" for="size">
+                                    XXL
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Product Quantity</label>
+                        <input type="number" class="form-control"name="quantity" id="quantity"
+                            aria-describedby="quantity">
+                        <div id="quantity" class="form-text">Please select product quantity here.
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a discription here"
+                            id="description" style="height: 150px;" name="description"></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                    <br>
+                    
+                    <button type="submit" class="btn btn-primary">Click here to add product details</button>
+                </form>
+            </div>
+        </div>      
+</div>
+
+<!-- Table End -->
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-</body>
-<script>
-    function previewImage(input) {
-        var file = input.files[0];
-        if (file) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                document.getElementById('imagePreview').src = e.target.result;
-            };
-            reader.readAsDataURL(file);
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    
+    <script src="/js/admin/common.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        function previewImage(input) {
+            var file = input.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
         }
-    }
-</script>
+    </script>
+</body>
+
 </html>

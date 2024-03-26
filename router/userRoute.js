@@ -44,8 +44,9 @@ router.get("/", auth.login)
     .delete('/userCartDelete',cart.deleteFromCart)
     .post('/quantityUpdate',cart.quantityUpdate)
 
-    .get('/userCartCheckOut',payment.cartCheckOut)
-    .get('/userBuyNow/:id',payment.buyNow)
+    .get('/userCartCheckOut',payment.checkOutGET)
+    .post('/usersCheckout',payment.checkOutPOST)
+    
 
     .get('/userAccount',profile.userProfile)
     .get('/addAddress',address.addAddress)
@@ -59,7 +60,10 @@ router.get("/", auth.login)
     .get('/userProductRate/:id',user.userReviewGet)
     .post('/review/:id',user.userReviewPost)
 
-    router.post('/applyCoupon',coupon.applyCoupon)
+    // .post('/applyCoupon',payment.applyCoupon)
+
+    .get('/success',payment.successPage)
+
 
 
      

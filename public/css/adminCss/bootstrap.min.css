@@ -6790,6 +6790,9 @@ fieldset:disabled .btn {
 }
 .text-primary {
   color: #eb1616 !important;
+  font-family: "Rubik Maps", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 .text-secondary {
   color: #191c24 !important;
