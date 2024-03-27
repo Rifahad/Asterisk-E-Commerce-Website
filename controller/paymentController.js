@@ -5,6 +5,16 @@ const productModel=require('../model/products')
 const OrderModel=require('../model/order')
 
 const {ObjectId}=require('mongodb')
+const Razorpay = require('razorpay')
+
+const Razorpay_key = process.env.RAZKEY
+const Razorpay_secret_key = process.env.RAZSECRET
+
+var instance = new Razorpay({
+  key_id:Razorpay_key,
+  key_secret:Razorpay_secret_key
+
+})
 
 module.exports={
     checkOutGET:async (req,res)=>{
@@ -33,6 +43,7 @@ module.exports={
                   console.log("No product found with the given ID");
                 }
             }
+            req.session.totalAmount=totalAmount
             res.status(200).render('user/userPayment',{total:totalAmount, data:addresses || '', userName:username})
         }else{
             res.redirect('/')
@@ -44,9 +55,15 @@ module.exports={
             if(req.session.userId)
             {   
                 const {phone,paymentAddress,paymentMethod} = req.body
-                if(paymentMethod =='COD'){
-                    
+                if(paymentMethod =='COD'){   
                     res.status(200).json({success:true, COD:true})
+                }else{
+                    const options = {
+                        amount: req.session.totalAmount * 100, // amount in the smallest currency unit
+                        currency: "INR",
+                      };
+                       const razorpayOrder = await instance.orders.create(options);
+                       res.status(200).json({success:true, razorpayOrder });
                 }
 
             }else{

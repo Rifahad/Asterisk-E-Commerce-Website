@@ -186,6 +186,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
       <script>
         async function applyCoupon(event, totalPrice) {
@@ -232,6 +233,26 @@
       const result=response.data
       if(result.COD == true){
         window.location.href='/success'
+      }else{
+        const RazorpayOrder = result.razorpayOrder
+        const options = {
+          key:'rzp_test_rtBq042RJdPlvA',
+          amount:RazorpayOrder.amount,
+          currency:RazorpayOrder.currency,
+          name:'ASTERISK',
+          description:'Test Payment',
+          order_id:RazorpayOrder.id,
+          handler:async function(response){
+            console.log('REached in handlewr');
+             const orderResponse = await axios.post('/razorpayment');
+             const orderResult = orderResponse.data
+             if (orderResult.success === true) {
+              window.location.href='/success'
+             }
+          }
+        }
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
       }
         });
 
