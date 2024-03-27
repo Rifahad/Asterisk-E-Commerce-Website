@@ -56,6 +56,7 @@ router.get("/", auth.login)
 
     .get('/showAllproducts',user.searchingGet)
     .get('/sort',user.sort)
+    .post('/userFliterByPrice',user.filter)
 
     .get('/userProductRate/:id',user.userReviewGet)
     .post('/review/:id',user.userReviewPost)

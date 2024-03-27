@@ -76,6 +76,11 @@ module.exports = {
     const sortedProducts=await product.find().sort({price:parseInt(sortType)})
     res.render("user/userSingleProductPage", { data:sortedProducts });
   },
+  filter:async (req,res)=>{
+    const {min,max}=req.body
+    const filtered=await product.find({price:{$gte:min,$lte:max}})
+    res.render("user/userSingleProductPage", { data:filtered });
+  },
   userReviewGet:async(req,res)=>{
     if(req.session.userId){
       const productId=req.params.id

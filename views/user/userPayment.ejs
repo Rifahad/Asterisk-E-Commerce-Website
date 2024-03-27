@@ -236,14 +236,14 @@
       }else{
         const RazorpayOrder = result.razorpayOrder
         const options = {
-          key:'rzp_test_rtBq042RJdPlvA',
+          key:'rzp_test_vixg29IkxIVXOQ',
           amount:RazorpayOrder.amount,
           currency:RazorpayOrder.currency,
           name:'ASTERISK',
-          description:'Test Payment',
+          description:'Payment for your order',
           order_id:RazorpayOrder.id,
           handler:async function(response){
-            console.log('REached in handlewr');
+            console.log('Reached in handler');
              const orderResponse = await axios.post('/razorpayment');
              const orderResult = orderResponse.data
              if (orderResult.success === true) {

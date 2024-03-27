@@ -82,20 +82,9 @@
           </form>
           <form action="/userFliterByPrice" method="post">
             <input type="text" value="" hidden />
-            <input type="number" value="" name="minPrice" placeholder="Min" required />
-            <input type="number" value="" name="minPrice" placeholder="Max" required />
+            <input type="number" value="" name="min" placeholder="Min" required />
+            <input type="number" value="" name="max" placeholder="Max" required />
             <button type="submit">Go</button>
-          </form>
-        </div>
-        <div class="fliterSubHead2">
-          <h2>Customer Ratings</h2>
-          <form class="rateing" action="/userFilterByRateing" method="post">
-            <input class="checkbox" type="checkbox" value="4" name="maxRate" required />
-            <input type="submit" value="4★ & above" />
-          </form>
-          <form class="rateing" action="/userFilterByRateing" method="post">
-            <input class="checkbox" type="checkbox" value="3" name="maxRate" required />
-            <input type="submit" value="3★ & above" />
           </form>
         </div>
         <div class="sort">
@@ -123,50 +112,39 @@
           </div>
           <div class="fliterSubHead">
             <h2>PRICE</h2>
-            <form action="/userFliter" method="post">
+            <form action="" method="post">
               <input type="text" value="" hidden />
               <input type="number" value="1000" name="maxPrice" hidden />
               <input class="bg-transparent border-0" type="submit" value="Under ₹1,000" />
             </form>
-            <form action="/userFliterByPrice" method="post">
+            <form action="" method="post">
               <input type="text" value="" hidden />
               <input type="number" value="1000" name="minPrice" hidden />
               <input type="number" value="5000" name="maxPrice" hidden />
               <input class="bg-transparent border-0" type="submit" value="₹1,000 - ₹5,000" />
             </form>
-            <form action="/userFliterByPrice" method="post">
+            <form action="" method="post">
               <input type="text" value="" hidden />
               <input type="number" value="5000" name="minPrice" hidden />
               <input type="number" value="10000" name="maxPrice" hidden />
               <input class="bg-transparent border-0" type="submit" value="₹5,000 - ₹10,000" />
             </form>
-            <form action="/userFliterByPrice" method="post">
+            <form action="/" method="post">
               <input type="text" value="" hidden />
               <input type="number" value="10000" name="minPrice" hidden />
               <input type="number" value="20000" name="maxPrice" hidden />
               <input class="bg-transparent border-0" type="submit" value="₹10,000 - ₹20,000" />
             </form>
-            <form action="/userFliterByPrice" method="post">
+            <form action="" method="post">
               <input type="text" value="" hidden />
               <input type="number" value="20000" name="minPrice" hidden />
               <input class="bg-transparent border-0" type="submit" value="Over ₹20,000" />
             </form>
             <form action="/userFliterByPrice" method="post">
               <input type="text" value="" hidden />
-              <input type="number" value="" name="minPrice" placeholder="Min" required />
-              <input type="number" value="" name="minPrice" placeholder="Max" required />
+              <input type="number" value="" name="min" placeholder="Min" required />
+              <input type="number" value="" name="max" placeholder="Max" required />
               <button type="submit">Go</button>
-            </form>
-          </div>
-          <div class="fliterSubHead2">
-            <h2>Customer Ratings</h2>
-            <form class="rateing" action="/userFilterByRateing" method="post">
-              <input class="checkbox" type="checkbox" value="4" name="maxRate" required />
-              <input type="submit" value="4★ & above" />
-            </form>
-            <form class="rateing" action="/userFilterByRateing" method="post">
-              <input class="checkbox" type="checkbox" value="3" name="maxRate" required />
-              <input type="submit" value="3★ & above" />
             </form>
           </div>
 
